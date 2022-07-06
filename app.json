@@ -1,10 +1,10 @@
 {
-  "id": "92F630BA-370D-4AD8-8BD9-26DC62C78BA4",
-  "name": "Barcode Scanning",
+  "id": "50b5fe9b-c60d-449c-9bf1-3b2b3cb04aa0",
+  "name": "Belluscura",
   "publisher": "Sophie Kent",
   "brief": "",
   "description": "",
-  "version": "19.0.0.66",
+  "version": "19.0.0.0",
   "privacyStatement": "",
   "EULA": "",
   "help": "",
@@ -15,9 +15,10 @@
   "idRanges": [
     {
       "from": 56600,
-      "to": 56650//TODO Check get SN Collecc
+      "to": 56660
     }
   ],
   "features": ["TranslationFile"],
-  "runtime": "8.0"
+  "runtime": "8.0",
+  "target": "Cloud"
 }

@@ -1,0 +1,41 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "al",
+            "request": "launch",
+            "name": "Belluscura",
+            "tenant": "7a562426-8836-427c-b389-5ed98f883459",
+            "environmentType": "Sandbox",
+            "environmentName": "Sandbox",
+            "breakOnError": true,
+            "schemaUpdateMode": "Synchronize",
+            "startupObjectType": "Page",
+            "startupObjectId": 56006
+        },
+        {
+            "type": "al",
+            "request": "launch",
+            "name": "Belluscura",
+            "tenant": "7a562426-8836-427c-b389-5ed98f883459",
+            "environmentType": "Sandbox",
+            "environmentName": "Sandbox2",
+            "breakOnError": true,
+            "schemaUpdateMode": "ForceSync",
+            "startupObjectType": "Page",
+            "startupObjectId": 56006
+        },
+                {
+            "type": "al",
+            "request": "launch",
+            "name": "Belluscura LLC LIVE",
+            "server": "http://businesscentral.dynamics.com",
+            "tenant": "fd1aa379-0fc2-4f0b-942a-c848ff452689",
+            "environmentType": "Production",
+            "breakOnError": true,
+            "schemaUpdateMode": "Synchronize",
+            "authentication": "UserPassword",
+            "enableLongRunningSqlStatements": true
+        }
+    ]
+}
