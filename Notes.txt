@@ -1,0 +1,63 @@
+***********************************************************************************************************
+Vsn 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+***********************************************************************************************************
+Vsn 1
+
+1. Reduce button clicks on assembly order
+    - One item at a time
+    - Dwayne does first header
+    - copy first header per item made, delete ass ord on close pages
+    DEFAULTS
+        x- CHOOSE bins
+        x- Due Date - OnNewRecord
+        x- Location - Plano - Setup
+            - Lines - will default in from header but uses pop-up - default this to yes and do nont show
+        - Qty - 1 - set onaftervalidate item no
+        - productline Code (Shortcut Dim 1) - comes from item - onaftervalidate item no
+    ITEM TRACKING
+        - Open item tracking page automatically per line
+            - only if
+                Line.Type = Item
+                Item.Item Tracking Code = SERIAL
+
+    - GLB serial non collection - fill in based on item tracking Lines
+
+    - generate sku
+    - print the label
+    - open header item tracking
+    - scan sku
+    - Post
+                
+2. Remove buttons on all pages
+3. Dwayne's Role (check all okay)
+4. Inv by bins report/factbox
+5. Aged Pay/Rec Excel Export
+    - More difficult than we think - Excel Export
+    - Check which codeunit produces the export
+
+
+New fields
+- Page Item Card - Global Dim 1 Code

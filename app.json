@@ -1,0 +1,23 @@
+{
+  "id": "F88D070D-9CC1-43FB-9CDA-2FC6B9805C9C",
+  "name": "Factboxes",
+  "publisher": "Sophie Kent",
+  "brief": "",
+  "description": "",
+  "version": "19.0.0.5",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "application": "19.0.0.0",
+  "platform": "19.0.0.0",
+  "screenshots": [],
+  "idRanges": [
+    {
+      "from": 56651,
+      "to": 56660
+    }
+  ],
+  "features": ["TranslationFile"],
+  "runtime": "8.0"
+}
