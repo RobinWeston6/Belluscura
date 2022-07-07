@@ -1,7 +1,6 @@
 codeunit 56601 "SK Barcode Functions"
 {
 
-
     procedure EncodeFont(BarcodeStr: Code[50]): Text
     var
         BarcodeSymbology: Enum "Barcode Symbology 2D";
