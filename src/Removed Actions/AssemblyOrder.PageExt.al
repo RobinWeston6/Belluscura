@@ -30,6 +30,13 @@ pageextension 56602 "SK Assembly Order" extends "Assembly Order"
                 end;
             end;
         }
+        addafter("Item No.")
+        {
+            field("SK SKU"; Rec."SK SKU")
+            {
+                ApplicationArea = all;
+            }
+        }
     }
 
     actions
@@ -42,8 +49,14 @@ pageextension 56602 "SK Assembly Order" extends "Assembly Order"
                 ApplicationArea = all;
 
                 trigger OnAction()
+                var
+                    SingleInstanceEvtMgt: Codeunit "SK Sngl Inst. Evt. Subscribers";
                 begin
+                    BindSubscription(SingleInstanceEvtMgt);
+                    SingleInstanceEvtMgt.SetAssemblyheader(Rec);
                     ItemTracking();
+                    Clear(SingleInstanceEvtMgt);
+                    UnbindSubscription(SingleInstanceEvtMgt);
                 end;
             }
         }
@@ -272,13 +285,13 @@ pageextension 56602 "SK Assembly Order" extends "Assembly Order"
             Commit();
         end;
 
-        Clear(BarcodeMgt);
-        BarcodeMgt.SetExtraSieveBed(ExtraSieveBed);
-        BarcodeMgt.SetAssemblyHeader(Rec);
+        //DELETE//Clear(BarcodeMgt);
+        //DELETE//BarcodeMgt.SetExtraSieveBed(ExtraSieveBed);
+        //DELETE//BarcodeMgt.SetAssemblyHeader(Rec);
         CurrPage.Lines.Page.OpenAllTrackingLines();
         //Label prints out - Scan SKU into header
         Rec.OpenItemTrackingLines();
-        BarcodeMgt.ClearAssemblyHeader();
+        //DELETE//BarcodeMgt.ClearAssemblyHeader();
         CODEUNIT.Run(CODEUNIT::"Assembly-Post (Yes/No)", Rec);
 
         AssemblyHeader.Init();
@@ -306,7 +319,7 @@ pageextension 56602 "SK Assembly Order" extends "Assembly Order"
         Item: Record Item;
         AssemblySetup: Record "Assembly Setup";
         BarcodeSetup: Record "SK Barcode Setup";
-        BarcodeMgt: Codeunit "SK Barcode Mgt.";
+        //DELETE//BarcodeMgt: Codeunit "SK Barcode Mgt.";
         AssemblyLineMgt: Codeunit "Assembly Line Management";
         ExtraSieveBed: Boolean;
 

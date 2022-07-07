@@ -8,6 +8,13 @@ V2
 2. Labels should print for all items with Serial No in parent item or component
     - Loop through the BOM to create (new tyoe) SN Collection records per BOM line
     - Possibly print label when SNcollection count filtered to SKU = total BOM line quantities (on Post)
+    NEW PLAN
+    - Print label on Post
+    - print all serial no from table with matching SKU
+    - Insert new sn collection entry on validate of item tracking lines from Assembly Orders
+        - single instance codeunit event
+        - will need to generate SKU first
+        - print label on post - last opportunity to filter to assembly header no.
 
 X. Simplify report
     - dynamic resizing

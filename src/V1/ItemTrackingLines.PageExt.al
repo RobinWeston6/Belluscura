@@ -65,7 +65,7 @@ pageextension 56601 "SK Item Tracking Lines" extends "Item Tracking Lines"
     }
 
     var
-        BarcodeMgt: Codeunit "SK Barcode Mgt.";
+        //DELETE//BarcodeMgt: Codeunit "SK Barcode Mgt.";
         BarcodeFunctions: Codeunit "SK Barcode Functions";
 
     trigger OnAfterGetRecord()

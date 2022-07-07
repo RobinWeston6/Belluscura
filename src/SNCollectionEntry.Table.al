@@ -32,28 +32,28 @@ table 56602 "SK SN Collection Entry"
         }
         field(160; "Send-to Document"; Enum "Sales Document Type")
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Caption = 'Send-to Document';
         }
         field(161; "Send-to No."; Code[20])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Caption = 'Send-to No.';
         }
         field(170; "Source Assembly Document"; enum "Assembly Document Type")
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Caption = 'Source Assembly Document Type';
         }
         field(171; "Source Assembly Doc. No."; Code[20])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Caption = 'Source Assembly Document No.';
         }
-        field(180; "Active Assembly"; Boolean)
+        field(180; Dismantled; Boolean)
         {
-            DataClassification = ToBeClassified;
-            Caption = 'Active Assembly';
+            DataClassification = CustomerContent;
+            Caption = 'Dismantled';
         }
     }
 
@@ -65,27 +65,5 @@ table 56602 "SK SN Collection Entry"
         }
     }
 
-    var
-        myInt: Integer;
-
-    trigger OnInsert()
-    begin
-
-    end;
-
-    trigger OnModify()
-    begin
-
-    end;
-
-    trigger OnDelete()
-    begin
-
-    end;
-
-    trigger OnRename()
-    begin
-
-    end;
 
 }
