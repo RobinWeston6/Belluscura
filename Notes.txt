@@ -1,3 +1,25 @@
+************************************************************
+V2
+
+1. Change functionality of SN Collection 
+    - PK SKU, Entry No.
+    - put sn collection processing into loops
+
+2. Labels should print for all items with Serial No in parent item or component
+    - Loop through the BOM to create (new tyoe) SN Collection records per BOM line
+    - Possibly print label when SNcollection count filtered to SKU = total BOM line quantities (on Post)
+
+X. Simplify report
+    - dynamic resizing
+    - extra level of grouping
+
+Y. Print report on Post
+    - will need to find a way to default in SKU rather than scanning
+
+Z. Find way to simplify SN validation on Item Tracking Lines - slowing down with large batches
+
+
+************************************************************
 1. Reduce button clicks on assembly order
     - One item at a time
     - Dwayne does first header
