@@ -9,10 +9,6 @@ pageextension 56600 "SK Item Card" extends "Item Card"
                 ApplicationArea = All;
                 Caption = 'Productline Code';
             }
-            field("SK X-PLOR Component"; Rec."SK X-PLOR Component")
-            {
-                ApplicationArea = All;
-            }
             field("SK SKU No. Series"; Rec."SK SKU No. Series")
             {
                 ApplicationArea = All;

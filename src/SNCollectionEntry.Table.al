@@ -5,14 +5,20 @@ table 56602 "SK SN Collection Entry"
 
     fields
     {
-        field(1; SKU; Code[50])
+        field(1; "Parent Item No."; Code[20])
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Parent Item No.';
+            TableRelation = Item;
+        }
+        field(2; SKU; Code[50])
         {
             DataClassification = CustomerContent;
             Caption = 'SKU';
             Editable = false;
             NotBlank = true;
         }
-        field(2; "Entry No."; Integer)
+        field(3; "Entry No."; Integer)
         {
             DataClassification = SystemMetadata;
             Caption = 'Entry No.';
@@ -25,7 +31,7 @@ table 56602 "SK SN Collection Entry"
             Caption = 'Component Item No.';
             TableRelation = Item;
         }
-        field(11; "Component Serial No."; Code[50])
+        field(20; "Component Serial No."; Code[50])
         {
             DataClassification = CustomerContent;
             Caption = 'Component Serial No.';
@@ -59,9 +65,13 @@ table 56602 "SK SN Collection Entry"
 
     keys
     {
-        key(PK; SKU, "Entry No.")
+        key(PK; "Parent Item No.", SKU, "Entry No.")
         {
             Clustered = true;
+        }
+        key(key1; "Component Item No.", "Component Serial No.")
+        {
+            Unique = true;
         }
     }
 

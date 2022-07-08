@@ -1,27 +1,38 @@
 reportextension 56600 "SK Standard Sales - Shipment" extends "Standard Sales - Shipment"
 {
     WordLayout = 'src/Layouts/StandardSalesShipment.docx';
-
+    //TODO - sort out extra loop for serial numbers in layout
     dataset
     {
         modify(ItemTrackingLine)
         {
+
             trigger OnAfterAfterGetRecord()
             begin
-                if not SerialNoCollection.Get(TempTrackingSpecBuffer."Serial No.") then
-                    Clear(SerialNoCollection);
+                "SK SN Collection Entry".SetRange("Parent Item No.", TempTrackingSpecBuffer."Item No.");
+                "SK SN Collection Entry".SetRange(SKU, TempTrackingSpecBuffer."Serial No.");
             end;
         }
         add(ItemTrackingLine)
         {
-            column(BatterySN_SerialNoCollection;SerialNoCollection."Battery Serial No.")
-            {}
-            column(UnitSN_SerialNoCollection;SerialNoCollection."Unit Serial No.")
-            {}
-            column(SieveSN_SerialNoCollection;SerialNoCollection."Sieve Bed Serial No.")
-            {}
-            column(Sieve2SN_SerialNoCollection;SerialNoCollection."Sieve Bed 2 Serial No.")
-            {}
+            column(BatterySN_SerialNoCollection; '')
+            { }
+            column(UnitSN_SerialNoCollection; '')
+            { }
+            column(SieveSN_SerialNoCollection; '')
+            { }
+            column(Sieve2SN_SerialNoCollection; '')
+            { }
+        }
+        addfirst(ItemTrackingLine)
+        {
+            dataitem("SK SN Collection Entry"; "SK SN Collection Entry")
+            {
+                column(ComponentItemNo_SNCollectionEntry; "Component Item No.")
+                { }
+                column(ComponentSerialNo_SNCollectionEntry; "Component Serial No.")
+                { }
+            }
         }
     }
 
@@ -29,9 +40,4 @@ reportextension 56600 "SK Standard Sales - Shipment" extends "Standard Sales - S
     {
         SKULbl = 'SKU';
     }
-
-    var
-        SerialNoCollection: Record "SK Serial No. Collection";
-
-    
 }

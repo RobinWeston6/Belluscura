@@ -16,6 +16,8 @@ V2
         - will need to generate SKU first
         - print label on post - last opportunity to filter to assembly header no.
 
+3. VERY IMPORTANT - MIGRATE SNcollection DATA TO NEW SNCOLLECTIONENTRY TABLE
+
 X. Simplify report
     - dynamic resizing
     - extra level of grouping
