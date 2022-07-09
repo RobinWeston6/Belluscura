@@ -2,8 +2,7 @@ report 56602 "SK Barcode Label"
 {
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;
-    //TODO layout
-    //TODO dynamic font sizes
+    //TODO finished layout
 
     dataset
     {
@@ -21,11 +20,18 @@ report 56602 "SK Barcode Label"
                 RequestFilterFields = "Parent Item No.", SKU;
 
                 column(SKU; SKU)
-                {
-                }
+                { }
+                column(LabelRowNo; (LabelRowNoX2 - 1) Div 2)
+                { }
                 column(ParentItemNo_SNCollectionEntry; "Parent Item No.")
                 { }
                 column(Description_ParentItem; ParentItem.Description)
+                { }
+                column(ComponentItemNo_SNCollectionEntry; "Component Item No.")
+                { }
+                column(Description_ComponentItem; ComponentItem.Description)
+                { }
+                column(RemovedFromParentItem_SNCollectionEntry; "Removed from Parent Item")
                 { }
                 trigger OnAfterGetRecord() //SNCollectionEntry
                 begin
@@ -34,11 +40,15 @@ report 56602 "SK Barcode Label"
 
                     if ComponentItem."No." <> "SK SN Collection Entry"."Component Item No." then
                         ComponentItem.Get("SK SN Collection Entry"."Component Item No.");
+
+                    LabelRowNoX2 += 1;
                 end;
             }
             trigger OnPreDataItem() //CopyLoop
             begin
                 CopyLoop.SetRange(Number, 1, NoOfCopies);
+                if ShowOldComponents then
+                    "SK SN Collection Entry".SetRange("Removed from Parent Item");
             end;
         }
     }
@@ -60,33 +70,39 @@ report 56602 "SK Barcode Label"
                         ApplicationArea = All;
                         Caption = 'Show Component Details';
                     }
+                    field(ShowOldComponents; ShowOldComponents)
+                    {
+                        ApplicationArea = All;
+                        Caption = 'Show Old Components;';
+                    }
                 }
             }
         }
         trigger OnInit()
         begin
             NoOfCopies := 1;
+            ShowComponentDetails := true;
         end;
     }
 
     trigger OnInitReport()
     begin
-        "SK SN Collection Entry".SetRange(Dismantled, false);
-        //todo functionality for show ex components
+        "SK SN Collection Entry".SetRange("Removed from Parent Item", false);
 
         CompanyInfo.Get();
         CompanyInfo.CalcFields(Picture);
-
     end;
 
     var
         //Request Page
         NoOfCopies: Integer;
         ShowComponentDetails: Boolean;
+        ShowOldComponents: Boolean;
 
         //Dataset
         CompanyInfo: Record "Company Information";
         ParentItem: Record Item;
         ComponentItem: Record Item;
         BarcodeFunctions: Codeunit "SK Barcode Functions";
+        LabelRowNoX2: Integer;
 }

@@ -56,7 +56,7 @@ table 56602 "SK SN Collection Entry"
             DataClassification = CustomerContent;
             Caption = 'Source Assembly Document No.';
         }
-        field(180; Dismantled; Boolean)
+        field(180; "Removed from Parent Item"; Boolean)
         {
             DataClassification = CustomerContent;
             Caption = 'Dismantled';
@@ -75,5 +75,14 @@ table 56602 "SK SN Collection Entry"
         }
     }
 
-
+    trigger OnDelete()
+    var
+        HasBeenMarkedAsInactiveErr: Label 'Assembly %1 cannot be deleted. It has been marked as Removed.';
+    begin
+        if ("Send-to No." <> '') then begin
+            "Removed from Parent Item" := true;
+            Rec.Modify();
+            Error(HasBeenMarkedAsInactiveErr, SKU);
+        end;
+    end;
 }

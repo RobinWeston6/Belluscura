@@ -41,4 +41,6 @@ tableextension 56601 "SK Activities Cue" extends "Activities Cue"
             Editable = false;
         }
     }
+    var
+    ITem: REcord Item;
 }
