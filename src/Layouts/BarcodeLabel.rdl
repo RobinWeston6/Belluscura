@@ -11,67 +11,6 @@
       <rd:DataSourceID>6eee2c99-8d8a-45d5-b01d-d0de302593c0</rd:DataSourceID>
     </DataSource>
   </DataSources>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-      <Fields>
-        <Field Name="Number_CopyLoop">
-          <DataField>Number_CopyLoop</DataField>
-        </Field>
-        <Field Name="Picture_CompanyInfo">
-          <DataField>Picture_CompanyInfo</DataField>
-        </Field>
-        <Field Name="SKU_SNCollection">
-          <DataField>SKU_SNCollection</DataField>
-        </Field>
-        <Field Name="SKU_SNCollectionEncoded">
-          <DataField>SKU_SNCollectionEncoded</DataField>
-        </Field>
-        <Field Name="Description_ParentItem">
-          <DataField>Description_ParentItem</DataField>
-        </Field>
-        <Field Name="UnitSerialNo_SNCollection">
-          <DataField>UnitSerialNo_SNCollection</DataField>
-        </Field>
-        <Field Name="UnitSerialNo_SNCollectionEncoded">
-          <DataField>UnitSerialNo_SNCollectionEncoded</DataField>
-        </Field>
-        <Field Name="BatterySerialNo_SNCollection">
-          <DataField>BatterySerialNo_SNCollection</DataField>
-        </Field>
-        <Field Name="BatterySerialNo_SNCollectionEncoded">
-          <DataField>BatterySerialNo_SNCollectionEncoded</DataField>
-        </Field>
-        <Field Name="SieveBedSerialNo_SNCollection">
-          <DataField>SieveBedSerialNo_SNCollection</DataField>
-        </Field>
-        <Field Name="SieveBedSerialNo_SNCollectionEncoded">
-          <DataField>SieveBedSerialNo_SNCollectionEncoded</DataField>
-        </Field>
-        <Field Name="SieveBed2SerialNo_SNCollection">
-          <DataField>SieveBed2SerialNo_SNCollection</DataField>
-        </Field>
-        <Field Name="SieveBed2SerialNo_SNCollectionEncoded">
-          <DataField>SieveBed2SerialNo_SNCollectionEncoded</DataField>
-        </Field>
-        <Field Name="ComponentItemDescArr1">
-          <DataField>ComponentItemDescArr1</DataField>
-        </Field>
-        <Field Name="ComponentItemDescArr2">
-          <DataField>ComponentItemDescArr2</DataField>
-        </Field>
-        <Field Name="ComponentItemDescArr3">
-          <DataField>ComponentItemDescArr3</DataField>
-        </Field>
-        <Field Name="ComponentItemDescArr4">
-          <DataField>ComponentItemDescArr4</DataField>
-        </Field>
-      </Fields>
-    </DataSet>
-  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -1652,12 +1591,6 @@
       </Page>
     </ReportSection>
   </ReportSections>
-  <ReportParametersLayout>
-    <GridLayoutDefinition>
-      <NumberOfColumns>4</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
-    </GridLayoutDefinition>
-  </ReportParametersLayout>
   <Code>Public Function BlankZero(ByVal Value As Decimal)
     if Value = 0 then
         Return ""
@@ -1697,4 +1630,41 @@ End Function
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="Number_CopyLoop">
+          <DataField>Number_CopyLoop</DataField>
+        </Field>
+        <Field Name="Picture_CompanyInfo">
+          <DataField>Picture_CompanyInfo</DataField>
+        </Field>
+        <Field Name="SKU">
+          <DataField>SKU</DataField>
+        </Field>
+        <Field Name="LabelRowNo">
+          <DataField>LabelRowNo</DataField>
+        </Field>
+        <Field Name="ParentItemNo_SNCollectionEntry">
+          <DataField>ParentItemNo_SNCollectionEntry</DataField>
+        </Field>
+        <Field Name="Description_ParentItem">
+          <DataField>Description_ParentItem</DataField>
+        </Field>
+        <Field Name="ComponentItemNo_SNCollectionEntry">
+          <DataField>ComponentItemNo_SNCollectionEntry</DataField>
+        </Field>
+        <Field Name="Description_ComponentItem">
+          <DataField>Description_ComponentItem</DataField>
+        </Field>
+        <Field Name="RemovedFromParentItem_SNCollectionEntry">
+          <DataField>RemovedFromParentItem_SNCollectionEntry</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
 </Report>

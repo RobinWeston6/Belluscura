@@ -3,6 +3,8 @@ report 56602 "SK Barcode Label"
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;
     //TODO finished layout
+    DefaultLayout = RDLC;
+    RDLCLayout = 'src/Layouts/BarcodeLabel.rdl';
 
     dataset
     {
@@ -19,9 +21,11 @@ report 56602 "SK Barcode Label"
             {
                 RequestFilterFields = "Parent Item No.", SKU;
 
-                column(SKU; SKU)
+                column(SKU_SNCollectionEntry; SKU)
                 { }
-                column(LabelRowNo; (LabelRowNoX2 - 1) Div 2)
+                column(SKU_SNCollectionEncoded; BarcodeFunctions.EncodeFont(SKU))
+                { }
+                column(LabelRowNo; (LineNo - 1) Div 2)
                 { }
                 column(ParentItemNo_SNCollectionEntry; "Parent Item No.")
                 { }
@@ -31,8 +35,23 @@ report 56602 "SK Barcode Label"
                 { }
                 column(Description_ComponentItem; ComponentItem.Description)
                 { }
+                column(ComponentSerialNo_SNCollection; "SK SN Collection Entry"."Component Serial No.")
+                { }
+                column(ComponentSerialNo_SNCollectionEncoded; BarcodeFunctions.EncodeFont("SK SN Collection Entry"."Component Serial No."))
+                { }
                 column(RemovedFromParentItem_SNCollectionEntry; "Removed from Parent Item")
                 { }
+
+                dataitem(OutputLoop; Integer)
+                {
+                    //Just for label output
+                    trigger OnPreDataItem()
+                    begin
+                        LabelRowNo := (LineNo - 1) div 2;
+                        OutputLoop.SetRange(Number, LabelRowNo);
+                    end;
+                }
+
                 trigger OnAfterGetRecord() //SNCollectionEntry
                 begin
                     if ParentItem."No." <> "SK SN Collection Entry"."Parent Item No." then
@@ -41,7 +60,7 @@ report 56602 "SK Barcode Label"
                     if ComponentItem."No." <> "SK SN Collection Entry"."Component Item No." then
                         ComponentItem.Get("SK SN Collection Entry"."Component Item No.");
 
-                    LabelRowNoX2 += 1;
+                    LineNo += 1;
                 end;
             }
             trigger OnPreDataItem() //CopyLoop
@@ -104,5 +123,12 @@ report 56602 "SK Barcode Label"
         ParentItem: Record Item;
         ComponentItem: Record Item;
         BarcodeFunctions: Codeunit "SK Barcode Functions";
-        LabelRowNoX2: Integer;
+
+        //Layout
+        LineNo: Integer;
+        LabelRowNo: Integer;
+        ItemNos: array[2] of Code[20];
+        Descriptions: array[2] of Text[100];
+        SerialNos: array[2] of Code[50];
+        SerialNosEncoded: array[2] of Text;
 }
