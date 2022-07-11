@@ -21,11 +21,9 @@ report 56602 "SK Barcode Label"
             {
                 RequestFilterFields = "Parent Item No.", SKU;
 
-                column(SKU_SNCollectionEntry; SKU)
+                /*column(SKU_SNCollectionEntry; SKU)
                 { }
                 column(SKU_SNCollectionEncoded; BarcodeFunctions.EncodeFont(SKU))
-                { }
-                column(LabelRowNo; (LineNo - 1) Div 2)
                 { }
                 column(ParentItemNo_SNCollectionEntry; "Parent Item No.")
                 { }
@@ -40,19 +38,51 @@ report 56602 "SK Barcode Label"
                 column(ComponentSerialNo_SNCollectionEncoded; BarcodeFunctions.EncodeFont("SK SN Collection Entry"."Component Serial No."))
                 { }
                 column(RemovedFromParentItem_SNCollectionEntry; "Removed from Parent Item")
-                { }
+                { }*/
 
                 dataitem(OutputLoop; Integer)
                 {
                     //Just for label output
-                    trigger OnPreDataItem()
+                    column(SKU_SNCollectionEntryEncoded; BarcodeFunctions.EncodeFont("SK SN Collection Entry".SKU))
+                    { }
+                    column(Description_ParentItem; ParentItem.Description)
+                    { }
+                    column(SKU_SNCollectionEntry; "SK SN Collection Entry".SKU)
+                    { }
+                    column(LabelRowNo; LabelRowNo)
+                    { }
+                    column(ItemNos1; ItemNos[1])
+                    { }
+                    column(ItemNos2; ItemNos[2])
+                    { }
+                    column(Descriptions1; Descriptions[1])
+                    { }
+                    column(Descriptions2; Descriptions[2])
+                    { }
+                    column(SerialNos1; SerialNos[1])
+                    { }
+                    column(SerialNos2; SerialNos[2])
+                    { }
+                    column(SerialNosEncoded1; SerialNosEncoded[1])
+                    { }
+                    column(SerialNosEncoded2; SerialNosEncoded[2])
+                    { }
+
+                    trigger OnPreDataItem()//OutputLoop
                     begin
-                        LabelRowNo := (LineNo - 1) div 2;
-                        OutputLoop.SetRange(Number, LabelRowNo);
+                        if (LineNo mod 2 = 0) and (LineNo <> "SK SN Collection Entry".Count) then
+                            CurrReport.Skip();
+                    end;
+
+                    trigger OnPostDataItem() //OutputLoop
+                    begin
+                        LineNo += 1;
                     end;
                 }
 
                 trigger OnAfterGetRecord() //SNCollectionEntry
+                var
+                    xPosition: Integer;
                 begin
                     if ParentItem."No." <> "SK SN Collection Entry"."Parent Item No." then
                         ParentItem.Get("SK SN Collection Entry"."Parent Item No.");
@@ -60,7 +90,14 @@ report 56602 "SK Barcode Label"
                     if ComponentItem."No." <> "SK SN Collection Entry"."Component Item No." then
                         ComponentItem.Get("SK SN Collection Entry"."Component Item No.");
 
-                    LineNo += 1;
+                    xPosition := LineNo mod 2;
+                    ItemNos[xPosition] := "Parent Item No.";
+                    Descriptions[xPosition] := ParentItem.Description;
+                    SerialNos[xPosition] := "SK SN Collection Entry"."Component Serial No.";
+                    SerialNosEncoded[xPosition] := BarcodeFunctions.EncodeFont("SK SN Collection Entry"."Component Serial No.");
+
+                    LabelRowNo := (LineNo - 1) div 2;
+                    OutputLoop.SetRange(Number, LabelRowNo);
                 end;
             }
             trigger OnPreDataItem() //CopyLoop
