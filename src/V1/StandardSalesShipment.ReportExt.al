@@ -26,7 +26,7 @@ reportextension 56700 "SK2 Standard Sales - Shipment" extends "Standard Sales - 
         }
         addfirst(ItemTrackingLine)
         {
-            dataitem("SK2 SN Collection Entry"; "SK2 SN Collection Entry")
+            dataitem("SK2 SN Collection Entry"; "SK SN Collection Entry")
             {
                 column(ComponentItemNo_SNCollectionEntry; "Component Item No.")
                 { }

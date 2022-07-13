@@ -17,7 +17,7 @@ report 56702 "SK2 Barcode Label"
             column(Picture_CompanyInfo; CompanyInfo.Picture)
             {
             }
-            dataitem("SK2 SN Collection Entry"; "SK2 SN Collection Entry")
+            dataitem("SK2 SN Collection Entry"; "SK SN Collection Entry")
             {
                 RequestFilterFields = "Parent Item No.", SKU;
                 DataItemTableView = sorting("Parent Item No.", SKU);
