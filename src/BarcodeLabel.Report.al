@@ -1,8 +1,8 @@
-report 56600 "SK Barcode Label"
+report 56602 "SK Barcode Label"
 {
-    Caption = 'Print Barcode Labels';
-    UsageCategory = Administration;
+    UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;
+    //TODO finished layout
     DefaultLayout = RDLC;
     RDLCLayout = 'src/Layouts/BarcodeLabel.rdl';
 
@@ -11,79 +11,103 @@ report 56600 "SK Barcode Label"
         dataitem(CopyLoop; Integer)
         {
             DataItemTableView = sorting(Number) where(Number = const(1));
-            column(Number_CopyLoop;
-            CopyLoop.Number)
+            column(Number_CopyLoop; CopyLoop.Number)
             {
             }
             column(Picture_CompanyInfo; CompanyInfo.Picture)
             {
             }
-
-            dataitem(SNCollection; "SK Serial No. Collection")
+            dataitem("SK SN Collection Entry"; "SK SN Collection Entry")
             {
-                RequestFilterFields = SKU, "Unit Serial No.", "Battery Serial No.", "Sieve Bed Serial No.", "Send-to Document", "Send-to No.";
+                RequestFilterFields = "Parent Item No.", SKU;
 
-                column(SKU_SNCollection; SKU)
-                {
-                }
+                /*column(SKU_SNCollectionEntry; SKU)
+                { }
                 column(SKU_SNCollectionEncoded; BarcodeFunctions.EncodeFont(SKU))
-                {
-                }
+                { }
+                column(ParentItemNo_SNCollectionEntry; "Parent Item No.")
+                { }
                 column(Description_ParentItem; ParentItem.Description)
+                { }
+                column(ComponentItemNo_SNCollectionEntry; "Component Item No.")
+                { }
+                column(Description_ComponentItem; ComponentItem.Description)
+                { }
+                column(ComponentSerialNo_SNCollection; "SK SN Collection Entry"."Component Serial No.")
+                { }
+                column(ComponentSerialNo_SNCollectionEncoded; BarcodeFunctions.EncodeFont("SK SN Collection Entry"."Component Serial No."))
+                { }
+                column(RemovedFromParentItem_SNCollectionEntry; "Removed from Parent Item")
+                { }*/
+
+                dataitem(OutputLoop; Integer)
                 {
-                }
-                column(UnitSerialNo_SNCollection; "Unit Serial No.")
-                {
-                }
-                column(UnitSerialNo_SNCollectionEncoded; BarcodeFunctions.EncodeFont("Unit Serial No."))
-                {
-                }
-                column(BatterySerialNo_SNCollection; "Battery Serial No.")
-                {
-                }
-                column(BatterySerialNo_SNCollectionEncoded; BarcodeFunctions.EncodeFont("Battery Serial No."))
-                {
-                }
-                column(SieveBedSerialNo_SNCollection; "Sieve Bed Serial No.")
-                {
-                }
-                column(SieveBedSerialNo_SNCollectionEncoded; BarcodeFunctions.EncodeFont("Sieve Bed Serial No."))
-                {
-                }
-                column(SieveBed2SerialNo_SNCollection; "Sieve Bed 2 Serial No.")
-                {
-                }
-                column(SieveBed2SerialNo_SNCollectionEncoded; BarcodeFunctions.EncodeFont("Sieve Bed 2 Serial No."))
-                {
-                }
-                column(ComponentItemDescArr1; ComponentItemDescArr[1])
-                {
-                }
-                column(ComponentItemDescArr2; ComponentItemDescArr[2])
-                {
-                }
-                column(ComponentItemDescArr3; ComponentItemDescArr[3])
-                {
-                }
-                column(ComponentItemDescArr4; ComponentItemDescArr[4])
-                {
+                    //Just for label output
+                    column(SKU_SNCollectionEntryEncoded; BarcodeFunctions.EncodeFont("SK SN Collection Entry".SKU))
+                    { }
+                    column(Description_ParentItem; ParentItem.Description)
+                    { }
+                    column(SKU_SNCollectionEntry; "SK SN Collection Entry".SKU)
+                    { }
+                    column(LabelRowNo; LabelRowNo)
+                    { }
+                    column(ItemNos1; ItemNos[1])
+                    { }
+                    column(ItemNos2; ItemNos[2])
+                    { }
+                    column(Descriptions1; Descriptions[1])
+                    { }
+                    column(Descriptions2; Descriptions[2])
+                    { }
+                    column(SerialNos1; SerialNos[1])
+                    { }
+                    column(SerialNos2; SerialNos[2])
+                    { }
+                    column(SerialNosEncoded1; SerialNosEncoded[1])
+                    { }
+                    column(SerialNosEncoded2; SerialNosEncoded[2])
+                    { }
+
+                    trigger OnPreDataItem()//OutputLoop
+                    begin
+                        if (LineNo mod 2 = 0) and (LineNo <> "SK SN Collection Entry".Count) then
+                            CurrReport.Skip();
+                    end;
+
+                    trigger OnPostDataItem() //OutputLoop
+                    begin
+                        LineNo += 1;
+                    end;
                 }
 
-                trigger OnAfterGetRecord()
+                trigger OnAfterGetRecord() //SNCollectionEntry
+                var
+                    xPosition: Integer;
                 begin
-                    if ParentItem."No." <> SNCollection."Item No." then
-                        ParentItem.Get(SNCollection."Item No.");
-                    PopulateComponentItemDescArr(SNCollection);
+                    if ParentItem."No." <> "SK SN Collection Entry"."Parent Item No." then
+                        ParentItem.Get("SK SN Collection Entry"."Parent Item No.");
+
+                    if ComponentItem."No." <> "SK SN Collection Entry"."Component Item No." then
+                        ComponentItem.Get("SK SN Collection Entry"."Component Item No.");
+
+                    xPosition := LineNo mod 2;
+                    ItemNos[xPosition] := "Parent Item No.";
+                    Descriptions[xPosition] := ParentItem.Description;
+                    SerialNos[xPosition] := "SK SN Collection Entry"."Component Serial No.";
+                    SerialNosEncoded[xPosition] := BarcodeFunctions.EncodeFont("SK SN Collection Entry"."Component Serial No.");
+
+                    LabelRowNo := (LineNo - 1) div 2;
+                    OutputLoop.SetRange(Number, LabelRowNo);
                 end;
             }
-
             trigger OnPreDataItem() //CopyLoop
             begin
                 CopyLoop.SetRange(Number, 1, NoOfCopies);
+                if ShowOldComponents then
+                    "SK SN Collection Entry".SetRange("Removed from Parent Item");
             end;
         }
     }
-
     requestpage
     {
         layout
@@ -102,56 +126,46 @@ report 56600 "SK Barcode Label"
                         ApplicationArea = All;
                         Caption = 'Show Component Details';
                     }
+                    field(ShowOldComponents; ShowOldComponents)
+                    {
+                        ApplicationArea = All;
+                        Caption = 'Show Old Components;';
+                    }
                 }
             }
         }
         trigger OnInit()
         begin
             NoOfCopies := 1;
+            ShowComponentDetails := true;
         end;
     }
 
     trigger OnInitReport()
     begin
+        "SK SN Collection Entry".SetRange("Removed from Parent Item", false);
+
         CompanyInfo.Get();
         CompanyInfo.CalcFields(Picture);
-
     end;
 
     var
         //Request Page
         NoOfCopies: Integer;
         ShowComponentDetails: Boolean;
+        ShowOldComponents: Boolean;
 
         //Dataset
         CompanyInfo: Record "Company Information";
         ParentItem: Record Item;
+        ComponentItem: Record Item;
         BarcodeFunctions: Codeunit "SK Barcode Functions";
-        ComponentItemDescArr: Array[4] of Text[100];
 
-    procedure PopulateComponentItemDescArr(SNCollection2: Record "SK Serial No. Collection")
-    var
-        Item: Record Item;
-        i: Integer;
-        CurrItemNo: Code[20];
-    begin
-        for i := 1 to ArrayLen(ComponentItemDescArr) do begin
-            Clear(Item);
-            Clear(CurrItemNo);
-            case i of
-                1:
-                    CurrItemNo := SNCollection2."Battery Item No.";
-                2:
-                    CurrItemNo := SNCollection2."Unit Item No.";
-                3:
-                    CurrItemNo := SNCollection2."Sieve Bed Item No.";
-                4:
-                    CurrItemNo := SNCollection2."Sieve Bed 2 Item No.";
-            end;
-            if Item.Get(CurrItemNo) then
-                ComponentItemDescArr[i] := Item.Description;
-        end;
-    end;
-
-
+        //Layout
+        LineNo: Integer;
+        LabelRowNo: Integer;
+        ItemNos: array[2] of Code[20];
+        Descriptions: array[2] of Text[100];
+        SerialNos: array[2] of Code[50];
+        SerialNosEncoded: array[2] of Text;
 }
