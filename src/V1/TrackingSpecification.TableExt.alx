@@ -1,8 +1,8 @@
-tableextension 56602 "SK Tracking Specification" extends "Tracking Specification"
+tableextension 56702 "SK Tracking Specification" extends "Tracking Specification"
 {
     fields
     {
-        field(56600; "SK Long Serial No."; Code[60])
+        field(56700; "SK Long Serial No."; Code[60])
         {
             DataClassification = CustomerContent;
             Caption = 'Serial No.';

@@ -1,4 +1,4 @@
-page 56601 "SK SN Collection List"
+page 56701 "SK SN Collection List"
 {
     PageType = List;
     Caption = 'Serial No. Collection List';

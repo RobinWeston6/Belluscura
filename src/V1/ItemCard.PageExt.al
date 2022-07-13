@@ -1,4 +1,4 @@
-pageextension 56600 "SK Item Card" extends "Item Card"
+pageextension 56700 "SK Item Card" extends "Item Card"
 {
     layout
     {

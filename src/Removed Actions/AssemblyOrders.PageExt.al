@@ -1,4 +1,4 @@
-pageextension 56616 "SK Assembly Orders" extends "Assembly Orders"
+pageextension 56716 "SK Assembly Orders" extends "Assembly Orders"
 {
     actions
     {

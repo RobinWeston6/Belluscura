@@ -1,4 +1,4 @@
-pageextension 56602 "SK Assembly Order" extends "Assembly Order"
+pageextension 56702 "SK Assembly Order" extends "Assembly Order"
 {
     layout
     {
@@ -228,7 +228,7 @@ pageextension 56602 "SK Assembly Order" extends "Assembly Order"
 
     trigger OnOpenPage()
     begin
-        BarcodeSetup.GetRecordOnce();
+        //DELETE//BarcodeSetup.GetRecordOnce();
     end;
 
     trigger OnNewRecord(BelowxRec: Boolean)
@@ -237,7 +237,7 @@ pageextension 56602 "SK Assembly Order" extends "Assembly Order"
         BarcodeScanManualEvtMgt: Codeunit "SK Barcd Scan Manual Evt Mgt.";
         NoSeriesMgt: Codeunit NoSeriesManagement;
     begin
-        BarcodeSetup.GetRecordOnce();
+        //DELETE//BarcodeSetup.GetRecordOnce();
 
         Rec.Validate("Due Date", WorkDate + 2);
 
@@ -301,7 +301,7 @@ pageextension 56602 "SK Assembly Order" extends "Assembly Order"
     var
         Item: Record Item;
         AssemblySetup: Record "Assembly Setup";
-        BarcodeSetup: Record "SK Barcode Setup";
+        //DELETE//BarcodeSetup: Record "SK Barcode Setup";
         //DELETE//BarcodeMgt: Codeunit "SK Barcode Mgt.";
         AssemblyLineMgt: Codeunit "Assembly Line Management";
     //ExtraSieveBed: Boolean;

@@ -1,4 +1,4 @@
-codeunit 56604 "SK Event Subscribers"
+codeunit 56704 "SK Event Subscribers"
 {
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Assembly-Post", 'OnAfterOnRun', '', false, false)]
     local procedure PrintBarcodeLabel(var AssemblyHeader: Record "Assembly Header")

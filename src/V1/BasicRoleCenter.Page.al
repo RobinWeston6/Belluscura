@@ -1,4 +1,4 @@
-page 56602 "Basic Role Center"
+page 56702 "Basic Role Center"
 {
     // CurrPage."Help And Setup List".ShowFeatured;
 

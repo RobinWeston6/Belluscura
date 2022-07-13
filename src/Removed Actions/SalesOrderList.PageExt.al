@@ -1,4 +1,4 @@
-pageextension 56613 "SK Sales Order List" extends "Sales Order List"
+pageextension 56713 "SK Sales Order List" extends "Sales Order List"
 {
     actions
     {

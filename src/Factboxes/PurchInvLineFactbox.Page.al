@@ -1,4 +1,4 @@
-page 56653 "SK Purch. Inv. Line Factbox"
+page 56753 "SK Purch. Inv. Line Factbox"
 {
     PageType = ListPart;
     SourceTable = "Purch. Inv. Line";

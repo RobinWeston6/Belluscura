@@ -1,4 +1,4 @@
-report 56600 "SK Barcode Label"
+report 56700 "SK Barcode Label"
 {
     Caption = 'Print Barcode Labels';
     UsageCategory = Administration;

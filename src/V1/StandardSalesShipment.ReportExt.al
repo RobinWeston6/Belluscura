@@ -1,4 +1,4 @@
-reportextension 56600 "SK Standard Sales - Shipment" extends "Standard Sales - Shipment"
+reportextension 56700 "SK Standard Sales - Shipment" extends "Standard Sales - Shipment"
 {
     WordLayout = 'src/Layouts/StandardSalesShipment.docx';
     //TODO - sort out extra loop for serial numbers in layout

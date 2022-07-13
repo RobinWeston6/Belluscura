@@ -1,4 +1,4 @@
-pageextension 56609 "SK Purchase Order List" extends "Purchase Order List"
+pageextension 56709 "SK Purchase Order List" extends "Purchase Order List"
 {
     layout
     {

@@ -1,4 +1,4 @@
-table 56602 "SK SN Collection Entry"
+table 56702 "SK SN Collection Entry"
 {
     Caption = 'SN Collection Entry';
     DataClassification = CustomerContent;

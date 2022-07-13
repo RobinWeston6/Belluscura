@@ -1,4 +1,4 @@
-report 56602 "SK Barcode Label"
+report 56702 "SK Barcode Label"
 {
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;

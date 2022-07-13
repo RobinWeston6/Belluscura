@@ -1,4 +1,4 @@
-page 56603 "SK Basic RC Activities"
+page 56703 "SK Basic RC Activities"
 {
     Caption = 'Activities';
     PageType = CardPart;

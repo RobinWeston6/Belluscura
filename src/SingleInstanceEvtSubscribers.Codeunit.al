@@ -1,4 +1,4 @@
-codeunit 56603 "SK Sngl Inst. Evt. Subscribers"
+codeunit 56703 "SK Sngl Inst. Evt. Subscribers"
 {
     SingleInstance = true;
 

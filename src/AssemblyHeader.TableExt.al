@@ -1,8 +1,8 @@
-tableextension 56604 "SK Assembly Header" extends "Assembly Header"
+tableextension 56704 "SK Assembly Header" extends "Assembly Header"
 {
     fields
     {
-        field(56600; "SK SKU"; Code[50])
+        field(56700; "SK SKU"; Code[50])
         {
             Caption = 'SKU';
             DataClassification = CustomerContent;

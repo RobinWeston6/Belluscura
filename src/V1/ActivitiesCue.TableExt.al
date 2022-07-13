@@ -1,4 +1,4 @@
-tableextension 56601 "SK Activities Cue" extends "Activities Cue"
+tableextension 56701 "SK Activities Cue" extends "Activities Cue"
 {
     fields
     {
@@ -42,5 +42,5 @@ tableextension 56601 "SK Activities Cue" extends "Activities Cue"
         }
     }
     var
-    ITem: REcord Item;
+        ITem: REcord Item;
 }

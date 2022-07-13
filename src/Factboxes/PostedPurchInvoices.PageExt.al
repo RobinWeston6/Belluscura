@@ -1,4 +1,4 @@
-pageextension 56654 "SK Posted Purchase Invoices" extends "Posted Purchase Invoices"
+pageextension 56754 "SK Posted Purchase Invoices" extends "Posted Purchase Invoices"
 {
     layout
     {

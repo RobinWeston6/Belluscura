@@ -1,4 +1,4 @@
-pageextension 56606 "SK Item Reclass. Journal" extends "Item Reclass. Journal"
+pageextension 56706 "SK Item Reclass. Journal" extends "Item Reclass. Journal"
 {
     actions
     {

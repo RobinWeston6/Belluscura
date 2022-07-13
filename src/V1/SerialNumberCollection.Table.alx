@@ -1,4 +1,4 @@
-table 56601 "SK Serial No. Collection"
+table 56701 "SK Serial No. Collection"
 {
     DataClassification = ToBeClassified;
     LookupPageId = "SK SN Collection List";

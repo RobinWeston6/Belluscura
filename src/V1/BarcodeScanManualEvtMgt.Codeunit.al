@@ -1,4 +1,4 @@
-codeunit 56602 "SK Barcd Scan Manual Evt Mgt."
+codeunit 56702 "SK Barcd Scan Manual Evt Mgt."
 {
     EventSubscriberInstance = Manual;
 

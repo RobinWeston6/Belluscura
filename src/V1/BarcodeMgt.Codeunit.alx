@@ -1,4 +1,4 @@
-codeunit 56600 "SK Barcode Mgt."
+codeunit 56700 "SK Barcode Mgt."
 {
     SingleInstance = true;
     //EventSubscriberInstance = Manual;

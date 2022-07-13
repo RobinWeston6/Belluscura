@@ -1,4 +1,4 @@
-page 56604 "SK Item Stock Factbox"
+page 56704 "SK Item Stock Factbox"
 {
     Caption = 'Item Stock';
     PageType = ListPart;

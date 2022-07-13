@@ -1,4 +1,4 @@
-pageextension 56618 "SK Bin Contents" extends "Bin Contents"
+pageextension 56718 "SK Bin Contents" extends "Bin Contents"
 {
     layout
     {
