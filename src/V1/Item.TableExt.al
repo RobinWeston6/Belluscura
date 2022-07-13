@@ -9,7 +9,4 @@ tableextension 56600 "SK Item" extends "Item"
             TableRelation = "No. Series";
         }
     }
-
-    var
-        myInt: Integer;
 }
