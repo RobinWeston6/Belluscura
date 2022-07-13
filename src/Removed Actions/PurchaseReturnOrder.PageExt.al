@@ -1,4 +1,4 @@
-pageextension 56710 "SK Purchase Return Order" extends "Purchase Return Order"
+pageextension 56710 "SK2 Purchase Return Order" extends "Purchase Return Order"
 {
     actions
     {

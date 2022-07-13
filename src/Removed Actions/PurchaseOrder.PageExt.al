@@ -1,4 +1,4 @@
-pageextension 56708 "SK Purchase Order" extends "Purchase Order"
+pageextension 56708 "SK2 Purchase Order" extends "Purchase Order"
 {
     layout
     {
@@ -609,7 +609,7 @@ pageextension 56708 "SK Purchase Order" extends "Purchase Order"
         }
     }
     var
-        EvtMgt: Codeunit "SK Barcd Scan Manual Evt Mgt.";
+        EvtMgt: Codeunit "SK2 Barcd Scan Manual Evt Mgt.";
         [InDataSet]
         PostingUnlocked: Boolean;
 }

@@ -1,8 +1,8 @@
-page 56700 "SK Barcode Setup"
+page 56700 "SK2 Barcode Setup"
 {
 
     PageType = Card;
-    SourceTable = "SK Barcode Setup";
+    SourceTable = "SK2 Barcode Setup";
     Caption = 'Barcode Setup';
     InsertAllowed = false;
     DeleteAllowed = false;

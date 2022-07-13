@@ -1,8 +1,8 @@
-report 56702 "SK Barcode Label"
+report 56702 "SK2 Barcode Label"
 {
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;
-    //TODO finished layout
+    //TODO double record on layout - why?
     DefaultLayout = RDLC;
     RDLCLayout = 'src/Layouts/BarcodeLabel.rdl';
 
@@ -17,9 +17,10 @@ report 56702 "SK Barcode Label"
             column(Picture_CompanyInfo; CompanyInfo.Picture)
             {
             }
-            dataitem("SK SN Collection Entry"; "SK SN Collection Entry")
+            dataitem("SK2 SN Collection Entry"; "SK2 SN Collection Entry")
             {
                 RequestFilterFields = "Parent Item No.", SKU;
+                DataItemTableView = sorting("Parent Item No.", SKU);
 
                 /*column(SKU_SNCollectionEntry; SKU)
                 { }
@@ -33,21 +34,22 @@ report 56702 "SK Barcode Label"
                 { }
                 column(Description_ComponentItem; ComponentItem.Description)
                 { }
-                column(ComponentSerialNo_SNCollection; "SK SN Collection Entry"."Component Serial No.")
+                column(ComponentSerialNo_SNCollection; "SK2 SN Collection Entry"."Component Serial No.")
                 { }
-                column(ComponentSerialNo_SNCollectionEncoded; BarcodeFunctions.EncodeFont("SK SN Collection Entry"."Component Serial No."))
+                column(ComponentSerialNo_SNCollectionEncoded; BarcodeFunctions.EncodeFont("SK2 SN Collection Entry"."Component Serial No."))
                 { }
                 column(RemovedFromParentItem_SNCollectionEntry; "Removed from Parent Item")
                 { }*/
 
                 dataitem(OutputLoop; Integer)
                 {
+                    DataItemTableView = sorting(Number) where(Number = const(1));
                     //Just for label output
-                    column(SKU_SNCollectionEntryEncoded; BarcodeFunctions.EncodeFont("SK SN Collection Entry".SKU))
+                    column(SKU_SNCollectionEntryEncoded; BarcodeFunctions.EncodeFont("SK2 SN Collection Entry".SKU))
                     { }
                     column(Description_ParentItem; ParentItem.Description)
                     { }
-                    column(SKU_SNCollectionEntry; "SK SN Collection Entry".SKU)
+                    column(SKU_SNCollectionEntry; "SK2 SN Collection Entry".SKU)
                     { }
                     column(LabelRowNo; LabelRowNo)
                     { }
@@ -70,8 +72,9 @@ report 56702 "SK Barcode Label"
 
                     trigger OnPreDataItem()//OutputLoop
                     begin
-                        if (LineNo mod 2 = 0) and (LineNo <> "SK SN Collection Entry".Count) then
+                        if (LineNo mod 2 = 0) and (LineNo <> "SK2 SN Collection Entry".Count) then
                             CurrReport.Skip();
+                        OutputLoop.SetRange(Number, LabelRowNo);
                     end;
 
                     trigger OnPostDataItem() //OutputLoop
@@ -84,27 +87,26 @@ report 56702 "SK Barcode Label"
                 var
                     xPosition: Integer;
                 begin
-                    if ParentItem."No." <> "SK SN Collection Entry"."Parent Item No." then
-                        ParentItem.Get("SK SN Collection Entry"."Parent Item No.");
+                    if ParentItem."No." <> "SK2 SN Collection Entry"."Parent Item No." then
+                        ParentItem.Get("SK2 SN Collection Entry"."Parent Item No.");
 
-                    if ComponentItem."No." <> "SK SN Collection Entry"."Component Item No." then
-                        ComponentItem.Get("SK SN Collection Entry"."Component Item No.");
+                    if ComponentItem."No." <> "SK2 SN Collection Entry"."Component Item No." then
+                        ComponentItem.Get("SK2 SN Collection Entry"."Component Item No.");
 
-                    xPosition := LineNo mod 2;
+                    xPosition := (LineNo mod 2) + 1;
                     ItemNos[xPosition] := "Parent Item No.";
                     Descriptions[xPosition] := ParentItem.Description;
-                    SerialNos[xPosition] := "SK SN Collection Entry"."Component Serial No.";
-                    SerialNosEncoded[xPosition] := BarcodeFunctions.EncodeFont("SK SN Collection Entry"."Component Serial No.");
+                    SerialNos[xPosition] := "SK2 SN Collection Entry"."Component Serial No.";
+                    SerialNosEncoded[xPosition] := BarcodeFunctions.EncodeFont("SK2 SN Collection Entry"."Component Serial No.");
 
                     LabelRowNo := (LineNo - 1) div 2;
-                    OutputLoop.SetRange(Number, LabelRowNo);
                 end;
             }
             trigger OnPreDataItem() //CopyLoop
             begin
                 CopyLoop.SetRange(Number, 1, NoOfCopies);
                 if ShowOldComponents then
-                    "SK SN Collection Entry".SetRange("Removed from Parent Item");
+                    "SK2 SN Collection Entry".SetRange("Removed from Parent Item");
             end;
         }
     }
@@ -143,7 +145,7 @@ report 56702 "SK Barcode Label"
 
     trigger OnInitReport()
     begin
-        "SK SN Collection Entry".SetRange("Removed from Parent Item", false);
+        "SK2 SN Collection Entry".SetRange("Removed from Parent Item", false);
 
         CompanyInfo.Get();
         CompanyInfo.CalcFields(Picture);
@@ -159,7 +161,7 @@ report 56702 "SK Barcode Label"
         CompanyInfo: Record "Company Information";
         ParentItem: Record Item;
         ComponentItem: Record Item;
-        BarcodeFunctions: Codeunit "SK Barcode Functions";
+        BarcodeFunctions: Codeunit "SK2 Barcode Functions";
 
         //Layout
         LineNo: Integer;

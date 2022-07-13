@@ -1,11 +1,11 @@
-page 56701 "SK SN Collection List"
+page 56701 "SK2 SN Collection List"
 {
     PageType = List;
     Caption = 'Serial No. Collection List';
     DelayedInsert = true;
     ApplicationArea = All;
     UsageCategory = Lists;
-    SourceTable = "SK Serial No. Collection";
+    SourceTable = "SK2 Serial No. Collection";
 
     layout
     {

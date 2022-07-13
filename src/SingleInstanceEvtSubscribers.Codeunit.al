@@ -1,4 +1,4 @@
-codeunit 56703 "SK Sngl Inst. Evt. Subscribers"
+codeunit 56703 "SK2 Sngl Inst. Evt. Subscrbers"
 {
     SingleInstance = true;
 
@@ -6,7 +6,7 @@ codeunit 56703 "SK Sngl Inst. Evt. Subscribers"
     //Run when opening the item tracking line page, bind when page opens from assembly order
     local procedure CreateSNCollectionEntry(var Rec: Record "Tracking Specification")
     var
-        SNCollectionEntry: Record "SK SN Collection Entry";
+        SNCollectionEntry: Record "SK2 SN Collection Entry";
     begin
         Rec.CreateSNCollectionEntry(AssemblyHeader);
     end;

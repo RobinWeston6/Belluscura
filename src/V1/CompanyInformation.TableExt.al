@@ -1,8 +1,8 @@
-tableextension 56703 "SK Company Information" extends "Company Information"
+tableextension 56703 "SK2 Company Information" extends "Company Information"
 {
     fields
     {
-        field(56700; "SK Barcode Logo"; Blob)
+        field(56700; "SK2 Barcode Logo"; Blob)
         {
             Caption = 'Barcode Logo';
             SubType = Bitmap;

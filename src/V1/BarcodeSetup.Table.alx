@@ -1,4 +1,4 @@
-table 56700 "SK Barcode Setup"
+table 56700 "SK2 Barcode Setup"
 {
     Caption = 'Assembly Settings';
     DataClassification = SystemMetadata;

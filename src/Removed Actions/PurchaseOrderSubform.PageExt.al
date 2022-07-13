@@ -1,4 +1,4 @@
-pageextension 56717 "SK Purchase Order Subform" extends "Purchase Order Subform"
+pageextension 56717 "SK2 Purchase Order Subform" extends "Purchase Order Subform"
 {
     layout
     {

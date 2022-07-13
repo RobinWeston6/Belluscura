@@ -1,4 +1,4 @@
-pageextension 56715 "SK Sales Return Order List" extends "Sales Return Order List"
+pageextension 56715 "SK2 Sales Return Order List" extends "Sales Return Order List"
 {
     actions
     {

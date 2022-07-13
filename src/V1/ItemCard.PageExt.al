@@ -1,4 +1,4 @@
-pageextension 56700 "SK Item Card" extends "Item Card"
+pageextension 56700 "SK2 Item Card" extends "Item Card"
 {
     layout
     {
@@ -9,7 +9,7 @@ pageextension 56700 "SK Item Card" extends "Item Card"
                 ApplicationArea = All;
                 Caption = 'Productline Code';
             }
-            field("SK SKU No. Series"; Rec."SK SKU No. Series")
+            field("SK2 SKU No. Series"; Rec."SK2 SKU No. Series")
             {
                 ApplicationArea = All;
             }

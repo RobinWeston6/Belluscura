@@ -1,4 +1,4 @@
-pageextension 56701 "SK Item Tracking Lines" extends "Item Tracking Lines"
+pageextension 56701 "SK2 Item Tracking Lines" extends "Item Tracking Lines"
 {
     layout
     {
@@ -20,7 +20,7 @@ pageextension 56701 "SK Item Tracking Lines" extends "Item Tracking Lines"
         }
         addafter("Serial No.")
         {
-            field("SK Long Serial No."; Rec."SK Long Serial No.")
+            field("SK2 Long Serial No."; Rec."SK2 Long Serial No.")
             {
                 Caption = 'Serial No.';
                 ApplicationArea = ItemTracking;
@@ -65,12 +65,12 @@ pageextension 56701 "SK Item Tracking Lines" extends "Item Tracking Lines"
     }
 
     var
-        //DELETE//BarcodeMgt: Codeunit "SK Barcode Mgt.";
-        BarcodeFunctions: Codeunit "SK Barcode Functions";
+        //DELETE//BarcodeMgt: Codeunit "SK2 Barcode Mgt.";
+        BarcodeFunctions: Codeunit "SK2 Barcode Functions";
 
     trigger OnAfterGetRecord()
     begin
-        Rec."SK Long Serial No." := Rec."Serial No.";
+        Rec."SK2 Long Serial No." := Rec."Serial No.";
     end;
 
 }

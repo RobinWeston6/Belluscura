@@ -1,4 +1,4 @@
-pageextension 56704 "SK Sales Order Subform" extends "Sales Order Subform"
+pageextension 56704 "SK2 Sales Order Subform" extends "Sales Order Subform"
 {
     layout
     {

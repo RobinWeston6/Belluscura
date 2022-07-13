@@ -1,11 +1,11 @@
-codeunit 56700 "SK Barcode Mgt."
+codeunit 56700 "SK2 Barcode Mgt."
 {
     SingleInstance = true;
     //EventSubscriberInstance = Manual;
 
     var
-        //S'NCollectionEntry: Record "SK Serial No. Collection";
-        SNCollectionEntry: Record "SK SN Collection Entry";
+        //S'NCollectionEntry: Record "SK2 Serial No. Collection";
+        SNCollectionEntry: Record "SK2 SN Collection Entry";
         AssemblyHeader: Record "Assembly Header";
         ExtraSieveBed: Boolean;
 
@@ -42,20 +42,20 @@ codeunit 56700 "SK Barcode Mgt."
         if not Item.Get(Rec."Item No.") then
             exit;
 
-        case Item."SK X-PLOR Component" of
-            "SK X-PLOR Component"::" ":
+        case Item."SK2 X-PLOR Component" of
+            "SK2 X-PLOR Component"::" ":
                 exit;
-            "SK X-PLOR Component"::Battery:
+            "SK2 X-PLOR Component"::Battery:
                 begin
                     SNCollectionEntry."Battery Item No." := Rec."Item No.";
                     SNCollectionEntry."Battery Serial No." := Rec."Serial No.";
                 end;
-            "SK X-PLOR Component"::Unit:
+            "SK2 X-PLOR Component"::Unit:
                 begin
                     SNCollectionEntry."Unit Item No." := Rec."Item No.";
                     SNCollectionEntry."Unit Serial No." := Rec."Serial No.";
                 end;
-            "SK X-PLOR Component"::"Sieve Bed":
+            "SK2 X-PLOR Component"::"Sieve Bed":
                 if (SNCollectionEntry."Sieve Bed Serial No." <> '') and (ExtraSieveBed) then begin
                     SNCollectionEntry."Sieve Bed 2 Item No." := Rec."Item No.";
                     SNCollectionEntry."Sieve Bed 2 Serial No." := Rec."Serial No."
@@ -81,20 +81,20 @@ codeunit 56700 "SK Barcode Mgt."
         if not Item.Get(Rec."Item No.") then
             exit;
 
-        case Item."SK X-PLOR Component" of
-            "SK X-PLOR Component"::" ":
+        case Item."SK2 X-PLOR Component" of
+            "SK2 X-PLOR Component"::" ":
                 exit;
-            "SK X-PLOR Component"::Battery:
+            "SK2 X-PLOR Component"::Battery:
                 begin
                     SNCollectionEntry."Battery Item No." := Rec."Item No.";
                     SNCollectionEntry."Battery Serial No." := Rec."Serial No.";
                 end;
-            "SK X-PLOR Component"::Unit:
+            "SK2 X-PLOR Component"::Unit:
                 begin
                     SNCollectionEntry."Unit Item No." := Rec."Item No.";
                     SNCollectionEntry."Unit Serial No." := Rec."Serial No.";
                 end;
-            "SK X-PLOR Component"::"Sieve Bed":
+            "SK2 X-PLOR Component"::"Sieve Bed":
                 if (SNCollectionEntry."Sieve Bed Serial No." <> '') and (ExtraSieveBed) then begin
                     SNCollectionEntry."Sieve Bed 2 Item No." := Rec."Item No.";
                     SNCollectionEntry."Sieve Bed 2 Serial No." := Rec."Serial No."
@@ -140,8 +140,8 @@ codeunit 56700 "SK Barcode Mgt."
 
     local procedure PrintLabel()
     var
-        SNCollectionEntry2: Record "SK Serial No. Collection";
-        BarcodeLabel: Report "SK Barcode Label";
+        SNCollectionEntry2: Record "SK2 Serial No. Collection";
+        BarcodeLabel: Report "SK2 Barcode Label";
     begin
         SNCollectionEntry2.SetRange(SKU, SNCollectionEntry.SKU);
         BarcodeLabel.SetTableView(SNCollectionEntry2);

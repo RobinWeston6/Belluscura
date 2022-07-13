@@ -1,4 +1,4 @@
-pageextension 56705 "SK Item List" extends "Item List"
+pageextension 56705 "SK2 Item List" extends "Item List"
 {
     actions
     {

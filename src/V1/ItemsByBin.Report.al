@@ -1,4 +1,4 @@
-report 56701 "SK Items By Bin"
+report 56701 "SK2 Items By Bin"
 {
     Caption = 'Items By Bin';
     UsageCategory = Administration;

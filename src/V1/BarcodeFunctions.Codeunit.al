@@ -1,4 +1,4 @@
-codeunit 56701 "SK Barcode Functions"
+codeunit 56701 "SK2 Barcode Functions"
 {
 
     procedure EncodeFont(BarcodeStr: Code[50]): Text

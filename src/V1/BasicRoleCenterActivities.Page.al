@@ -1,4 +1,4 @@
-page 56703 "SK Basic RC Activities"
+page 56703 "SK2 Basic RC Activities"
 {
     Caption = 'Activities';
     PageType = CardPart;
@@ -20,7 +20,7 @@ page 56703 "SK Basic RC Activities"
                     DrillDownPageID = "Purchase Order List";
                     ToolTip = 'Specifies purchase orders that are not posted or only partially posted.';
                 }
-                field("Purchase Return Orders"; Rec."SK Purchase Return Orders")
+                field("Purchase Return Orders"; Rec."SK2 Purchase Return Orders")
                 {
                     ApplicationArea = All;
                     DrillDownPageID = "Purchase Return Order List";
@@ -31,7 +31,7 @@ page 56703 "SK Basic RC Activities"
             {
                 Caption = 'Assembly';
 
-                field("Assembly Orders"; Rec."SK Assembly Orders")
+                field("Assembly Orders"; Rec."SK2 Assembly Orders")
                 {
                     ApplicationArea = Basic, All;
                     Caption = 'Assembly Orders';
@@ -50,7 +50,7 @@ page 56703 "SK Basic RC Activities"
                     DrillDownPageID = "Sales Order List";
                     ToolTip = 'Specifies sales orders that are not yet posted or only partially posted.';
                 }
-                field("SK Sales Return Orders"; Rec."SK Sales Return Orders")
+                field("SK2 Sales Return Orders"; Rec."SK2 Sales Return Orders")
                 {
                     ApplicationArea = Basic, All;
                     Caption = 'Sales Return Orders';
@@ -61,20 +61,20 @@ page 56703 "SK Basic RC Activities"
             cuegroup(Item)
             {
                 Caption = 'Item';
-                field("SK Items"; Rec."SK Items")
+                field("SK2 Items"; Rec."SK2 Items")
                 {
                     ApplicationArea = All;
                     DrillDownPageID = "Item List";
                     ToolTip = 'View a list of all items.';
                 }
-                field("SK Item Reclass Journal"; Rec."SK Item Reclass Journal")
+                field("SK2 Item Reclass Journal"; Rec."SK2 Item Reclass Journal")
                 {
                     ApplicationArea = All;
                     DrillDownPageID = "Item Reclass. Journal";
                     ToolTip = 'View Item Reclass Journal.';
                     BlankZero = true;
                 }
-                field("SK Item Tracing"; Rec."SK Item Tracing")
+                field("SK2 Item Tracing"; Rec."SK2 Item Tracing")
                 {
                     ApplicationArea = All;
                     DrillDownPageID = "Item Tracing";

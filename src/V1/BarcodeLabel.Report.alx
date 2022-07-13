@@ -1,4 +1,4 @@
-report 56700 "SK Barcode Label"
+report 56700 "SK2 Barcode Label"
 {
     Caption = 'Print Barcode Labels';
     UsageCategory = Administration;
@@ -19,7 +19,7 @@ report 56700 "SK Barcode Label"
             {
             }
 
-            dataitem(SNCollection; "SK Serial No. Collection")
+            dataitem(SNCollection; "SK2 Serial No. Collection")
             {
                 RequestFilterFields = SKU, "Unit Serial No.", "Battery Serial No.", "Sieve Bed Serial No.", "Send-to Document", "Send-to No.";
 
@@ -126,10 +126,10 @@ report 56700 "SK Barcode Label"
         //Dataset
         CompanyInfo: Record "Company Information";
         ParentItem: Record Item;
-        BarcodeFunctions: Codeunit "SK Barcode Functions";
+        BarcodeFunctions: Codeunit "SK2 Barcode Functions";
         ComponentItemDescArr: Array[4] of Text[100];
 
-    procedure PopulateComponentItemDescArr(SNCollection2: Record "SK Serial No. Collection")
+    procedure PopulateComponentItemDescArr(SNCollection2: Record "SK2 Serial No. Collection")
     var
         Item: Record Item;
         i: Integer;

@@ -1,10 +1,10 @@
-pageextension 56709 "SK Purchase Order List" extends "Purchase Order List"
+pageextension 56709 "SK2 Purchase Order List" extends "Purchase Order List"
 {
     layout
     {
         addfirst(factboxes)
         {
-            part("SK Purchase Order Items"; "SK Purchase Line Factbox")
+            part("SK2 Purchase Order Items"; "SK2 Purchase Line Factbox")
             {
                 Caption = 'Lines on this Purchase Order';
                 ApplicationArea = All;

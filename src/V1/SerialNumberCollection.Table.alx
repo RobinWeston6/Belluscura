@@ -1,8 +1,8 @@
-table 56701 "SK Serial No. Collection"
+table 56701 "SK2 Serial No. Collection"
 {
     DataClassification = ToBeClassified;
-    LookupPageId = "SK SN Collection List";
-    DrillDownPageId = "SK SN Collection List";
+    LookupPageId = "SK2 SN Collection List";
+    DrillDownPageId = "SK2 SN Collection List";
 
     fields
     {
@@ -117,11 +117,11 @@ table 56701 "SK Serial No. Collection"
 
     procedure GenerateSKU()
     var
-        BarcodeSetup: Record "SK Barcode Setup";
+        BarcodeSetup: Record "SK2 Barcode Setup";
         Item: Record Item;
     begin
         Item.Get("Item No.");
-        Item.TestField("SK SKU No. Series");
-        SKU := NoSeriesManagement.GetNextNo(Item."SK SKU No. Series", WorkDate(), true);
+        Item.TestField("SK2 SKU No. Series");
+        SKU := NoSeriesManagement.GetNextNo(Item."SK2 SKU No. Series", WorkDate(), true);
     end;
 }

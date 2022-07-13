@@ -1,4 +1,4 @@
-reportextension 56700 "SK Standard Sales - Shipment" extends "Standard Sales - Shipment"
+reportextension 56700 "SK2 Standard Sales - Shipment" extends "Standard Sales - Shipment"
 {
     WordLayout = 'src/Layouts/StandardSalesShipment.docx';
     //TODO - sort out extra loop for serial numbers in layout
@@ -9,8 +9,8 @@ reportextension 56700 "SK Standard Sales - Shipment" extends "Standard Sales - S
 
             trigger OnAfterAfterGetRecord()
             begin
-                "SK SN Collection Entry".SetRange("Parent Item No.", TempTrackingSpecBuffer."Item No.");
-                "SK SN Collection Entry".SetRange(SKU, TempTrackingSpecBuffer."Serial No.");
+                "SK2 SN Collection Entry".SetRange("Parent Item No.", TempTrackingSpecBuffer."Item No.");
+                "SK2 SN Collection Entry".SetRange(SKU, TempTrackingSpecBuffer."Serial No.");
             end;
         }
         add(ItemTrackingLine)
@@ -26,7 +26,7 @@ reportextension 56700 "SK Standard Sales - Shipment" extends "Standard Sales - S
         }
         addfirst(ItemTrackingLine)
         {
-            dataitem("SK SN Collection Entry"; "SK SN Collection Entry")
+            dataitem("SK2 SN Collection Entry"; "SK2 SN Collection Entry")
             {
                 column(ComponentItemNo_SNCollectionEntry; "Component Item No.")
                 { }

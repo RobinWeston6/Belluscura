@@ -1,10 +1,10 @@
-pageextension 56720 "SK Company Information" extends "Company Information"
+pageextension 56720 "SK2 Company Information" extends "Company Information"
 {
     layout
     {
         addafter(Picture)
         {
-            field("SK Barcode Logo"; Rec."SK Barcode Logo")
+            field("SK2 Barcode Logo"; Rec."SK2 Barcode Logo")
             {
                 ApplicationArea = All;
             }

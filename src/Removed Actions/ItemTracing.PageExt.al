@@ -1,4 +1,4 @@
-pageextension 56707 "SK Item Tracing" extends "Item Tracing"
+pageextension 56707 "SK2 Item Tracing" extends "Item Tracing"
 {
     actions
     {

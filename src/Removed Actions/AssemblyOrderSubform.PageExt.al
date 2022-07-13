@@ -1,4 +1,4 @@
-pageextension 56703 "SK Assembly Order Subform" extends "Assembly Order Subform"
+pageextension 56703 "SK2 Assembly Order Subform" extends "Assembly Order Subform"
 {
     layout
     {

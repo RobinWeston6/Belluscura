@@ -1,8 +1,8 @@
-tableextension 56704 "SK Assembly Header" extends "Assembly Header"
+tableextension 56704 "SK2 Assembly Header" extends "Assembly Header"
 {
     fields
     {
-        field(56700; "SK SKU"; Code[50])
+        field(56700; "SK2 SKU"; Code[50])
         {
             Caption = 'SKU';
             DataClassification = CustomerContent;
@@ -16,10 +16,10 @@ tableextension 56704 "SK Assembly Header" extends "Assembly Header"
                 NoSeriesMgt: Codeunit NoSeriesManagement;
             begin
                 if Rec."Item No." <> xRec."Item No." then begin
-                    Rec."SK SKU" := '';
+                    Rec."SK2 SKU" := '';
                     Item.Get(Rec."Item No.");
-                    if Item."SK SKU No. Series" <> '' then
-                        "SK SKU" := NoSeriesMgt.GetNextNo(Item."SK SKU No. Series", WorkDate(), true);
+                    if Item."SK2 SKU No. Series" <> '' then
+                        "SK2 SKU" := NoSeriesMgt.GetNextNo(Item."SK2 SKU No. Series", WorkDate(), true);
                 end;
             end;
         }

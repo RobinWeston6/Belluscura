@@ -1,4 +1,4 @@
-pageextension 56718 "SK Bin Contents" extends "Bin Contents"
+pageextension 56718 "SK2 Bin Contents" extends "Bin Contents"
 {
     layout
     {
@@ -16,7 +16,7 @@ pageextension 56718 "SK Bin Contents" extends "Bin Contents"
         }
         addafter("Item No.")
         {
-            Field("SK Item Description"; SKItem.Description)
+            Field("SK2 Item Description"; SKItem.Description)
             {
                 ApplicationArea = All;
                 Caption = 'Item Description';
