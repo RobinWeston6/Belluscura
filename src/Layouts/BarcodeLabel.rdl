@@ -11,58 +11,6 @@
       <rd:DataSourceID>6eee2c99-8d8a-45d5-b01d-d0de302593c0</rd:DataSourceID>
     </DataSource>
   </DataSources>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-      <Fields>
-        <Field Name="Number_CopyLoop">
-          <DataField>Number_CopyLoop</DataField>
-        </Field>
-        <Field Name="Picture_CompanyInfo">
-          <DataField>Picture_CompanyInfo</DataField>
-        </Field>
-        <Field Name="SKU_SNCollectionEntryEncoded">
-          <DataField>SKU_SNCollectionEntryEncoded</DataField>
-        </Field>
-        <Field Name="Description_ParentItem">
-          <DataField>Description_ParentItem</DataField>
-        </Field>
-        <Field Name="SKU_SNCollectionEntry">
-          <DataField>SKU_SNCollectionEntry</DataField>
-        </Field>
-        <Field Name="LabelRowNo">
-          <DataField>LabelRowNo</DataField>
-        </Field>
-        <Field Name="ItemNos1">
-          <DataField>ItemNos1</DataField>
-        </Field>
-        <Field Name="ItemNos2">
-          <DataField>ItemNos2</DataField>
-        </Field>
-        <Field Name="Descriptions1">
-          <DataField>Descriptions1</DataField>
-        </Field>
-        <Field Name="Descriptions2">
-          <DataField>Descriptions2</DataField>
-        </Field>
-        <Field Name="SerialNos1">
-          <DataField>SerialNos1</DataField>
-        </Field>
-        <Field Name="SerialNos2">
-          <DataField>SerialNos2</DataField>
-        </Field>
-        <Field Name="SerialNosEncoded1">
-          <DataField>SerialNosEncoded1</DataField>
-        </Field>
-        <Field Name="SerialNosEncoded2">
-          <DataField>SerialNosEncoded2</DataField>
-        </Field>
-      </Fields>
-    </DataSet>
-  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -447,12 +395,6 @@
       </Page>
     </ReportSection>
   </ReportSections>
-  <ReportParametersLayout>
-    <GridLayoutDefinition>
-      <NumberOfColumns>4</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
-    </GridLayoutDefinition>
-  </ReportParametersLayout>
   <Code>Public Function BlankZero(ByVal Value As Decimal)
     if Value = 0 then
         Return ""
@@ -492,4 +434,56 @@ End Function
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="Number_CopyLoop">
+          <DataField>Number_CopyLoop</DataField>
+        </Field>
+        <Field Name="Picture_CompanyInfo">
+          <DataField>Picture_CompanyInfo</DataField>
+        </Field>
+        <Field Name="SKU_SNCollectionEntryEncoded">
+          <DataField>SKU_SNCollectionEntryEncoded</DataField>
+        </Field>
+        <Field Name="Description_ParentItem">
+          <DataField>Description_ParentItem</DataField>
+        </Field>
+        <Field Name="SKU_SNCollectionEntry">
+          <DataField>SKU_SNCollectionEntry</DataField>
+        </Field>
+        <Field Name="LabelRowNo">
+          <DataField>LabelRowNo</DataField>
+        </Field>
+        <Field Name="ItemNos1">
+          <DataField>ItemNos1</DataField>
+        </Field>
+        <Field Name="ItemNos2">
+          <DataField>ItemNos2</DataField>
+        </Field>
+        <Field Name="Descriptions1">
+          <DataField>Descriptions1</DataField>
+        </Field>
+        <Field Name="Descriptions2">
+          <DataField>Descriptions2</DataField>
+        </Field>
+        <Field Name="SerialNos1">
+          <DataField>SerialNos1</DataField>
+        </Field>
+        <Field Name="SerialNos2">
+          <DataField>SerialNos2</DataField>
+        </Field>
+        <Field Name="SerialNosEncoded1">
+          <DataField>SerialNosEncoded1</DataField>
+        </Field>
+        <Field Name="SerialNosEncoded2">
+          <DataField>SerialNosEncoded2</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
 </Report>
