@@ -42,7 +42,7 @@ pageextension 56702 "SK2 Assembly Order" extends "Assembly Order"
 
                 trigger OnAction()
                 var
-                    SingleInstanceEvtMgt: Codeunit "SK2 Sngl Inst. Evt. Subscrbers";
+                    SingleInstanceEvtMgt: Codeunit "SK2 Create SN Colln. ManEvtSub";
                 begin
                     BindSubscription(SingleInstanceEvtMgt);
                     SingleInstanceEvtMgt.SetAssemblyheader(Rec);

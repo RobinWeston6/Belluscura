@@ -1,6 +1,7 @@
-codeunit 56703 "SK2 Sngl Inst. Evt. Subscrbers"
+codeunit 56703 "SK2 Create SN Colln. ManEvtSub"
 {
     SingleInstance = true;
+    EventSubscriberInstance = Manual;
 
     [EventSubscriber(ObjectType::Page, Page::"Item Tracking Lines", 'OnInsertRecordEvent', '', false, false)]
     //Run when opening the item tracking line page, bind when page opens from assembly order

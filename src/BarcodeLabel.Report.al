@@ -95,7 +95,7 @@ report 56702 "SK2 Barcode Label"
 
                     xPosition := (LineNo mod 2) + 1;
                     ItemNos[xPosition] := "Parent Item No.";
-                    Descriptions[xPosition] := ParentItem.Description;
+                    Descriptions[xPosition] := ComponentItem.Description;
                     SerialNos[xPosition] := "SK2 SN Collection Entry"."Component Serial No.";
                     SerialNosEncoded[xPosition] := BarcodeFunctions.EncodeFont("SK2 SN Collection Entry"."Component Serial No.");
 
