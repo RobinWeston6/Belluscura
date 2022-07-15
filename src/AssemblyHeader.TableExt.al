@@ -11,6 +11,7 @@ tableextension 56704 "SK2 Assembly Header" extends "Assembly Header"
         modify("Item No.")
         {
             //TODO fix Parent Item and SKU not populating
+            //
             trigger OnAfterValidate()
             var
                 Item: Record Item;
