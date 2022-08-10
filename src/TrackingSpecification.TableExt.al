@@ -29,6 +29,8 @@ tableextension 56702 "SK2 Tracking Specification" extends "Tracking Specificatio
     var
         SNCollectionEntry: Record "SK SN Collection Entry";
     begin
+        if AssemblyHeader."No." = Rec."Item No." then
+            exit;
         SNCollectionEntry.Init();
         SNCollectionEntry."Source Assembly Document" := AssemblyHeader."Document Type";
         SNCollectionEntry."Source Assembly Doc. No." := AssemblyHeader."No.";
