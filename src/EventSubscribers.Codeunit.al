@@ -12,4 +12,10 @@ codeunit 56704 "SK2 Event Subscribers"
         BarcodeLabel.UseRequestPage(true);
         BarcodeLabel.Run();
     end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Purchase Line", 'OnShowEarlyOrderDateMessageOnAfterCalcShowMessage', '', false, false)]
+    local procedure HideMessage(var ShowMessage: Boolean)
+    begin
+        ShowMessage := false;
+    end;
 }
