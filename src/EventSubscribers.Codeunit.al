@@ -18,4 +18,12 @@ codeunit 56704 "SK2 Event Subscribers"
     begin
         ShowMessage := false;
     end;
+
+    [EventSubscriber(ObjectType::Report, Report::"Adjust Cost - Item Entries", 'OnBeforePreReport', '', false, false)]
+    local procedure SkipAdHocItems(var Item: Record Item)
+    begin
+        Item.FilterGroup(2);
+        Item.SetFilter("No.", '<>%1', 'AD HOC');
+        Item.FilterGroup(0);
+    end;
 }
