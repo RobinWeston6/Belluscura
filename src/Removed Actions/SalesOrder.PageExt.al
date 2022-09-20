@@ -1,4 +1,4 @@
-pageextension 56612 "SK Sales Order" extends "Sales Order"
+pageextension 56712 "SK2 Sales Order" extends "Sales Order"
 {
     layout
     {
@@ -315,6 +315,6 @@ pageextension 56612 "SK Sales Order" extends "Sales Order"
     }
 
     var
-        EvtMgt: Codeunit "SK Barcd Scan Manual Evt Mgt.";
+        EvtMgt: Codeunit "SK2 Barcd Scan Manual Evt Mgt.";
         PostingUnlocked: Boolean;
 }

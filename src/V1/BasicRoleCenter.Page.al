@@ -1,4 +1,4 @@
-page 56602 "Basic Role Center"
+page 56702 "Basic Role Center"
 {
     // CurrPage."Help And Setup List".ShowFeatured;
 
@@ -15,12 +15,12 @@ page 56602 "Basic Role Center"
 
                 ApplicationArea = Basic, Suite;
             }
-            part(Control16; "SK Basic RC Activities")
+            part(Control16; "SK2 Basic RC Activities")
             {
                 AccessByPermission = TableData "Activities Cue" = I;
                 ApplicationArea = Basic, Suite;
             }
-            part(d; "SK Item Stock Factbox")
+            part(d; "SK2 Item Stock Factbox")
             {
                 ApplicationArea = All;
             }

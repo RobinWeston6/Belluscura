@@ -1,4 +1,4 @@
-pageextension 56602 "SK Assembly Order" extends "Assembly Order"
+pageextension 56702 "SK2 Assembly Order" extends "Assembly Order"
 {
     layout
     {
@@ -24,7 +24,7 @@ pageextension 56602 "SK Assembly Order" extends "Assembly Order"
         }
         addafter("Item No.")
         {
-            field("SK SKU"; Rec."SK SKU")
+            field("SK2 SKU"; Rec."SK2 SKU")
             {
                 ApplicationArea = all;
             }
@@ -35,14 +35,14 @@ pageextension 56602 "SK Assembly Order" extends "Assembly Order"
     {
         addfirst(navigation)
         {
-            action("SK Item Tracking")
+            action("SK2 Item Tracking")
             {
                 Caption = 'Serial Numbers';
                 ApplicationArea = all;
 
                 trigger OnAction()
                 var
-                    SingleInstanceEvtMgt: Codeunit "SK Sngl Inst. Evt. Subscribers";
+                    SingleInstanceEvtMgt: Codeunit "SK2 Create SN Colln. ManEvtSub";
                 begin
                     BindSubscription(SingleInstanceEvtMgt);
                     SingleInstanceEvtMgt.SetAssemblyheader(Rec);
@@ -228,16 +228,16 @@ pageextension 56602 "SK Assembly Order" extends "Assembly Order"
 
     trigger OnOpenPage()
     begin
-        BarcodeSetup.GetRecordOnce();
+        //DELETE//BarcodeSetup.GetRecordOnce();
     end;
 
     trigger OnNewRecord(BelowxRec: Boolean)
     var
         AssemblyLine: Record "Assembly Line";
-        BarcodeScanManualEvtMgt: Codeunit "SK Barcd Scan Manual Evt Mgt.";
+        BarcodeScanManualEvtMgt: Codeunit "SK2 Barcd Scan Manual Evt Mgt.";
         NoSeriesMgt: Codeunit NoSeriesManagement;
     begin
-        BarcodeSetup.GetRecordOnce();
+        //DELETE//BarcodeSetup.GetRecordOnce();
 
         Rec.Validate("Due Date", WorkDate + 2);
 
@@ -301,8 +301,8 @@ pageextension 56602 "SK Assembly Order" extends "Assembly Order"
     var
         Item: Record Item;
         AssemblySetup: Record "Assembly Setup";
-        BarcodeSetup: Record "SK Barcode Setup";
-        //DELETE//BarcodeMgt: Codeunit "SK Barcode Mgt.";
+        //DELETE//BarcodeSetup: Record "SK2 Barcode Setup";
+        //DELETE//BarcodeMgt: Codeunit "SK2 Barcode Mgt.";
         AssemblyLineMgt: Codeunit "Assembly Line Management";
     //ExtraSieveBed: Boolean;
 

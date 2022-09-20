@@ -1,8 +1,8 @@
-tableextension 56602 "SK Tracking Specification" extends "Tracking Specification"
+tableextension 56702 "SK2 Tracking Specification" extends "Tracking Specification"
 {
     fields
     {
-        field(56600; "SK Long Serial No."; Code[60])
+        field(56700; "SK2 Long Serial No."; Code[60])
         {
             DataClassification = CustomerContent;
             Caption = 'Serial No.';
@@ -10,9 +10,9 @@ tableextension 56602 "SK Tracking Specification" extends "Tracking Specification
 
             trigger OnValidate()
             begin
-                BarcodeFunctions.TrimSerialNo("SK Long Serial No.");
+                BarcodeFunctions.TrimSerialNo("SK2 Long Serial No.");
 
-                Rec.Validate("Serial No.", "SK Long Serial No.");
+                Rec.Validate("Serial No.", "SK2 Long Serial No.");
 
                 //Set SN in single instance CU
                 //DELETE//BarcodeMgt.StoreSerialNo(Rec);
@@ -21,18 +21,20 @@ tableextension 56602 "SK Tracking Specification" extends "Tracking Specification
     }
 
     var
-        BarcodeFunctions: Codeunit "SK Barcode Functions";
-    //DELETE//BarcodeMgt: Codeunit "SK Barcode Mgt.";
+        BarcodeFunctions: Codeunit "SK2 Barcode Functions";
+    //DELETE//BarcodeMgt: Codeunit "SK2 Barcode Mgt.";
 
 
     procedure CreateSNCollectionEntry(AssemblyHeader: Record "Assembly Header")
     var
         SNCollectionEntry: Record "SK SN Collection Entry";
     begin
+        if AssemblyHeader."No." = Rec."Item No." then
+            exit;
         SNCollectionEntry.Init();
         SNCollectionEntry."Source Assembly Document" := AssemblyHeader."Document Type";
         SNCollectionEntry."Source Assembly Doc. No." := AssemblyHeader."No.";
-        SNCollectionEntry.SKU := AssemblyHeader."SK SKU";
+        SNCollectionEntry.SKU := AssemblyHeader."SK2 SKU";
         SNCollectionEntry."Component Item No." := Rec."Item No.";
         SNCollectionEntry."Component Serial No." := Rec."Serial No.";
         SNCollectionEntry.Insert(true);

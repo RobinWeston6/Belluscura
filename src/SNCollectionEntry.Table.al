@@ -1,4 +1,4 @@
-table 56602 "SK SN Collection Entry"
+table 56702 "SK SN Collection Entry"
 {
     Caption = 'SN Collection Entry';
     DataClassification = CustomerContent;
@@ -68,10 +68,6 @@ table 56602 "SK SN Collection Entry"
         key(PK; "Parent Item No.", SKU, "Entry No.")
         {
             Clustered = true;
-        }
-        key(key1; "Component Item No.", "Component Serial No.")
-        {
-            Unique = true;
         }
     }
 
