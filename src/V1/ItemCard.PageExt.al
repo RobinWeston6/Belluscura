@@ -4,7 +4,7 @@ pageextension 56700 "SK2 Item Card" extends "Item Card"
     {
         addlast(Item)
         {
-            field("Global Dimension 1 Code"; Rec."Global Dimension 1 Code")
+            field("SK2 Global Dimension 1 Code"; Rec."Global Dimension 1 Code")
             {
                 ApplicationArea = All;
                 Caption = 'Productline Code';
@@ -13,10 +13,14 @@ pageextension 56700 "SK2 Item Card" extends "Item Card"
             {
                 ApplicationArea = All;
             }
+            field("SK2 Salvage %"; Rec."SK2 Salvage %")
+            {
+                ApplicationArea = All;
+            }
         }
         addlast(Planning)
         {
-            field("Stockout Warning"; Rec."Stockout Warning")
+            field("SK2 Stockout Warning"; Rec."Stockout Warning")
             {
                 ApplicationArea = All;
             }
