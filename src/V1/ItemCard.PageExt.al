@@ -13,6 +13,10 @@ pageextension 56700 "SK2 Item Card" extends "Item Card"
             {
                 ApplicationArea = All;
             }
+            field("SK2 Salvage %"; Rec."SK2 Salvage %")
+            {
+                ApplicationArea = All;
+            }
         }
         addlast(Planning)
         {

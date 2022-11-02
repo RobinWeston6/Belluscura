@@ -8,5 +8,12 @@ tableextension 56700 "SK2 Item" extends "Item"
             Caption = 'SKU No. Series';
             TableRelation = "No. Series";
         }
+        field(56700; "SK2 Salvage %"; Integer)
+        {
+            DataClassification = CustomerContent;
+            MinValue = 0;
+            MaxValue = 100;
+            Caption = 'Salvage %';
+        }
     }
 }
