@@ -256,10 +256,6 @@ pageextension 56712 "SK2 Sales Order" extends "Sales Order"
         {
             Visible = false;
         }
-        modify(PreviewPosting)
-        {
-            Visible = false;
-        }
         modify(ProformaInvoice)
         {
             Visible = false;
