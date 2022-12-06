@@ -119,10 +119,10 @@ pageextension 56713 "SK2 Sales Order List" extends "Sales Order List"
         {
             Visible = false;
         }
-        modify("Print Confirmation")
+        /*modify("Print Confirmation")
         {
             Visible = false;
-        }
+        }*/
         modify(AttachAsPDF)
         {
             Visible = false;

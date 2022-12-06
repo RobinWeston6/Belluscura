@@ -365,6 +365,22 @@ pageextension 56717 "SK2 Purchase Order Subform" extends "Purchase Order Subform
     }
     actions
     {
+        addfirst("&Line")
+        {
+            action("SK2 Serial No.s")
+            {
+                Caption = 'Serial No.s';
+                ApplicationArea = All;
+                Image = SerialNo;
+
+                trigger OnAction()
+                begin
+                    ShowComments();
+                end;
+
+            }
+        }
+        //Remove actions
         modify(SelectMultiItems)
         {
             Visible = false;
@@ -457,4 +473,18 @@ pageextension 56717 "SK2 Purchase Order Subform" extends "Purchase Order Subform
             Visible = false;
         }
     }
+
+    procedure ShowComments()
+    var
+        PurchCommentLine: Record "Purch. Comment Line";
+        PurchSNCommentSheet: Page "SK2 Purch. Serial Nos. Commnts";
+    begin
+        Rec.TestField("Document No.");
+        Rec.TestField("Line No.");
+        PurchCommentLine.SetRange("Document Type", Rec."Document Type");
+        PurchCommentLine.SetRange("No.", Rec."Document No.");
+        PurchCommentLine.SetRange("Document Line No.", Rec."Line No.");
+        PurchSNCommentSheet.SetTableView(PurchCommentLine);
+        PurchSNCommentSheet.RunModal;
+    end;
 }

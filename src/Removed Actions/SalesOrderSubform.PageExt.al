@@ -105,6 +105,22 @@ pageextension 56704 "SK2 Sales Order Subform" extends "Sales Order Subform"
     }
     actions
     {
+        addfirst("&Line")
+        {
+            action("SK2 Serial No.s")
+            {
+                Caption = 'Serial No.s';
+                ApplicationArea = All;
+                Image = SerialNo;
+
+                trigger OnAction()
+                begin
+                    ShowComments();
+                end;
+
+            }
+        }
+        //Remove actions
         modify(SelectMultiItems)
         {
             Visible = false;
@@ -237,4 +253,18 @@ pageextension 56704 "SK2 Sales Order Subform" extends "Sales Order Subform"
             Visible = false;
         }
     }
+
+    procedure ShowComments()
+    var
+        SalesCommentLine: Record "Sales Comment Line";
+        SalesSNCommentSheet: Page "SK2 Sales Serial No.s Comments";
+    begin
+        Rec.TestField("Document No.");
+        Rec.TestField("Line No.");
+        SalesCommentLine.SetRange("Document Type", Rec."Document Type");
+        SalesCommentLine.SetRange("No.", Rec."Document No.");
+        SalesCommentLine.SetRange("Document Line No.", Rec."Line No.");
+        SalesSNCommentSheet.SetTableView(SalesCommentLine);
+        SalesSNCommentSheet.RunModal;
+    end;
 }
