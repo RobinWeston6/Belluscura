@@ -2,6 +2,25 @@ pageextension 56708 "SK2 Purchase Order" extends "Purchase Order"
 {
     layout
     {
+        addlast(General)
+        {
+            field("SK2 Department"; Rec."SK2 Department")
+            {
+                ApplicationArea = All;
+            }
+            field("SK2 Approver"; Rec."SK2 Approver")
+            {
+                ApplicationArea = All;
+            }
+            field("SK2 Date To Be Issued"; Rec."SK2 Date To Be Issued")
+            {
+                ApplicationArea = All;
+            }
+            field("SK2 Issued"; Rec."SK2 Issued")
+            {
+                ApplicationArea = All;
+            }
+        }
         //Remove fields
         modify("No.")
         {

@@ -2,6 +2,13 @@ pageextension 56717 "SK2 Purchase Order Subform" extends "Purchase Order Subform
 {
     layout
     {
+        addafter("Requested Receipt Date")
+        {
+            field("SK2 Expected Payment Date"; Rec."SK2 Expected Payment Date")
+            {
+                ApplicationArea = All;
+            }
+        }
         modify("Item Reference No.")
         {
             Visible = false;
@@ -473,6 +480,9 @@ pageextension 56717 "SK2 Purchase Order Subform" extends "Purchase Order Subform
             Visible = false;
         }
     }
+
+
+
 
     procedure ShowComments()
     var

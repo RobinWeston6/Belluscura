@@ -11,6 +11,25 @@ pageextension 56709 "SK2 Purchase Order List" extends "Purchase Order List"
                 SubPageLink = "Document Type" = field("Document Type"), "Document No." = field("No.");
             }
         }
+        addlast(Control1)
+        {
+            field("SK2 Department"; Rec."SK2 Department")
+            {
+                ApplicationArea = All;
+            }
+            field("SK2 Approver"; Rec."SK2 Approver")
+            {
+                ApplicationArea = All;
+            }
+            field("SK2 Date To Be Issued"; Rec."SK2 Date To Be Issued")
+            {
+                ApplicationArea = All;
+            }
+            field("SK2 Issued"; Rec."SK2 Issued")
+            {
+                ApplicationArea = All;
+            }
+        }
     }
     actions
     {

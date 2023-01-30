@@ -4,6 +4,11 @@ reportextension 56701 MyExtension extends "Standard Sales - Order Conf."
 
     dataset
     {
+        add(Header)
+        {
+            column(BillToAddress_Lbl; BillToAddressLbl)
+            { }
+        }
         add(Line)
         {
             column(Discount; Discount)
@@ -11,17 +16,23 @@ reportextension 56701 MyExtension extends "Standard Sales - Order Conf."
             column(DiscountLbl; DiscountLbl)
             { }
         }
+        modify(Header)
+        {
+            trigger OnBeforeAfterGetRecord()
+            begin
+                DiscountLbl := '';
+            end;
+        }
         modify(line)
         {
             trigger OnAfterAfterGetRecord()
             begin
-                if (Line.Type = Line.Type::Item) and
-                   (Line."No." = '201-06-17-0017.A') and
-                   (Line.Quantity <> 0) then begin
-                    Discount := Format(Line.Quantity * (-500));
-                    DiscountLbl := 'Total 2022 Promo Discount'
-                end else
-                    Discount := '';
+                Discount := '';
+                if Line."Line Discount Amount" <> 0 then begin
+                    Discount := Format(Line."Line Discount Amount");
+                    DiscountLbl := 'Total 2023 Promo Discount';
+                end;
+
             end;
         }
     }
@@ -29,4 +40,5 @@ reportextension 56701 MyExtension extends "Standard Sales - Order Conf."
     var
         Discount: Text;
         DiscountLbl: Text;
+        BillToAddressLbl: Label 'Bill-to Address';
 }
