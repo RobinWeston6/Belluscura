@@ -11,175 +11,6 @@
       <rd:DataSourceID>05d024ec-0939-40b8-bbea-8e42ec090757</rd:DataSourceID>
     </DataSource>
   </DataSources>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-      <Fields>
-        <Field Name="Picture_CompanyInformation">
-          <DataField>Picture_CompanyInformation</DataField>
-        </Field>
-        <Field Name="No_Header">
-          <DataField>No_Header</DataField>
-        </Field>
-        <Field Name="OrderDate_Header">
-          <DataField>OrderDate_Header</DataField>
-        </Field>
-        <Field Name="BuyFromAddress1">
-          <DataField>BuyFromAddress1</DataField>
-        </Field>
-        <Field Name="BuyFromAddress2">
-          <DataField>BuyFromAddress2</DataField>
-        </Field>
-        <Field Name="BuyFromAddress3">
-          <DataField>BuyFromAddress3</DataField>
-        </Field>
-        <Field Name="BuyFromAddress4">
-          <DataField>BuyFromAddress4</DataField>
-        </Field>
-        <Field Name="BuyFromAddress5">
-          <DataField>BuyFromAddress5</DataField>
-        </Field>
-        <Field Name="BuyFromAddress6">
-          <DataField>BuyFromAddress6</DataField>
-        </Field>
-        <Field Name="BuyFromAddress7">
-          <DataField>BuyFromAddress7</DataField>
-        </Field>
-        <Field Name="BuyFromAddress8">
-          <DataField>BuyFromAddress8</DataField>
-        </Field>
-        <Field Name="BillToAddress1">
-          <DataField>BillToAddress1</DataField>
-        </Field>
-        <Field Name="BillToAddress2">
-          <DataField>BillToAddress2</DataField>
-        </Field>
-        <Field Name="BillToAddress3">
-          <DataField>BillToAddress3</DataField>
-        </Field>
-        <Field Name="BillToAddress4">
-          <DataField>BillToAddress4</DataField>
-        </Field>
-        <Field Name="BillToAddress5">
-          <DataField>BillToAddress5</DataField>
-        </Field>
-        <Field Name="BillToAddress6">
-          <DataField>BillToAddress6</DataField>
-        </Field>
-        <Field Name="BillToAddress7">
-          <DataField>BillToAddress7</DataField>
-        </Field>
-        <Field Name="BillToAddress8">
-          <DataField>BillToAddress8</DataField>
-        </Field>
-        <Field Name="ShipToAddress1">
-          <DataField>ShipToAddress1</DataField>
-        </Field>
-        <Field Name="ShipToAddress2">
-          <DataField>ShipToAddress2</DataField>
-        </Field>
-        <Field Name="ShipToAddress3">
-          <DataField>ShipToAddress3</DataField>
-        </Field>
-        <Field Name="ShipToAddress4">
-          <DataField>ShipToAddress4</DataField>
-        </Field>
-        <Field Name="ShipToAddress5">
-          <DataField>ShipToAddress5</DataField>
-        </Field>
-        <Field Name="ShipToAddress6">
-          <DataField>ShipToAddress6</DataField>
-        </Field>
-        <Field Name="ShipToAddress7">
-          <DataField>ShipToAddress7</DataField>
-        </Field>
-        <Field Name="ShipToAddress8">
-          <DataField>ShipToAddress8</DataField>
-        </Field>
-        <Field Name="RequestedReceiptDate_Line">
-          <DataField>RequestedReceiptDate_Line</DataField>
-        </Field>
-        <Field Name="Type_Line">
-          <DataField>Type_Line</DataField>
-        </Field>
-        <Field Name="No_Line">
-          <DataField>No_Line</DataField>
-        </Field>
-        <Field Name="Description_Line">
-          <DataField>Description_Line</DataField>
-        </Field>
-        <Field Name="Quantity_Line">
-          <DataField>Quantity_Line</DataField>
-        </Field>
-        <Field Name="Quantity_LineFormat">
-          <DataField>Quantity_LineFormat</DataField>
-        </Field>
-        <Field Name="UnitPriceLCY_Line">
-          <DataField>UnitPriceLCY_Line</DataField>
-        </Field>
-        <Field Name="UnitPriceLCY_LineFormat">
-          <DataField>UnitPriceLCY_LineFormat</DataField>
-        </Field>
-        <Field Name="UnitCostLCY_Line">
-          <DataField>UnitCostLCY_Line</DataField>
-        </Field>
-        <Field Name="UnitCostLCY_LineFormat">
-          <DataField>UnitCostLCY_LineFormat</DataField>
-        </Field>
-        <Field Name="LineAmount_Line">
-          <DataField>LineAmount_Line</DataField>
-        </Field>
-        <Field Name="LineAmount_LineFormat">
-          <DataField>LineAmount_LineFormat</DataField>
-        </Field>
-        <Field Name="TotalVATAmount">
-          <DataField>TotalVATAmount</DataField>
-        </Field>
-        <Field Name="TotalVATAmountFormat">
-          <DataField>TotalVATAmountFormat</DataField>
-        </Field>
-        <Field Name="TotalVATDiscountAmount">
-          <DataField>TotalVATDiscountAmount</DataField>
-        </Field>
-        <Field Name="TotalVATDiscountAmountFormat">
-          <DataField>TotalVATDiscountAmountFormat</DataField>
-        </Field>
-        <Field Name="TotalVATBaseAmount">
-          <DataField>TotalVATBaseAmount</DataField>
-        </Field>
-        <Field Name="TotalVATBaseAmountFormat">
-          <DataField>TotalVATBaseAmountFormat</DataField>
-        </Field>
-        <Field Name="TotalAmountInclVAT">
-          <DataField>TotalAmountInclVAT</DataField>
-        </Field>
-        <Field Name="TotalAmountInclVATFormat">
-          <DataField>TotalAmountInclVATFormat</DataField>
-        </Field>
-        <Field Name="TotalSubTotal">
-          <DataField>TotalSubTotal</DataField>
-        </Field>
-        <Field Name="TotalSubTotalFormat">
-          <DataField>TotalSubTotalFormat</DataField>
-        </Field>
-        <Field Name="TotalInvoiceDiscountAmount">
-          <DataField>TotalInvoiceDiscountAmount</DataField>
-        </Field>
-        <Field Name="TotalInvoiceDiscountAmountFormat">
-          <DataField>TotalInvoiceDiscountAmountFormat</DataField>
-        </Field>
-        <Field Name="TotalAmount">
-          <DataField>TotalAmount</DataField>
-        </Field>
-        <Field Name="TotalAmountFormat">
-          <DataField>TotalAmountFormat</DataField>
-        </Field>
-      </Fields>
-    </DataSet>
-  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -3172,4 +3003,173 @@ AAAAAACgaQRkelwGHWdZUV5KWPP/2ruDmzaCKAzAjwpIB0kHIE0DlBC5gTi3OVIC6SDcfIQGRqaCQAGW
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="Picture_CompanyInformation">
+          <DataField>Picture_CompanyInformation</DataField>
+        </Field>
+        <Field Name="No_Header">
+          <DataField>No_Header</DataField>
+        </Field>
+        <Field Name="OrderDate_Header">
+          <DataField>OrderDate_Header</DataField>
+        </Field>
+        <Field Name="BuyFromAddress1">
+          <DataField>BuyFromAddress1</DataField>
+        </Field>
+        <Field Name="BuyFromAddress2">
+          <DataField>BuyFromAddress2</DataField>
+        </Field>
+        <Field Name="BuyFromAddress3">
+          <DataField>BuyFromAddress3</DataField>
+        </Field>
+        <Field Name="BuyFromAddress4">
+          <DataField>BuyFromAddress4</DataField>
+        </Field>
+        <Field Name="BuyFromAddress5">
+          <DataField>BuyFromAddress5</DataField>
+        </Field>
+        <Field Name="BuyFromAddress6">
+          <DataField>BuyFromAddress6</DataField>
+        </Field>
+        <Field Name="BuyFromAddress7">
+          <DataField>BuyFromAddress7</DataField>
+        </Field>
+        <Field Name="BuyFromAddress8">
+          <DataField>BuyFromAddress8</DataField>
+        </Field>
+        <Field Name="BillToAddress1">
+          <DataField>BillToAddress1</DataField>
+        </Field>
+        <Field Name="BillToAddress2">
+          <DataField>BillToAddress2</DataField>
+        </Field>
+        <Field Name="BillToAddress3">
+          <DataField>BillToAddress3</DataField>
+        </Field>
+        <Field Name="BillToAddress4">
+          <DataField>BillToAddress4</DataField>
+        </Field>
+        <Field Name="BillToAddress5">
+          <DataField>BillToAddress5</DataField>
+        </Field>
+        <Field Name="BillToAddress6">
+          <DataField>BillToAddress6</DataField>
+        </Field>
+        <Field Name="BillToAddress7">
+          <DataField>BillToAddress7</DataField>
+        </Field>
+        <Field Name="BillToAddress8">
+          <DataField>BillToAddress8</DataField>
+        </Field>
+        <Field Name="ShipToAddress1">
+          <DataField>ShipToAddress1</DataField>
+        </Field>
+        <Field Name="ShipToAddress2">
+          <DataField>ShipToAddress2</DataField>
+        </Field>
+        <Field Name="ShipToAddress3">
+          <DataField>ShipToAddress3</DataField>
+        </Field>
+        <Field Name="ShipToAddress4">
+          <DataField>ShipToAddress4</DataField>
+        </Field>
+        <Field Name="ShipToAddress5">
+          <DataField>ShipToAddress5</DataField>
+        </Field>
+        <Field Name="ShipToAddress6">
+          <DataField>ShipToAddress6</DataField>
+        </Field>
+        <Field Name="ShipToAddress7">
+          <DataField>ShipToAddress7</DataField>
+        </Field>
+        <Field Name="ShipToAddress8">
+          <DataField>ShipToAddress8</DataField>
+        </Field>
+        <Field Name="RequestedReceiptDate_Line">
+          <DataField>RequestedReceiptDate_Line</DataField>
+        </Field>
+        <Field Name="Type_Line">
+          <DataField>Type_Line</DataField>
+        </Field>
+        <Field Name="No_Line">
+          <DataField>No_Line</DataField>
+        </Field>
+        <Field Name="Description_Line">
+          <DataField>Description_Line</DataField>
+        </Field>
+        <Field Name="Quantity_Line">
+          <DataField>Quantity_Line</DataField>
+        </Field>
+        <Field Name="Quantity_LineFormat">
+          <DataField>Quantity_LineFormat</DataField>
+        </Field>
+        <Field Name="UnitPriceLCY_Line">
+          <DataField>UnitPriceLCY_Line</DataField>
+        </Field>
+        <Field Name="UnitPriceLCY_LineFormat">
+          <DataField>UnitPriceLCY_LineFormat</DataField>
+        </Field>
+        <Field Name="UnitCostLCY_Line">
+          <DataField>UnitCostLCY_Line</DataField>
+        </Field>
+        <Field Name="UnitCostLCY_LineFormat">
+          <DataField>UnitCostLCY_LineFormat</DataField>
+        </Field>
+        <Field Name="LineAmount_Line">
+          <DataField>LineAmount_Line</DataField>
+        </Field>
+        <Field Name="LineAmount_LineFormat">
+          <DataField>LineAmount_LineFormat</DataField>
+        </Field>
+        <Field Name="TotalVATAmount">
+          <DataField>TotalVATAmount</DataField>
+        </Field>
+        <Field Name="TotalVATAmountFormat">
+          <DataField>TotalVATAmountFormat</DataField>
+        </Field>
+        <Field Name="TotalVATDiscountAmount">
+          <DataField>TotalVATDiscountAmount</DataField>
+        </Field>
+        <Field Name="TotalVATDiscountAmountFormat">
+          <DataField>TotalVATDiscountAmountFormat</DataField>
+        </Field>
+        <Field Name="TotalVATBaseAmount">
+          <DataField>TotalVATBaseAmount</DataField>
+        </Field>
+        <Field Name="TotalVATBaseAmountFormat">
+          <DataField>TotalVATBaseAmountFormat</DataField>
+        </Field>
+        <Field Name="TotalAmountInclVAT">
+          <DataField>TotalAmountInclVAT</DataField>
+        </Field>
+        <Field Name="TotalAmountInclVATFormat">
+          <DataField>TotalAmountInclVATFormat</DataField>
+        </Field>
+        <Field Name="TotalSubTotal">
+          <DataField>TotalSubTotal</DataField>
+        </Field>
+        <Field Name="TotalSubTotalFormat">
+          <DataField>TotalSubTotalFormat</DataField>
+        </Field>
+        <Field Name="TotalInvoiceDiscountAmount">
+          <DataField>TotalInvoiceDiscountAmount</DataField>
+        </Field>
+        <Field Name="TotalInvoiceDiscountAmountFormat">
+          <DataField>TotalInvoiceDiscountAmountFormat</DataField>
+        </Field>
+        <Field Name="TotalAmount">
+          <DataField>TotalAmount</DataField>
+        </Field>
+        <Field Name="TotalAmountFormat">
+          <DataField>TotalAmountFormat</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
 </Report>
