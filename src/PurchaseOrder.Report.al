@@ -3,6 +3,7 @@ report 56704 "SK2 Purchase Order"
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;
     DefaultRenderingLayout = Default;
+    Caption = 'Purchase Order';
 
     dataset
     {
@@ -13,6 +14,18 @@ report 56704 "SK2 Purchase Order"
             RequestFilterHeading = 'Purchase Order';
             column(Picture_CompanyInformation; CompanyInformation.Picture)
             { }
+            column(PhoneNo_CompanyInformation; CompanyInformation."Phone No.")
+            {
+                IncludeCaption = true;
+            }
+            column(HomePage_CompanyInformation; CompanyInformation."Home Page")
+            {
+                IncludeCaption = true;
+            }
+            column(Email_CompanyInformation; CompanyInformation."E-Mail")
+            {
+                IncludeCaption = true;
+            }
             column(No_Header; "No.")
             { }
             column(OrderDate_Header; "Order Date")
@@ -264,6 +277,9 @@ report 56704 "SK2 Purchase Order"
         InvoiceDiscountLbl = 'Invoice Discount';
         TaxLbl = 'Tax';
         TotalLbl = 'Total USD';
+        HomePageLbl = 'Home Page';
+        PhoneNoLbl = 'Phone No.';
+        EmailLbl = 'Email';
     }
 
     var

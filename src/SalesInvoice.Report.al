@@ -1,17 +1,17 @@
-report 56705 "SK2 Sales Order"
+report 56706 "SK2 Sales Invoice"
 {
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;
     DefaultRenderingLayout = Default;
-    Caption = 'Sales Order';
+    Caption = 'Sales Invoice';
 
     dataset
     {
-        dataitem("Sales Header"; "Sales Header")
+        dataitem("Sales Invoice Header"; "Sales Invoice Header")
         {
-            DataItemTableView = SORTING("Document Type", "No.") WHERE("Document Type" = CONST(Order));
+            DataItemTableView = SORTING("No.");
             RequestFilterFields = "No.", "Sell-to Customer No.", "No. Printed";
-            RequestFilterHeading = 'Sales Order';
+            RequestFilterHeading = 'Sales Invoice';
             column(Picture_CompanyInformation; CompanyInformation.Picture)
             { }
             column(PhoneNo_CompanyInformation; CompanyInformation."Phone No.")
@@ -28,6 +28,8 @@ report 56705 "SK2 Sales Order"
             }
             column(DocumentDate_Header; "Document Date")
             { }
+            column(DueDate_Header; "Due Date")
+            { }
             column(No_Header; "No.")
             { }
             column(ExternalDocumentNo_Header; "External Document No.")
@@ -42,8 +44,6 @@ report 56705 "SK2 Sales Order"
             { }
             column(Description_ShipmentMethod; ShipmentMethod.Description)
             { }
-            column(OrderDate_Header; "Order Date")
-            { }//TODO delete
             column(BuyFromAddress1; BuyFromAddress[1])
             { }
             column(BuyFromAddress2; BuyFromAddress[2])
@@ -76,29 +76,29 @@ report 56705 "SK2 Sales Order"
             { }
             column(BillToAddress8; BillToAddress[8])
             { }
-            column(ShipToAddress1; BillToAddress[1])
+            column(SellToAddress1; SellToAddress[1])
             { }
-            column(ShipToAddress2; BillToAddress[2])
+            column(SellToAddress2; SellToAddress[2])
             { }
-            column(ShipToAddress3; BillToAddress[3])
+            column(SellToAddress3; SellToAddress[3])
             { }
-            column(ShipToAddress4; BillToAddress[4])
+            column(SellToAddress4; SellToAddress[4])
             { }
-            column(ShipToAddress5; BillToAddress[5])
+            column(SellToAddress5; SellToAddress[5])
             { }
-            column(ShipToAddress6; BillToAddress[6])
+            column(SellToAddress6; SellToAddress[6])
             { }
-            column(ShipToAddress7; BillToAddress[7])
+            column(SellToAddress7; SellToAddress[7])
             { }
-            column(ShipToAddress8; BillToAddress[8])
+            column(SellToAddress8; SellToAddress[8])
             { }
             column(DiscountCaption; DiscountCaption)
             { }
 
-            dataitem("Sales Line"; "Sales Line")
+            dataitem("Sales Invoice Line"; "Sales Invoice Line")
             {
-                DataItemLink = "Document Type" = FIELD("Document Type"), "Document No." = FIELD("No.");
-                DataItemTableView = SORTING("Document Type", "Document No.", "Line No.");
+                DataItemLink = "Document No." = FIELD("No.");
+                DataItemTableView = SORTING("Document No.", "Line No.");
 
                 column(Type_Line; Type)
                 { }
@@ -119,14 +119,14 @@ report 56705 "SK2 Sales Order"
                 column(LineAmount_Line; "Line Amount")
                 { }
 
-                //Sales Line
+                //Sales Invoice Line
                 trigger OnAfterGetRecord()
                 begin
                     if not ShowGLAccounts and (Type = Type::"G/L Account") then
                         "No." := '';
 
                     if ("Line Discount Amount" <> 0) and (DiscountCaption = '') then
-                        DiscountCaption := StrSubstNo(DiscountLbl, Date2DMY("Sales Header"."Order Date", 3));
+                        DiscountCaption := StrSubstNo(DiscountLbl, Date2DMY("Sales Invoice Header"."Order Date", 3));
 
                     if Quantity <> 0 then
                         UnitDiscount := "Line Discount Amount" / Quantity
@@ -145,82 +145,82 @@ report 56705 "SK2 Sales Order"
 
                 column(TotalVATAmount; VATAmount)
                 {
-                    AutoFormatExpression = "Sales Header"."Currency Code";
+                    AutoFormatExpression = "Sales Invoice Header"."Currency Code";
                     AutoFormatType = 1;
                 }
                 column(TotalVATDiscountAmount; -VATDiscountAmount)
                 {
-                    AutoFormatExpression = "Sales Header"."Currency Code";
+                    AutoFormatExpression = "Sales Invoice Header"."Currency Code";
                     AutoFormatType = 1;
                 }
                 column(TotalVATBaseAmount; VATBaseAmount)
                 {
-                    AutoFormatExpression = "Sales Header"."Currency Code";
+                    AutoFormatExpression = "Sales Invoice Header"."Currency Code";
                     AutoFormatType = 1;
                 }
                 column(TotalAmountInclVAT; TotalAmountInclVAT)
                 {
-                    AutoFormatExpression = "Sales Header"."Currency Code";
+                    AutoFormatExpression = "Sales Invoice Header"."Currency Code";
                     AutoFormatType = 1;
                 }
                 column(TotalSubTotal; TotalSubTotal)
                 {
-                    AutoFormatExpression = "Sales Header"."Currency Code";
+                    AutoFormatExpression = "Sales Invoice Header"."Currency Code";
                     AutoFormatType = 1;
                 }
                 column(TotalInvoiceDiscountAmount; TotalInvoiceDiscountAmount)
                 {
-                    AutoFormatExpression = "Sales Header"."Currency Code";
+                    AutoFormatExpression = "Sales Invoice Header"."Currency Code";
                     AutoFormatType = 1;
                 }
                 column(TotalAmount; TotalAmount)
                 {
-                    AutoFormatExpression = "Sales Header"."Currency Code";
+                    AutoFormatExpression = "Sales Invoice Header"."Currency Code";
                     AutoFormatType = 1;
                 }
 
                 //Totals
                 trigger OnAfterGetRecord()
                 var
-                    TempPrepmtSalesLine: Record "Sales Line" temporary;
-                    TempSalesLine: Record "Sales Line" temporary;
+                    TempPrepmtSalesLine: Record "Sales Invoice Line" temporary;
+                    TempSalesLine: Record "Sales Invoice Line" temporary;
                     TempPrepaymentInvLineBuffer: Record "Prepayment Inv. Line Buffer" temporary;
                     TempPrepmtVATAmountLine: Record "VAT Amount Line" temporary;
                     TempPrePmtVATAmountLineDeduct: Record "VAT Amount Line" temporary;
                     SalesPostPrepayments: Codeunit "Sales-Post Prepayments";
                     SalesPost: Codeunit "Sales-Post";
                 begin
-                    Clear(TempSalesLine);
+                    /*Clear(TempSalesLine);
                     Clear(SalesPost);
                     TempSalesLine.DeleteAll();
                     TempVATAmountLine.DeleteAll();
-                    SalesPost.GetSalesLines("Sales Header", TempSalesLine, 0);
-                    TempSalesLine.CalcVATAmountLines(0, "Sales Header", TempSalesLine, TempVATAmountLine);
-                    TempSalesLine.UpdateVATOnLines(0, "Sales Header", TempSalesLine, TempVATAmountLine);
+                    SalesPost.GetSalesLines("Sales Invoice Header", TempSalesLine, 0);
+                    TempSalesLine.CalcVATAmountLines(0, "Sales Invoice Header", TempSalesLine, TempVATAmountLine);
+                    TempSalesLine.UpdateVATOnLines(0, "Sales Invoice Header", TempSalesLine, TempVATAmountLine);
                     VATAmount := TempVATAmountLine.GetTotalVATAmount();
                     VATBaseAmount := TempVATAmountLine.GetTotalVATBase();
                     VATDiscountAmount :=
-                      TempVATAmountLine.GetTotalVATDiscount("Sales Header"."Currency Code", "Sales Header"."Prices Including VAT");
+                      TempVATAmountLine.GetTotalVATDiscount("Sales Invoice Header"."Currency Code", "Sales Invoice Header"."Prices Including VAT");
                     TotalAmountInclVAT := TempVATAmountLine.GetTotalAmountInclVAT();
 
                     TempPrepaymentInvLineBuffer.DeleteAll();
-                    SalesPostPrepayments.GetSalesLines("Sales Header", 0, TempPrepmtSalesLine);
+                    SalesPostPrepayments.GetSalesLines("Sales Invoice Header", 0, TempPrepmtSalesLine);
                     if not TempPrepmtSalesLine.IsEmpty() then begin
-                        SalesPostPrepayments.GetSalesLinesToDeduct("Sales Header", TempSalesLine);
+                        SalesPostPrepayments.GetSalesLinesToDeduct("Sales Invoice Header", TempSalesLine);
                         if not TempSalesLine.IsEmpty() then
-                            SalesPostPrepayments.CalcVATAmountLines("Sales Header", TempSalesLine, TempPrePmtVATAmountLineDeduct, 1);
+                            SalesPostPrepayments.CalcVATAmountLines("Sales Invoice Header", TempSalesLine, TempPrePmtVATAmountLineDeduct, 1);
                     end;
-                    SalesPostPrepayments.CalcVATAmountLines("Sales Header", TempPrepmtSalesLine, TempPrepmtVATAmountLine, 0);
+                    SalesPostPrepayments.CalcVATAmountLines("Sales Invoice Header", TempPrepmtSalesLine, TempPrepmtVATAmountLine, 0);
                     TempPrepmtVATAmountLine.DeductVATAmountLine(TempPrePmtVATAmountLineDeduct);
-                    SalesPostPrepayments.UpdateVATOnLines("Sales Header", TempPrepmtSalesLine, TempPrepmtVATAmountLine, 0);
-                    SalesPostPrepayments.BuildInvLineBuffer("Sales Header", TempPrepmtSalesLine, 0, TempPrepaymentInvLineBuffer);
+                    SalesPostPrepayments.UpdateVATOnLines("Sales Invoice Header", TempPrepmtSalesLine, TempPrepmtVATAmountLine, 0);
+                    SalesPostPrepayments.BuildInvLineBuffer("Sales Invoice Header", TempPrepmtSalesLine, 0, TempPrepaymentInvLineBuffer);
                     PrepmtVATAmount := TempPrepmtVATAmountLine.GetTotalVATAmount();
                     PrepmtVATBaseAmount := TempPrepmtVATAmountLine.GetTotalVATBase();
-                    PrepmtTotalAmountInclVAT := TempPrepmtVATAmountLine.GetTotalAmountInclVAT();
+                    PrepmtTotalAmountInclVAT := TempPrepmtVATAmountLine.GetTotalAmountInclVAT();*/
                 end;
             }
 
-            //Sales Header
+            //Sales Invoice Header
             trigger OnAfterGetRecord()
             begin
                 if not PictureCalculated then begin
@@ -229,28 +229,28 @@ report 56705 "SK2 Sales Order"
                     PictureCalculated := true;
                 end;
 
-                if not SalesPerson.Get("Sales Header"."Salesperson Code") then
+                if not SalesPerson.Get("Sales Invoice Header"."Salesperson Code") then
                     Clear(SalesPerson);
-                if not ShipmentMethod.Get("Sales Header"."Shipment Method Code") then
+                if not ShipmentMethod.Get("Sales Invoice Header"."Shipment Method Code") then
                     Clear(ShipmentMethod);
-                if not PaymentTerms.Get("Sales Header"."Payment Terms Code") then
+                if not PaymentTerms.Get("Sales Invoice Header"."Payment Terms Code") then
                     Clear(PaymentTerms);
 
-                FormatAddressFields("Sales Header");
+                FormatAddressFields("Sales Invoice Header");
                 DiscountCaption := '';
 
                 TotalAmount := 0;
                 TotalSubTotal := 0;
                 TotalInvoiceDiscountAmount := 0;
 
-                /*FormatDocumentFields("Sales Header");
+                /*FormatDocumentFields("Sales Invoice Header");
                 if BuyFromContact.Get("Buy-from Contact No.") then;
                 if PayToContact.Get("Pay-to Contact No.") then;
 
                 if not IsReportInPreviewMode() then begin
-                    CODEUNIT.Run(CODEUNIT::"Sales.Header-Printed", "Sales Header");
+                    CODEUNIT.Run(CODEUNIT::"Sales.Header-Printed", "Sales Invoice Header");
                     if ArchiveDocument then
-                        ArchiveManagement.StoreSalesDocument("Sales Header", LogInteraction);
+                        ArchiveManagement.StoreSalesDocument("Sales Invoice Header", LogInteraction);
                 end;*/
 
 
@@ -288,26 +288,27 @@ report 56705 "SK2 Sales Order"
         layout(Default)
         {
             Type = RDLC;
-            LayoutFile = 'src\Layouts\SalesOrder.rdl';
+            LayoutFile = 'src\Layouts\SalesInvoice.rdl';
         }
     }
 
     labels
     {
         //Header
-        SalesOrderUCaseLbl = 'SALES ORDER';
-        SalesOrderLbl = 'Sales Order';
+        SalesInvoiceUCaseLbl = 'SALES INVOICE';
+        SalesInvoiceLbl = 'Sales Invoice';
         DocumentDateLbl = 'Document Date';
+        DueDateLbl = 'Due Date';
         PurchaseOrderNoLbl = 'Purchase Order';
         QuoteNoLbl = 'Quote No.';
         SalesPersonLbl = 'Sales Person';
         PaymentTermsLbl = 'Payment Terms';
         ShipmentDateLbl = 'Shipment Date';
         ShipmentMethodLbl = 'Shipment Method';
-        SalesOrderDateLbl = 'Sales Order Date';
+        SalesInvoiceDateLbl = 'Sales Invoice Date';
         ToLbl = 'To:';
         BillToLbl = 'Bill To:';
-        ShipToLbl = 'Ship To:';
+        SellToLbl = 'Sell To:';
         BuyFromLbl = 'Buy From:';
         PageLbl = 'Page %1 of %2';
         //Line Captions
@@ -323,6 +324,13 @@ report 56705 "SK2 Sales Order"
         InvoiceDiscountLbl = 'Invoice Discount';
         TaxLbl = 'Tax';
         TotalLbl = 'Total USD';
+        ForAnyPaymentsLbl = 'For any payments please use the following account:';
+        BankLbl = 'Bank:';
+        BankValue = 'Chase';
+        RoutingNoLbl = 'Routing No.:';
+        RoutingNoValue = '111000614';
+        AccountNoLbl = 'Account No.:';
+        AccountNoValue = '787172689';
         HomePageLbl = 'Home Page';
         PhoneNoLbl = 'Phone No.';
         EmailLbl = 'Email';
@@ -340,7 +348,7 @@ report 56705 "SK2 Sales Order"
         TempVATAmountLine: Record "VAT Amount Line" temporary;
         BuyFromAddress: array[8] of Text[100];
         BillToAddress: array[8] of Text[100];
-        ShipToAddress: array[8] of Text[100];
+        SellToAddress: array[8] of Text[100];
         DiscountCaption: Text;
         UnitDiscount: Decimal;
         VATAmount: Decimal;
@@ -360,15 +368,15 @@ report 56705 "SK2 Sales Order"
         DiscountLbl: label '%1 Promo Unit Discount';
 
         f: report 1305;
-        r: page "Sales Order";
+        r: page "Sales Invoice";
 
 
-    local procedure FormatAddressFields(var SalesHeader: Record "Sales Header")
+    local procedure FormatAddressFields(var SalesInvoiceHeader: Record "Sales Invoice Header")
     var
         RespCenter: Record "Responsibility Center";
     begin
-        FormatAddress.GetCompanyAddr(SalesHeader."Responsibility Center", RespCenter, CompanyInformation, BuyFromAddress);
-        FormatAddress.SalesHeaderSellTo(BillToAddress, SalesHeader);
-        FormatAddress.SalesHeaderShipTo(ShipToAddress, BillToAddress, SalesHeader);
+        FormatAddress.GetCompanyAddr(SalesInvoiceHeader."Responsibility Center", RespCenter, CompanyInformation, BuyFromAddress);
+        FormatAddress.SalesInvBillTo(BillToAddress, SalesInvoiceHeader);
+        FormatAddress.SalesInvSellTo(SellToAddress, SalesInvoiceHeader);
     end;
 }

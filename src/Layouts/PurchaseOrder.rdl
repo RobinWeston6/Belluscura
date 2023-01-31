@@ -2579,10 +2579,10 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>10.35108cm</Height>
+        <Height>10.14501cm</Height>
         <Style />
       </Body>
-      <Width>16.84454cm</Width>
+      <Width>16.85966cm</Width>
       <Page>
         <PageHeader>
           <Height>2.27541cm</Height>
@@ -2668,6 +2668,222 @@
             </Border>
           </Style>
         </PageHeader>
+        <PageFooter>
+          <Height>1.18179cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="Textbox25">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Parameters!PhoneNoLbl.Value</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>#2397d6</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox20</rd:DefaultName>
+              <Height>0.39393cm</Height>
+              <Width>5.61484cm</Width>
+              <Style>
+                <Border>
+                  <Color>LightGrey</Color>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>5pt</PaddingLeft>
+                <PaddingRight>5pt</PaddingRight>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox26">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Parameters!HomePageLbl.Value</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>#2397d6</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox23</rd:DefaultName>
+              <Left>5.61484cm</Left>
+              <Height>0.39393cm</Height>
+              <Width>5.61484cm</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Color>LightGrey</Color>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>5pt</PaddingLeft>
+                <PaddingRight>5pt</PaddingRight>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox27">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Parameters!EmailLbl.Value</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>#2397d6</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox24</rd:DefaultName>
+              <Left>11.22968cm</Left>
+              <Height>0.39393cm</Height>
+              <Width>5.61484cm</Width>
+              <ZIndex>2</ZIndex>
+              <Style>
+                <Border>
+                  <Color>LightGrey</Color>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>5pt</PaddingLeft>
+                <PaddingRight>5pt</PaddingRight>
+              </Style>
+            </Textbox>
+            <Textbox Name="PhoneNo_CompanyInformation2">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Fields!PhoneNo_CompanyInformation.Value</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>PhoneNo_CompanyInformation</rd:DefaultName>
+              <Top>0.39393cm</Top>
+              <Height>0.39393cm</Height>
+              <Width>5.61484cm</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Color>LightGrey</Color>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>5pt</PaddingLeft>
+                <PaddingRight>5pt</PaddingRight>
+              </Style>
+            </Textbox>
+            <Textbox Name="HomePage_CompanyInformation2">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Fields!HomePage_CompanyInformation.Value</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>HomePage_CompanyInformation</rd:DefaultName>
+              <Top>0.39393cm</Top>
+              <Left>5.61484cm</Left>
+              <Height>0.39393cm</Height>
+              <Width>5.61484cm</Width>
+              <ZIndex>4</ZIndex>
+              <Style>
+                <Border>
+                  <Color>LightGrey</Color>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>5pt</PaddingLeft>
+                <PaddingRight>5pt</PaddingRight>
+              </Style>
+            </Textbox>
+            <Textbox Name="Email_CompanyInformation2">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Fields!Email_CompanyInformation.Value</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Email_CompanyInformation</rd:DefaultName>
+              <Top>0.39393cm</Top>
+              <Left>11.22968cm</Left>
+              <Height>0.39393cm</Height>
+              <Width>5.61484cm</Width>
+              <ZIndex>5</ZIndex>
+              <Style>
+                <Border>
+                  <Color>LightGrey</Color>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>5pt</PaddingLeft>
+                <PaddingRight>5pt</PaddingRight>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
         <PageHeight>27.94cm</PageHeight>
         <PageWidth>18cm</PageWidth>
         <LeftMargin>0.5cm</LeftMargin>
@@ -2833,11 +3049,65 @@
       </DefaultValue>
       <Prompt>TotalLbl</Prompt>
     </ReportParameter>
+    <ReportParameter Name="HomePageLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>HomePageLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>HomePageLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PhoneNoLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>PhoneNoLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>PhoneNoLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="EmailLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>EmailLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>EmailLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PhoneNo_CompanyInformationCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>PhoneNo_CompanyInformationCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>PhoneNo_CompanyInformationCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="HomePage_CompanyInformationCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>HomePage_CompanyInformationCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>HomePage_CompanyInformationCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Email_CompanyInformationCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Email_CompanyInformationCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Email_CompanyInformationCaption</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>1</NumberOfColumns>
-      <NumberOfRows>17</NumberOfRows>
+      <NumberOfRows>23</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
@@ -2924,6 +3194,36 @@
           <RowIndex>16</RowIndex>
           <ParameterName>TotalLbl</ParameterName>
         </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>17</RowIndex>
+          <ParameterName>HomePageLbl</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>18</RowIndex>
+          <ParameterName>PhoneNoLbl</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>19</RowIndex>
+          <ParameterName>EmailLbl</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>20</RowIndex>
+          <ParameterName>PhoneNo_CompanyInformationCaption</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>21</RowIndex>
+          <ParameterName>HomePage_CompanyInformationCaption</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>22</RowIndex>
+          <ParameterName>Email_CompanyInformationCaption</ParameterName>
+        </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
   </ReportParametersLayout>
@@ -3008,6 +3308,15 @@ AAAAAACgaQRkelwGHWdZUV5KWPP/2ruDmzaCKAzAjwpIB0kHIE0DlBC5gTi3OVIC6SDcfIQGRqaCQAGW
       <Fields>
         <Field Name="Picture_CompanyInformation">
           <DataField>Picture_CompanyInformation</DataField>
+        </Field>
+        <Field Name="PhoneNo_CompanyInformation">
+          <DataField>PhoneNo_CompanyInformation</DataField>
+        </Field>
+        <Field Name="HomePage_CompanyInformation">
+          <DataField>HomePage_CompanyInformation</DataField>
+        </Field>
+        <Field Name="Email_CompanyInformation">
+          <DataField>Email_CompanyInformation</DataField>
         </Field>
         <Field Name="No_Header">
           <DataField>No_Header</DataField>
