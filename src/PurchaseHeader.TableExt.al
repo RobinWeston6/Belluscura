@@ -18,13 +18,32 @@ tableextension 56708 "SK2 Purchase Header" extends "Purchase Header"
         {
             DataClassification = CustomerContent;
             Caption = 'Date To Be Issued';
-
         }
         field(56703; "SK2 Issued"; Boolean)
         {
             DataClassification = CustomerContent;
             Caption = 'Issued';
         }
-
+        field(56710; "SK2 Engineering Type"; Text[50]) //RND,Product Development,Sustaining Engineering
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Engineering Type';
+            TableRelation = "SK2 Engineering Type".Description;
+            ValidateTableRelation = false;
+        }
+        field(56711; "SK2 Project"; Text[50]) //CX, CX+, DX, Nomad, Infrastructure
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Project';
+            TableRelation = "SK2 Project".Description;
+            ValidateTableRelation = false;
+        }
+        field(56712; "SK2 Expense Type"; Text[50]) //Materials, Contract Labor, Tooling, Testing, Audit, IT, Misc Expense
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Expense Type';
+            TableRelation = "SK2 Expense Type".Description;
+            ValidateTableRelation = false;
+        }
     }
 }

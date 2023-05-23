@@ -2,6 +2,13 @@ pageextension 56704 "SK2 Sales Order Subform" extends "Sales Order Subform"
 {
     layout
     {
+        addafter("Planned Shipment Date")
+        {
+            field("SK2 Expected Receipt Date"; Rec."SK2 Expected Receipt Date")
+            {
+                ApplicationArea = all;
+            }
+        }
         modify("Item Reference No.")
         {
             Visible = false;

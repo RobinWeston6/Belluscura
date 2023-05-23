@@ -86,6 +86,8 @@ report 56704 "SK2 Purchase Order"
 
                 column(RequestedReceiptDate_Line; "Requested Receipt Date")
                 { }
+                column(ExpectedReceiptDate_Line; "Expected Receipt Date")
+                { }
                 column(Type_Line; Type)
                 { }
                 column(No_Line; "No.")
@@ -267,6 +269,7 @@ report 56704 "SK2 Purchase Order"
         PageLbl = 'Page %1 of %2';
         //Line Captions
         RequestedReceiptDateLbl = 'Requested Receipt Date';
+        ExpectedReceiptDateLbl = 'Expected Receipt Date';
         ItemNoLbl = 'Item No.';
         DescriptionLbl = 'Description';
         QuantityLbl = 'Quantity';

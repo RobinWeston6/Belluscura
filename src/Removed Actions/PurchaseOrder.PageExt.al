@@ -20,6 +20,18 @@ pageextension 56708 "SK2 Purchase Order" extends "Purchase Order"
             {
                 ApplicationArea = All;
             }
+            field("SK2 Engineering Type"; Rec."SK2 Engineering Type")
+            {
+                ApplicationArea = All;
+            }
+            field("SK2 Project"; Rec."SK2 Project")
+            {
+                ApplicationArea = All;
+            }
+            field("SK2 Expense Type"; Rec."SK2 Expense Type")
+            {
+                ApplicationArea = All;
+            }
         }
         //Remove fields
         modify("No.")

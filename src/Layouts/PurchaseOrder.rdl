@@ -1185,7 +1185,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Parameters!RequestedReceiptDateLbl.Value</Value>
+                                  <Value>=Parameters!ExpectedReceiptDateLbl.Value</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>8pt</FontSize>
@@ -1473,14 +1473,14 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="RequestedReceiptDate_Line">
+                        <Textbox Name="ExpectedReceiptDate_Line">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!RequestedReceiptDate_Line.Value</Value>
+                                  <Value>=Fields!ExpectedReceiptDate_Line.Value</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>8pt</FontSize>
@@ -1488,10 +1488,12 @@
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>RequestedReceiptDate_Line</rd:DefaultName>
+                          <rd:DefaultName>ExpectedReceiptDate_Line</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -2968,6 +2970,15 @@
       </DefaultValue>
       <Prompt>RequestedReceiptDateLbl</Prompt>
     </ReportParameter>
+    <ReportParameter Name="ExpectedReceiptDateLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ExpectedReceiptDateLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ExpectedReceiptDateLbl</Prompt>
+    </ReportParameter>
     <ReportParameter Name="ItemNoLbl">
       <DataType>String</DataType>
       <DefaultValue>
@@ -3107,7 +3118,7 @@
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>1</NumberOfColumns>
-      <NumberOfRows>23</NumberOfRows>
+      <NumberOfRows>24</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
@@ -3152,76 +3163,81 @@
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>8</RowIndex>
-          <ParameterName>ItemNoLbl</ParameterName>
+          <ParameterName>ExpectedReceiptDateLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>9</RowIndex>
-          <ParameterName>DescriptionLbl</ParameterName>
+          <ParameterName>ItemNoLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>10</RowIndex>
-          <ParameterName>QuantityLbl</ParameterName>
+          <ParameterName>DescriptionLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>11</RowIndex>
-          <ParameterName>UnitCostLbl</ParameterName>
+          <ParameterName>QuantityLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>12</RowIndex>
-          <ParameterName>TotalPriceLBl</ParameterName>
+          <ParameterName>UnitCostLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>13</RowIndex>
-          <ParameterName>SubtotalLbl</ParameterName>
+          <ParameterName>TotalPriceLBl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>14</RowIndex>
-          <ParameterName>InvoiceDiscountLbl</ParameterName>
+          <ParameterName>SubtotalLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>15</RowIndex>
-          <ParameterName>TaxLbl</ParameterName>
+          <ParameterName>InvoiceDiscountLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>16</RowIndex>
-          <ParameterName>TotalLbl</ParameterName>
+          <ParameterName>TaxLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>17</RowIndex>
-          <ParameterName>HomePageLbl</ParameterName>
+          <ParameterName>TotalLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>18</RowIndex>
-          <ParameterName>PhoneNoLbl</ParameterName>
+          <ParameterName>HomePageLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>19</RowIndex>
-          <ParameterName>EmailLbl</ParameterName>
+          <ParameterName>PhoneNoLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>20</RowIndex>
-          <ParameterName>PhoneNo_CompanyInformationCaption</ParameterName>
+          <ParameterName>EmailLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>21</RowIndex>
-          <ParameterName>HomePage_CompanyInformationCaption</ParameterName>
+          <ParameterName>PhoneNo_CompanyInformationCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>22</RowIndex>
+          <ParameterName>HomePage_CompanyInformationCaption</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>23</RowIndex>
           <ParameterName>Email_CompanyInformationCaption</ParameterName>
         </CellDefinition>
       </CellDefinitions>
@@ -3398,6 +3414,9 @@ AAAAAACgaQRkelwGHWdZUV5KWPP/2ruDmzaCKAzAjwpIB0kHIE0DlBC5gTi3OVIC6SDcfIQGRqaCQAGW
         </Field>
         <Field Name="RequestedReceiptDate_Line">
           <DataField>RequestedReceiptDate_Line</DataField>
+        </Field>
+        <Field Name="ExpectedReceiptDate_Line">
+          <DataField>ExpectedReceiptDate_Line</DataField>
         </Field>
         <Field Name="Type_Line">
           <DataField>Type_Line</DataField>
