@@ -194,8 +194,6 @@ pageextension 56704 "SK2 Sales Order Subform" extends "Sales Order Subform"
         }
         modify(ItemTrackingLines)
         {
-            Promoted = true;
-            PromotedOnly = true;
             Enabled = true;
             Caption = 'Serial Numbers';
         }

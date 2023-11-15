@@ -12,6 +12,10 @@ pageextension 56728 "SK2 Pstd. Sales Cr.Memo Lines" extends "Posted Sales Credit
             {
                 ApplicationArea = All;
             }
+            field("Posting Date"; Rec."Posting Date")
+            {
+                ApplicationArea = All;
+            }
         }
         addlast(Control1)
         {

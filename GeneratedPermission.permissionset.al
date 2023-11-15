@@ -26,5 +26,12 @@ permissionset 56700 GeneratedPermission
         table "SK2 Engineering Type" = X,
         table "SK2 Expense Type" = X,
         table "SK2 Project" = X,
-        report "SK2 Sales Invoice" = X;
+        report "SK2 Sales Invoice" = X,
+        tabledata "SK2 GL Entry Cat. Breakdown" = RIMD,
+        table "SK2 GL Entry Cat. Breakdown" = X,
+        page "SK2 Break Down G/L Entries" = X,
+        page "SK2 Engineering Types" = X,
+        page "SK2 Expense Types" = X,
+        page "SK2 G/L Entry Cat. Brkdn Subpg" = X,
+        page "SK2 Projects" = X;
 }

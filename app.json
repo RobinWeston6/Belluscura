@@ -4,7 +4,7 @@
   "publisher": "Sophie Kent",
   "brief": "",
   "description": "",
-  "version": "21.0.0.32",
+  "version": "21.0.0.70",
   "privacyStatement": "",
   "EULA": "",
   "help": "",
@@ -27,6 +27,6 @@
     }
   ],
   "features": ["TranslationFile"],
-  "runtime": "10.0",
+  "runtime": "11.0",
   "target": "Cloud"
 }

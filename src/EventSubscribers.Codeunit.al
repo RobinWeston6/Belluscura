@@ -26,4 +26,10 @@ codeunit 56704 "SK2 Event Subscribers"
         Item.SetFilter("No.", '<>%1', 'AD HOC');
         Item.FilterGroup(0);
     end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnBeforeCheckShipmentDateBeforeWorkDate', '', False, False)]
+    local procedure CheckShipmentDateBeforeWorkDate(var SalesLine: Record "Sales Line"; xSalesLine: Record "Sales Line"; var HasBeenShown: Boolean; var IsHandled: Boolean)
+    begin
+        IsHandled := True;
+    end;
 }

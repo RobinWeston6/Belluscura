@@ -20,6 +20,7 @@ pageextension 56709 "SK2 Purchase Order List" extends "Purchase Order List"
             field("SK2 Approver"; Rec."SK2 Approver")
             {
                 ApplicationArea = All;
+                OptionCaption = ' ,Keith Cook,,Paul Bray,Sarah Clark,Brian Brown,Dwayne Thompson,Mark Vines';
             }
             field("SK2 Date To Be Issued"; Rec."SK2 Date To Be Issued")
             {
@@ -29,6 +30,18 @@ pageextension 56709 "SK2 Purchase Order List" extends "Purchase Order List"
             {
                 ApplicationArea = All;
             }
+        }
+        addafter(Status)
+        {
+            field("SK2 Ext. Status"; Rec."SK2 Ext. Status")
+            {
+                ApplicationArea = All;
+                StyleExpr = ExtStatusStyleTxt;
+            }
+        }
+        modify(Status)
+        {
+            Visible = false;
         }
     }
     actions
@@ -139,4 +152,13 @@ pageextension 56709 "SK2 Purchase Order List" extends "Purchase Order List"
             Visible = false;
         }
     }
+
+    trigger OnAfterGetRecord()
+    begin
+        Rec.CalcExtStatus();
+        ExtStatusStyleTxt := Rec.GetExtStatusStyleText();
+    end;
+
+    var
+        ExtStatusStyleTxt: Text;
 }

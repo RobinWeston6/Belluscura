@@ -4,7 +4,7 @@ page 56705 "SK2 Engineering Types"
     ApplicationArea = All;
     UsageCategory = Administration;
     SourceTable = "SK2 Engineering Type";
-    Caption = 'Engineering Types';
+    Caption = 'Engineering Activities';
 
     layout
     {

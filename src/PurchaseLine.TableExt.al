@@ -23,26 +23,20 @@ tableextension 56709 "SK2 Purchase Line" extends "Purchase Line"
                     "SK2 Expected Payment Date" := CalcDate(PaymentTerms."Due Date Calculation", Rec."Expected Receipt Date");
             end;
         }
-        field(56710; "SK2 Engineering Type"; Code[20])
+        field(56710; "SK2 Engineering Type"; Text[50])
         {
             Caption = 'Engineering Type';
-            FieldClass = FlowField;
-            CalcFormula = lookup("Purchase Header"."SK2 Engineering Type" where("Document Type" = field("Document Type"), "No." = field("Document No.")));
-            Editable = false;
+            TableRelation = "SK2 Engineering Type";
         }
-        field(56711; "SK2 Project"; Code[20])
+        field(56711; "SK2 Project"; Text[50])
         {
             Caption = 'Project';
-            FieldClass = FlowField;
-            CalcFormula = lookup("Purchase Header"."SK2 Project" where("Document Type" = field("Document Type"), "No." = field("Document No.")));
-            Editable = false;
+            TableRelation = "SK2 Project";
         }
-        field(56712; "SK2 Expense Type"; Code[20])
+        field(56712; "SK2 Expense Type"; Text[50])
         {
             Caption = 'Expense Type';
-            FieldClass = FlowField;
-            CalcFormula = lookup("Purchase Header"."SK2 Expense Type" where("Document Type" = field("Document Type"), "No." = field("Document No.")));
-            Editable = false;
+            TableRelation = "SK2 Expense Type";
         }
     }
 }

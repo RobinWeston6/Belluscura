@@ -3,7 +3,7 @@ page 56701 "SK2 Sales Serial No.s Comments"
     ApplicationArea = All;
     UsageCategory = Administration;
     SourceTable = "Sales Comment Line";
-    Caption = 'Serial No.s';
+    Caption = 'Sales Serial No.s';
     SourceTableView = where("SK2 Serial No." = const(true));
     AutoSplitKey = true;
     DataCaptionFields = "Document Type", "No.";
@@ -22,6 +22,14 @@ page 56701 "SK2 Sales Serial No.s Comments"
                 {
                     Caption = 'Serial No.';
                     ApplicationArea = All;
+                }
+                field("Document Type"; Rec."Document Type")
+                {
+                    ApplicationArea = All;
+                }
+                field("No."; Rec."No.")
+                {
+                    Caption = 'Document No.';
                 }
             }
         }

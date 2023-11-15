@@ -12,6 +12,10 @@ pageextension 56727 "SK2 Pstd. Sales Invoice Lines" extends "Posted Sales Invoic
             {
                 ApplicationArea = All;
             }
+            field("Posting Date"; Rec."Posting Date")
+            {
+                ApplicationArea = All;
+            }
         }
         addlast(Control1)
         {

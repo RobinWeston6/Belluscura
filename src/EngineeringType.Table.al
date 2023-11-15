@@ -1,7 +1,7 @@
 table 56700 "SK2 Engineering Type"
 {
     DataClassification = CustomerContent;
-    Caption = 'Engineering Type';
+    Caption = 'Engineering Activity';
     LookupPageId = "SK2 Engineering Types";
     DrillDownPageId = "SK2 Engineering Types";
 

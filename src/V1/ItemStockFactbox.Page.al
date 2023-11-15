@@ -36,9 +36,6 @@ page 56704 "SK2 Item Stock Factbox"
             {
                 Caption = 'Items By Bin';
                 ApplicationArea = All;
-                Promoted = true;
-                PromotedOnly = true;
-                PromotedIsBig = true;
                 RunObject = report "SK2 Items By Bin";
                 Image = Report;
             }

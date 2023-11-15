@@ -127,10 +127,6 @@ pageextension 56713 "SK2 Sales Order List" extends "Sales Order List"
         {
             Visible = false;
         }
-        modify(ReportFactBoxVisibility)
-        {
-            Visible = false;
-        }
         modify("Sales Reservation Avail.")
         {
             Visible = false;

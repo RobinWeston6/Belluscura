@@ -9,6 +9,21 @@ pageextension 56717 "SK2 Purchase Order Subform" extends "Purchase Order Subform
                 ApplicationArea = All;
             }
         }
+        addlast(Control1)
+        {
+            field("SK2 Engineering Type"; Rec."SK2 Engineering Type")
+            {
+                ApplicationArea = all;
+            }
+            field("SK2 Project"; Rec."SK2 Project")
+            {
+                ApplicationArea = all;
+            }
+            field("SK2 Expense Type"; Rec."SK2 Expense Type")
+            {
+                ApplicationArea = all;
+            }
+        }
         modify("Item Reference No.")
         {
             Visible = false;
@@ -418,8 +433,6 @@ pageextension 56717 "SK2 Purchase Order Subform" extends "Purchase Order Subform
         }
         modify("Item Tracking Lines")
         {
-            Promoted = true;
-            PromotedOnly = true;
             Enabled = true;
             Caption = 'Serial Numbers';
         }
