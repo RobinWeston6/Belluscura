@@ -4,14 +4,12 @@
         {
             "type": "al",
             "request": "launch",
-            "name": "Belluscura",
+            "name": "Belluscura LLC Sandbox",
             "tenant": "fd1aa379-0fc2-4f0b-942a-c848ff452689",
             "environmentType": "Sandbox",
-            "environmentName": "Sandbox",
+            "environmentName": "Sandbox12042023",
             "breakOnError": true,
-            "schemaUpdateMode": "Synchronize",
-            "startupObjectType": "Page",
-            "startupObjectId": 56006
+            "schemaUpdateMode": "Synchronize"
         },
         {
             "type": "al",
