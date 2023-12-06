@@ -659,17 +659,6 @@ page 56702 "Basic Role Center"
                     RunObject = Page "Account Schedule Names";
                     ToolTip = 'Get insight into the financial data stored in your chart of accounts. Account schedules analyze figures in G/L accounts, and compare general ledger entries with general ledger budget entries. For example, you can view the general ledger entries as percentages of the budget entries. Account schedules provide the data for core financial statements and views, such as the Cash Flow chart.';
                 }
-                action("Intrastat Journals")
-                {
-
-                    Visible = false;
-                    ApplicationArea = BasicEU;
-                    Caption = 'Intrastat Journals';
-
-
-                    RunObject = Page "Intrastat Jnl. Batches";
-                    ToolTip = 'Summarize the value of your purchases and sales with business partners in the EU for statistical purposes and prepare to send it to the relevant authority.';
-                }
                 action("Sales Budgets")
                 {
 

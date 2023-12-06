@@ -529,10 +529,6 @@ pageextension 56708 "SK2 Purchase Order" extends "Purchase Order"
         //{
         //    Visible = false;
         //}
-        modify(CreateFlow)
-        {
-            Visible = false;
-        }
         modify("Create &Whse. Receipt")
         {
             Visible = false;
