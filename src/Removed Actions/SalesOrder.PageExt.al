@@ -182,10 +182,6 @@ pageextension 56712 "SK2 Sales Order" extends "Sales Order"
         {
             Visible = false;
         }
-        modify(CreateFlow)
-        {
-            Visible = false;
-        }
         modify("Create Inventor&y Put-away/Pick")
         {
             Visible = false;
