@@ -4,21 +4,29 @@
   "publisher": "Sophie Kent",
   "brief": "",
   "description": "",
-  "version": "19.0.0.0",
+  "version": "21.0.0.70",
   "privacyStatement": "",
   "EULA": "",
   "help": "",
   "url": "",
-  "application": "19.0.0.0",
-  "platform": "19.0.0.0",
+  "application": "21.0.0.0",
+  "platform": "21.0.0.0",
+  "dependencies": [
+    {
+      "id": "b1f29b45-f368-4b44-9ef3-83f9c759004c",
+      "name": "Purchase Report Pack",
+      "publisher": "Bam Boom Cloud",
+      "version": "18.0.0.6"
+    }
+  ],
   "screenshots": [],
   "idRanges": [
     {
-      "from": 56600,
-      "to": 56660
+      "from": 56700,
+      "to": 56760
     }
   ],
   "features": ["TranslationFile"],
-  "runtime": "8.0",
+  "runtime": "11.0",
   "target": "Cloud"
 }

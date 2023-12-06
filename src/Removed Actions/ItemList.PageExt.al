@@ -1,4 +1,4 @@
-pageextension 56605 "SK Item List" extends "Item List"
+pageextension 56705 "SK2 Item List" extends "Item List"
 {
     actions
     {
@@ -240,15 +240,7 @@ pageextension 56605 "SK Item List" extends "Item List"
         modify(ApplyTemplate)
         {
             Visible = false;
-
         }
-        modify(ReportFactBoxVisibility)
-        {
-            Visible = false;
-
-
-        }
-
         modify("Assemble to Order - Sales")
         {
             Visible = false;

@@ -1,4 +1,4 @@
-page 56604 "SK Item Stock Factbox"
+page 56704 "SK2 Item Stock Factbox"
 {
     Caption = 'Item Stock';
     PageType = ListPart;
@@ -36,10 +36,7 @@ page 56604 "SK Item Stock Factbox"
             {
                 Caption = 'Items By Bin';
                 ApplicationArea = All;
-                Promoted = true;
-                PromotedOnly = true;
-                PromotedIsBig = true;
-                RunObject = report "SK Items By Bin";
+                RunObject = report "SK2 Items By Bin";
                 Image = Report;
             }
         }

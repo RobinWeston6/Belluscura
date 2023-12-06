@@ -1,7 +1,14 @@
-pageextension 56604 "SK Sales Order Subform" extends "Sales Order Subform"
+pageextension 56704 "SK2 Sales Order Subform" extends "Sales Order Subform"
 {
     layout
     {
+        addafter("Planned Shipment Date")
+        {
+            field("SK2 Expected Receipt Date"; Rec."SK2 Expected Receipt Date")
+            {
+                ApplicationArea = all;
+            }
+        }
         modify("Item Reference No.")
         {
             Visible = false;
@@ -105,6 +112,22 @@ pageextension 56604 "SK Sales Order Subform" extends "Sales Order Subform"
     }
     actions
     {
+        addfirst("&Line")
+        {
+            action("SK2 Serial No.s")
+            {
+                Caption = 'Serial No.s';
+                ApplicationArea = All;
+                Image = SerialNo;
+
+                trigger OnAction()
+                begin
+                    ShowComments();
+                end;
+
+            }
+        }
+        //Remove actions
         modify(SelectMultiItems)
         {
             Visible = false;
@@ -171,8 +194,6 @@ pageextension 56604 "SK Sales Order Subform" extends "Sales Order Subform"
         }
         modify(ItemTrackingLines)
         {
-            Promoted = true;
-            PromotedOnly = true;
             Enabled = true;
             Caption = 'Serial Numbers';
         }
@@ -237,4 +258,18 @@ pageextension 56604 "SK Sales Order Subform" extends "Sales Order Subform"
             Visible = false;
         }
     }
+
+    procedure ShowComments()
+    var
+        SalesCommentLine: Record "Sales Comment Line";
+        SalesSNCommentSheet: Page "SK2 Sales Serial No.s Comments";
+    begin
+        Rec.TestField("Document No.");
+        Rec.TestField("Line No.");
+        SalesCommentLine.SetRange("Document Type", Rec."Document Type");
+        SalesCommentLine.SetRange("No.", Rec."Document No.");
+        SalesCommentLine.SetRange("Document Line No.", Rec."Line No.");
+        SalesSNCommentSheet.SetTableView(SalesCommentLine);
+        SalesSNCommentSheet.RunModal;
+    end;
 }

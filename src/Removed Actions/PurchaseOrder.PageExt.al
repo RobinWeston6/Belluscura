@@ -1,7 +1,48 @@
-pageextension 56608 "SK Purchase Order" extends "Purchase Order"
+pageextension 56708 "SK2 Purchase Order" extends "Purchase Order"
 {
     layout
     {
+        addlast(General)
+        {
+            field("SK2 Department"; Rec."SK2 Department")
+            {
+                ApplicationArea = All;
+            }
+            field("SK2 Approver"; Rec."SK2 Approver")
+            {
+                ApplicationArea = All;
+                OptionCaption = ' ,Keith Cook,,Paul Bray,Sarah Clark,Brian Brown,Dwayne Thompson,Mark Vines';
+            }
+            field("SK2 Date To Be Issued"; Rec."SK2 Date To Be Issued")
+            {
+                ApplicationArea = All;
+            }
+            field("SK2 Issued"; Rec."SK2 Issued")
+            {
+                ApplicationArea = All;
+            }
+            /*field("SK2 Engineering Type"; Rec."SK2 Engineering Type")
+            {
+                ApplicationArea = All;
+            }
+            field("SK2 Project"; Rec."SK2 Project")
+            {
+                ApplicationArea = All;
+            }
+            field("SK2 Expense Type"; Rec."SK2 Expense Type")
+            {
+                ApplicationArea = All;
+            }*/
+        }
+        addafter(Status)
+        {
+            field("SK2 Ext. Status"; Rec."SK2 Ext. Status")
+            {
+                ApplicationArea = All;
+                StyleExpr = ExtStatusStyleTxt;
+            }
+        }
+        //Remove fields
         modify("No.")
         {
             Visible = false;
@@ -360,14 +401,14 @@ pageextension 56608 "SK Purchase Order" extends "Purchase Order"
         {
             Visible = false;
         }
-        modify(Approvals)
-        {
-            Visible = false;
-        }
-        modify("Co&mments")
-        {
-            Visible = false;
-        }
+        //modify(Approvals)
+        //{
+        //    Visible = false;
+        //}
+        //modify("Co&mments")
+        //{
+        //    Visible = false;
+        //}
         modify(DocAttach)
         {
             Visible = false;
@@ -404,14 +445,14 @@ pageextension 56608 "SK Purchase Order" extends "Purchase Order"
         {
             Visible = false;
         }
-        modify(Approve)
-        {
-            Visible = false;
-        }
-        modify(Reject)
-        {
-            Visible = false;
-        }
+        //modify(Approve)
+        //{
+        //    Visible = false;
+        //}
+        //modify(Reject)
+        //{
+        //    Visible = false;
+        //}
         modify(Delegate)
         {
             Visible = false;
@@ -480,19 +521,15 @@ pageextension 56608 "SK Purchase Order" extends "Purchase Order"
         {
             Visible = false;
         }
-        modify(SendApprovalRequest)
-        {
-            Visible = false;
-        }
-        modify(CancelApprovalRequest)
-        {
-            Visible = false;
-        }
+        //modify(SendApprovalRequest)
+        //{
+        //    Visible = false;
+        //}
+        //modify(CancelApprovalRequest)
+        //{
+        //    Visible = false;
+        //}
         modify(CreateFlow)
-        {
-            Visible = false;
-        }
-        modify(SeeFlows)
         {
             Visible = false;
         }
@@ -595,10 +632,6 @@ pageextension 56608 "SK Purchase Order" extends "Purchase Order"
         {
             Visible = false;
         }
-        modify("&Print")
-        {
-            Visible = false;
-        }
         modify(SendCustom)
         {
             Visible = false;
@@ -608,8 +641,15 @@ pageextension 56608 "SK Purchase Order" extends "Purchase Order"
             Visible = false;
         }
     }
+
     var
-        EvtMgt: Codeunit "SK Barcd Scan Manual Evt Mgt.";
-        [InDataSet]
+        EvtMgt: Codeunit "SK2 Barcd Scan Manual Evt Mgt.";
+        ExtStatusStyleTxt: Text;
         PostingUnlocked: Boolean;
+
+    trigger OnAfterGetRecord()
+    begin
+        Rec.CalcExtStatus();
+        ExtStatusStyleTxt := Rec.GetExtStatusStyleText();
+    end;
 }

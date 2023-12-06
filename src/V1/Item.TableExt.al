@@ -1,12 +1,19 @@
-tableextension 56600 "SK Item" extends "Item"
+tableextension 56700 "SK2 Item" extends "Item"
 {
     fields
     {
-        field(56601; "SK SKU No. Series"; Code[20])
+        field(56701; "SK2 SKU No. Series"; Code[20])
         {
             DataClassification = SystemMetadata;
             Caption = 'SKU No. Series';
             TableRelation = "No. Series";
+        }
+        field(56700; "SK2 Salvage %"; Integer)
+        {
+            DataClassification = CustomerContent;
+            MinValue = 0;
+            MaxValue = 100;
+            Caption = 'Salvage %';
         }
     }
 }

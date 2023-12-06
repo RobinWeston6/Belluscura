@@ -5,7 +5,7 @@
             "type": "al",
             "request": "launch",
             "name": "Belluscura",
-            "tenant": "7a562426-8836-427c-b389-5ed98f883459",
+            "tenant": "fd1aa379-0fc2-4f0b-942a-c848ff452689",
             "environmentType": "Sandbox",
             "environmentName": "Sandbox",
             "breakOnError": true,
