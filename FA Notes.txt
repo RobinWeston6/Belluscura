@@ -1,0 +1,12 @@
+Overview
+
+When a Sales Order is posted, if certain item (defined on item card) is on lines, create fixed asset (in the same manner as creating manually using wizard)
+Get serial number to add to description of new FA (name)
+Create one journal line in batch defined on setup, default in posting date to first payment date
+codeunit for job queue to run daily and post journal up to current date
+
+Tracking no. field on Sales Header and Sales Order, Posted Sales Invoice
+
+
+Note to Sophie - ask about monthly payment dates
+let appseconnect know about dependency on tracking no. app
