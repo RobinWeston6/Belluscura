@@ -10,8 +10,7 @@
             "environmentName": "Sandbox12042023",
             "breakOnError": true,
             "schemaUpdateMode": "Synchronize",
-            "startupObjectType": "Page",
-            "startupObjectId": 56006
+            "startupObjectType": "Page"
         },
         {
             "type": "al",

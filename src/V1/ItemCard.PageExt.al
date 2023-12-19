@@ -25,5 +25,13 @@ pageextension 56700 "SK2 Item Card" extends "Item Card"
                 ApplicationArea = All;
             }
         }
+        addlast(ItemTracking)
+        {
+            field("SK2 Serial No. Format"; Rec."SK2 Serial No. Format")
+            {
+                ApplicationArea = All;
+                Importance = Additional;
+            }
+        }
     }
 }
