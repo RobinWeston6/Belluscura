@@ -34,15 +34,12 @@ page 56701 "SK2 Sales Serial No.s Comments"
                 {
                     Caption = 'Serial No.';
                     ApplicationArea = All;
-                    Visible = not Categorise;
                 }
-                field("Document Type"; Rec."Document Type")
+                field("SK2 Serial No."; Rec."SK2 Serial No.")
                 {
+                    Caption = 'Is Serial No.?';
                     ApplicationArea = All;
-                }
-                field("No."; Rec."No.")
-                {
-                    Caption = 'Document No.';
+                    Visible = Categorise;
                 }
             }
         }
@@ -66,10 +63,17 @@ page 56701 "SK2 Sales Serial No.s Comments"
                 action(AutoCategoriseLines)
                 {
                     ApplicationArea = All;
+                    Visible = Categorise;
 
                     trigger OnAction()
+                    var
+                        SalesCommentLine: Record "Sales Comment Line";
                     begin
-                        AutoCategorise();
+                        SalesCommentLine.CopyFilters(Rec);
+                        if SalesCommentLine.FindSet(true) then
+                            repeat
+                                AutoCat.AutoCategoriseSNLine(Rec);
+                            until SalesCommentLine.Next() = 0;
                     end;
                 }
             }
@@ -84,6 +88,7 @@ page 56701 "SK2 Sales Serial No.s Comments"
     end;
 
     var
+        AutoCat: Codeunit "SK2 Sales SN Comment AutoCat";
         Categorise: Boolean;
         WholeDocument: Boolean;
 
@@ -92,33 +97,36 @@ page 56701 "SK2 Sales Serial No.s Comments"
         Categorise := NewCategorise;
     end;
 
-    procedure AutoCategorise()
-    var
-        SalesCommentLine: Record "Sales Comment Line";
-        Item: Record Item;
-        TextFunctions: Codeunit "SK2 Text Functions";
-        TEMP: Text;
-    begin
-        Item.SetFilter("SK2 Serial No. Format", '<>%1', '');
-        Item.SetCurrentKey("SK2 SN Format Length");
+    // procedure SetWholeDocument(NewWholeDocument: Boolean)
+    // begin
+    //     WholeDocument := NewWholeDocument;
+    // end;
 
-        SalesCommentLine.SetRange("Document Type", Rec."Document Type");
-        SalesCommentLine.SetRange("No.", Rec."No.");
-        if not WholeDocument then
-            SalesCommentLine.SetRange("Document Line No.", Rec."Document Line No.");
-        if SalesCommentLine.FindSet(true) then
-            repeat
-                Item.Find('-');
-                TEMP := TextFunctions.AsSNFormat(SalesCommentLine."SK2 Extracted SN");
-                repeat
-                    if Item."SK2 Serial No. Format" = TextFunctions.AsSNFormat(SalesCommentLine."SK2 Extracted SN") then begin
-                        SalesCommentLine."SK2 Item No." := Item."No.";
-                        SalesCommentLine."SK2 Item Desc" := Item.Description;
-                        SalesCommentLine.Modify();
-                    end;
-                until Item.Next() = 0;
-            until SalesCommentLine.Next() = 0;
+    // procedure AutoCategorise()
+    // var
+    //     SalesCommentLine: Record "Sales Comment Line";
+    //     Item: Record Item;
+    //     TextFunctions: Codeunit "SK2 Text Functions";
+    //     TEMP: Text;
+    // begin
+    //     Item.SetFilter("SK2 Serial No. Format", '<>%1', '');
+    //     Item.SetCurrentKey("SK2 SN Format Length");
 
-
-    end;
+    //     SalesCommentLine.SetRange("Document Type", Rec."Document Type");
+    //     SalesCommentLine.SetRange("No.", Rec."No.");
+    //     if not WholeDocument then
+    //         SalesCommentLine.SetRange("Document Line No.", Rec."Document Line No.");
+    //     if SalesCommentLine.FindSet(true) then
+    //         repeat
+    //             Item.Find('-');
+    //             TEMP := TextFunctions.AsSNFormat(SalesCommentLine."SK2 Extracted SN");
+    //             repeat
+    //                 if Item."SK2 Serial No. Format" = TextFunctions.AsSNFormat(SalesCommentLine."SK2 Extracted SN") then begin
+    //                     SalesCommentLine."SK2 Item No." := Item."No.";
+    //                     SalesCommentLine."SK2 Item Desc" := Item.Description;
+    //                     SalesCommentLine.Modify();
+    //                 end;
+    //             until Item.Next() = 0;
+    //         until SalesCommentLine.Next() = 0;
+    // end;
 }
