@@ -34,7 +34,7 @@
                   <Width>2.11597cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.07505cm</Width>
+                  <Width>3.08006cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -66,7 +66,7 @@
                                 </Paragraph>
                               </Paragraphs>
                               <Top>0.16654in</Top>
-                              <Left>4.18664in</Left>
+                              <Left>4.18861in</Left>
                               <Height>11pt</Height>
                               <Width>1.13445in</Width>
                               <Style>
@@ -108,7 +108,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>=First(Fields!OrderDate_Header.Value)</Value>
+                                      <Value>=Fields!OrderDate_Header.Value</Value>
                                       <Style>
                                         <FontFamily>Segoe UI</FontFamily>
                                         <FontSize>8pt</FontSize>
@@ -136,7 +136,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>=First(Fields!No_Header.Value)</Value>
+                                      <Value>=Fields!No_Header.Value</Value>
                                       <Style>
                                         <FontFamily>Segoe UI</FontFamily>
                                         <FontSize>8pt</FontSize>
@@ -1075,6 +1075,66 @@
                                 </Border>
                               </Style>
                             </Tablix>
+                            <Textbox Name="PurchOrderDateCaption2">
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Parameters!Payment_Terms_CodeCaption.Value</Value>
+                                      <Style>
+                                        <FontFamily>Segoe UI</FontFamily>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                        <Color>#2397d6</Color>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <Top>0.33321in</Top>
+                              <Left>4.18861in</Left>
+                              <Height>11pt</Height>
+                              <Width>1.13445in</Width>
+                              <ZIndex>8</ZIndex>
+                              <Visibility>
+                                <Hidden>=Fields!Payment_Terms_Code.Value = ""</Hidden>
+                              </Visibility>
+                              <Style>
+                                <VerticalAlign>Middle</VerticalAlign>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="PurchaseHeaderOrderDate2">
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!Payment_Terms_Code.Value</Value>
+                                      <Style>
+                                        <FontFamily>Segoe UI</FontFamily>
+                                        <FontSize>8pt</FontSize>
+                                        <Format>MM/dd/yyyy</Format>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Right</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <Top>0.33321in</Top>
+                              <Left>5.33556in</Left>
+                              <Height>11pt</Height>
+                              <Width>1.29615in</Width>
+                              <ZIndex>9</ZIndex>
+                              <Style>
+                                <VerticalAlign>Middle</VerticalAlign>
+                              </Style>
+                            </Textbox>
                           </ReportItems>
                           <KeepTogether>true</KeepTogether>
                           <Style>
@@ -1084,6 +1144,7 @@
                           </Style>
                         </Rectangle>
                         <ColSpan>6</ColSpan>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell />
@@ -1809,13 +1870,13 @@
                           <TablixBody>
                             <TablixColumns>
                               <TablixColumn>
-                                <Width>11.8482cm</Width>
+                                <Width>11.84987cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>2.39316cm</Width>
+                                <Width>2.39483cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>2.60317cm</Width>
+                                <Width>2.60484cm</Width>
                               </TablixColumn>
                             </TablixColumns>
                             <TablixRows>
@@ -2573,7 +2634,7 @@
               </Filter>
             </Filters>
             <Height>10.14501cm</Height>
-            <Width>16.84454cm</Width>
+            <Width>16.84955cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -3114,11 +3175,20 @@
       </DefaultValue>
       <Prompt>Email_CompanyInformationCaption</Prompt>
     </ReportParameter>
+    <ReportParameter Name="Payment_Terms_CodeCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Payment_Terms_CodeCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Payment_Terms_CodeCaption</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>1</NumberOfColumns>
-      <NumberOfRows>24</NumberOfRows>
+      <NumberOfRows>25</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
@@ -3240,6 +3310,11 @@
           <RowIndex>23</RowIndex>
           <ParameterName>Email_CompanyInformationCaption</ParameterName>
         </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>24</RowIndex>
+          <ParameterName>Payment_Terms_CodeCaption</ParameterName>
+        </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
   </ReportParametersLayout>
@@ -3339,6 +3414,9 @@ AAAAAACgaQRkelwGHWdZUV5KWPP/2ruDmzaCKAzAjwpIB0kHIE0DlBC5gTi3OVIC6SDcfIQGRqaCQAGW
         </Field>
         <Field Name="OrderDate_Header">
           <DataField>OrderDate_Header</DataField>
+        </Field>
+        <Field Name="Payment_Terms_Code">
+          <DataField>Payment_Terms_Code</DataField>
         </Field>
         <Field Name="BuyFromAddress1">
           <DataField>BuyFromAddress1</DataField>

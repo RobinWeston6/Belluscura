@@ -11,7 +11,7 @@ pageextension 56708 "SK2 Purchase Order" extends "Purchase Order"
             field("SK2 Approver"; Rec."SK2 Approver")
             {
                 ApplicationArea = All;
-                OptionCaption = ' ,Keith Cook,,Paul Bray,Sarah Clark,Brian Brown,Dwayne Thompson,Mark Vines';
+                OptionCaption = ' ,Keith Cook,,Paul Bray,Sarah Clark,Brian Brown,Dwayne Thompson,Mark Vines,DeAndra Carpenter';
             }
             field("SK2 Date To Be Issued"; Rec."SK2 Date To Be Issued")
             {

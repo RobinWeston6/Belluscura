@@ -45,4 +45,21 @@ tableextension 56705 "SK2 Sales Comment Line" extends "Sales Comment Line"
             String := CopyStr(String, LastSpace);
         "SK2 Extracted SN" := String;
     end;
+
+    procedure AutoCategoriseItem(Modify: Boolean)
+    var
+        Item: Record Item;
+        TextFunctions: Codeunit "SK2 Text Functions";
+    begin
+        Item.SetCurrentKey("SK2 SN Format Length");
+        Item.SetFilter("SK2 SN Format Length", '>%1', 0);
+        Item.SetRange("SK2 Serial No. Format", TextFunctions.AsSNFormat(Rec."SK2 Extracted SN"));
+        if Item.Count <> 1 then
+            if Item.FindFirst() then begin
+                Rec."SK2 Item No." := Item."No.";
+                Rec."SK2 Item Desc" := Item.Description;
+                if Modify then
+                    Rec.Modify();
+            end;
+    end;
 }

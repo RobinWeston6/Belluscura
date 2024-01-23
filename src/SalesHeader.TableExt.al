@@ -11,6 +11,6 @@ tableextension 56715 "SK2 Sales Header" extends "Sales Header"
     var
         AutoCat: Codeunit "SK2 Sales SN Comment AutoCat";
     begin
-        AutoCat.AllCommentsCategorised(Rec."Document Type", Rec."No.");
+        exit(AutoCat.AllCommentsCategorised(Rec."Document Type", Rec."No."));
     end;
 }

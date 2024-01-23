@@ -11,8 +11,8 @@ tableextension 56708 "SK2 Purchase Header" extends "Purchase Header"
         field(56701; "SK2 Approver"; Option)
         {
             DataClassification = CustomerContent;
-            Caption = 'Approver';
-            OptionMembers = " ","Keith Cook","Bo Borrello","Paul Bray","Sarah Clark","Brian Brown","Dwayne Thompson","Mark Vines";
+            Caption = 'Requested By';
+            OptionMembers = " ","Keith Cook","Bo Borrello","Paul Bray","Sarah Clark","Brian Brown","Dwayne Thompson","Mark Vines","DeAndra Carpenter";
         }
         field(56702; "SK2 Date To Be Issued"; Date)
         {

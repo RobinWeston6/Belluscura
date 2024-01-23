@@ -72,7 +72,7 @@ page 56701 "SK2 Sales Serial No.s Comments"
                         SalesCommentLine.CopyFilters(Rec);
                         if SalesCommentLine.FindSet(true) then
                             repeat
-                                AutoCat.AutoCategoriseSNLine(Rec);
+                                Rec.AutoCategoriseItem(true);
                             until SalesCommentLine.Next() = 0;
                     end;
                 }
@@ -85,6 +85,7 @@ page 56701 "SK2 Sales Serial No.s Comments"
         Rec.Date := WorkDate();
         Rec."SK2 Serial No." := true;
         Rec.ExtractSN();
+        Rec.AutoCategoriseItem(false);
     end;
 
     var
