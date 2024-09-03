@@ -1,0 +1,11 @@
+    {
+        "name": "Object Ninja",
+        "description": "Description",
+        "rules": [
+            {
+                "id": "N0301",
+                "action": "Hidden",
+                "justification": "Not using"
+            }
+        ]
+    }

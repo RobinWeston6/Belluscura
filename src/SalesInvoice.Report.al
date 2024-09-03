@@ -92,6 +92,22 @@ report 56706 "SK2 Sales Invoice"
             { }
             column(SellToAddress8; SellToAddress[8])
             { }
+            column(ShipToAddress1; ShipToAddress[1])
+            { }
+            column(ShipToAddress2; ShipToAddress[2])
+            { }
+            column(ShipToAddress3; ShipToAddress[3])
+            { }
+            column(ShipToAddress4; ShipToAddress[4])
+            { }
+            column(ShipToAddress5; ShipToAddress[5])
+            { }
+            column(ShipToAddress6; ShipToAddress[6])
+            { }
+            column(ShipToAddress7; ShipToAddress[7])
+            { }
+            column(ShipToAddress8; ShipToAddress[8])
+            { }
             column(DiscountCaption; DiscountCaption)
             { }
 
@@ -309,6 +325,7 @@ report 56706 "SK2 Sales Invoice"
         ToLbl = 'To:';
         BillToLbl = 'Bill To:';
         SellToLbl = 'Sell To:';
+        ShipToLbl = 'Ship To:';
         BuyFromLbl = 'Buy From:';
         PageLbl = 'Page %1 of %2';
         //Line Captions
@@ -349,6 +366,7 @@ report 56706 "SK2 Sales Invoice"
         BuyFromAddress: array[8] of Text[100];
         BillToAddress: array[8] of Text[100];
         SellToAddress: array[8] of Text[100];
+        ShipToAddress: array[8] of Text[100];
         DiscountCaption: Text;
         UnitDiscount: Decimal;
         VATAmount: Decimal;
@@ -378,5 +396,7 @@ report 56706 "SK2 Sales Invoice"
         FormatAddress.GetCompanyAddr(SalesInvoiceHeader."Responsibility Center", RespCenter, CompanyInformation, BuyFromAddress);
         FormatAddress.SalesInvBillTo(BillToAddress, SalesInvoiceHeader);
         FormatAddress.SalesInvSellTo(SellToAddress, SalesInvoiceHeader);
+        FormatAddress.SalesInvShipTo(ShipToAddress, BillToAddress, SalesInvoiceHeader);
+
     end;
 }

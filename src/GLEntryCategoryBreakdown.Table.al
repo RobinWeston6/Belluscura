@@ -123,7 +123,7 @@ table 56704 "SK2 GL Entry Cat. Breakdown"
 
     procedure RatioAmountAccountedForTotal(): Decimal
     begin
-        CalcSums("G/L Entry Amount");
+        CalcFields("G/L Entry Amount");
         exit(Round(TotalAmountForGLEntry() / "G/L Entry Amount", 0.01));
     end;
 

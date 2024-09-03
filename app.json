@@ -4,7 +4,7 @@
   "publisher": "Sophie Kent",
   "brief": "",
   "description": "",
-  "version": "21.0.0.75",
+  "version": "21.0.0.79",
   "privacyStatement": "",
   "EULA": "",
   "help": "",
@@ -12,12 +12,7 @@
   "application": "21.0.0.0",
   "platform": "21.0.0.0",
   "dependencies": [
-    {
-      "id": "b1f29b45-f368-4b44-9ef3-83f9c759004c",
-      "name": "Purchase Report Pack",
-      "publisher": "Bam Boom Cloud",
-      "version": "18.0.0.6"
-    }
+
   ],
   "screenshots": [],
   "idRanges": [
