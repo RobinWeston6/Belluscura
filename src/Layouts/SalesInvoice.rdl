@@ -11,6 +11,238 @@
       <rd:DataSourceID>05d024ec-0939-40b8-bbea-8e42ec090757</rd:DataSourceID>
     </DataSource>
   </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+      <Fields>
+        <Field Name="Picture_CompanyInformation">
+          <DataField>Picture_CompanyInformation</DataField>
+        </Field>
+        <Field Name="PhoneNo_CompanyInformation">
+          <DataField>PhoneNo_CompanyInformation</DataField>
+        </Field>
+        <Field Name="HomePage_CompanyInformation">
+          <DataField>HomePage_CompanyInformation</DataField>
+        </Field>
+        <Field Name="Email_CompanyInformation">
+          <DataField>Email_CompanyInformation</DataField>
+        </Field>
+        <Field Name="DocumentDate_Header">
+          <DataField>DocumentDate_Header</DataField>
+        </Field>
+        <Field Name="DueDate_Header">
+          <DataField>DueDate_Header</DataField>
+        </Field>
+        <Field Name="No_Header">
+          <DataField>No_Header</DataField>
+        </Field>
+        <Field Name="ExternalDocumentNo_Header">
+          <DataField>ExternalDocumentNo_Header</DataField>
+        </Field>
+        <Field Name="QuoteNo_Header">
+          <DataField>QuoteNo_Header</DataField>
+        </Field>
+        <Field Name="Name_SalesPerson">
+          <DataField>Name_SalesPerson</DataField>
+        </Field>
+        <Field Name="Description_PaymentTerms">
+          <DataField>Description_PaymentTerms</DataField>
+        </Field>
+        <Field Name="ShipmentDate_Header">
+          <DataField>ShipmentDate_Header</DataField>
+        </Field>
+        <Field Name="Description_ShipmentMethod">
+          <DataField>Description_ShipmentMethod</DataField>
+        </Field>
+        <Field Name="BuyFromAddress1">
+          <DataField>BuyFromAddress1</DataField>
+        </Field>
+        <Field Name="BuyFromAddress2">
+          <DataField>BuyFromAddress2</DataField>
+        </Field>
+        <Field Name="BuyFromAddress3">
+          <DataField>BuyFromAddress3</DataField>
+        </Field>
+        <Field Name="BuyFromAddress4">
+          <DataField>BuyFromAddress4</DataField>
+        </Field>
+        <Field Name="BuyFromAddress5">
+          <DataField>BuyFromAddress5</DataField>
+        </Field>
+        <Field Name="BuyFromAddress6">
+          <DataField>BuyFromAddress6</DataField>
+        </Field>
+        <Field Name="BuyFromAddress7">
+          <DataField>BuyFromAddress7</DataField>
+        </Field>
+        <Field Name="BuyFromAddress8">
+          <DataField>BuyFromAddress8</DataField>
+        </Field>
+        <Field Name="BillToAddress1">
+          <DataField>BillToAddress1</DataField>
+        </Field>
+        <Field Name="BillToAddress2">
+          <DataField>BillToAddress2</DataField>
+        </Field>
+        <Field Name="BillToAddress3">
+          <DataField>BillToAddress3</DataField>
+        </Field>
+        <Field Name="BillToAddress4">
+          <DataField>BillToAddress4</DataField>
+        </Field>
+        <Field Name="BillToAddress5">
+          <DataField>BillToAddress5</DataField>
+        </Field>
+        <Field Name="BillToAddress6">
+          <DataField>BillToAddress6</DataField>
+        </Field>
+        <Field Name="BillToAddress7">
+          <DataField>BillToAddress7</DataField>
+        </Field>
+        <Field Name="BillToAddress8">
+          <DataField>BillToAddress8</DataField>
+        </Field>
+        <Field Name="SellToAddress1">
+          <DataField>SellToAddress1</DataField>
+        </Field>
+        <Field Name="SellToAddress2">
+          <DataField>SellToAddress2</DataField>
+        </Field>
+        <Field Name="SellToAddress3">
+          <DataField>SellToAddress3</DataField>
+        </Field>
+        <Field Name="SellToAddress4">
+          <DataField>SellToAddress4</DataField>
+        </Field>
+        <Field Name="SellToAddress5">
+          <DataField>SellToAddress5</DataField>
+        </Field>
+        <Field Name="SellToAddress6">
+          <DataField>SellToAddress6</DataField>
+        </Field>
+        <Field Name="SellToAddress7">
+          <DataField>SellToAddress7</DataField>
+        </Field>
+        <Field Name="SellToAddress8">
+          <DataField>SellToAddress8</DataField>
+        </Field>
+        <Field Name="ShipToAddress1">
+          <DataField>ShipToAddress1</DataField>
+        </Field>
+        <Field Name="ShipToAddress2">
+          <DataField>ShipToAddress2</DataField>
+        </Field>
+        <Field Name="ShipToAddress3">
+          <DataField>ShipToAddress3</DataField>
+        </Field>
+        <Field Name="ShipToAddress4">
+          <DataField>ShipToAddress4</DataField>
+        </Field>
+        <Field Name="ShipToAddress5">
+          <DataField>ShipToAddress5</DataField>
+        </Field>
+        <Field Name="ShipToAddress6">
+          <DataField>ShipToAddress6</DataField>
+        </Field>
+        <Field Name="ShipToAddress7">
+          <DataField>ShipToAddress7</DataField>
+        </Field>
+        <Field Name="ShipToAddress8">
+          <DataField>ShipToAddress8</DataField>
+        </Field>
+        <Field Name="DiscountCaption">
+          <DataField>DiscountCaption</DataField>
+        </Field>
+        <Field Name="Type_Line">
+          <DataField>Type_Line</DataField>
+        </Field>
+        <Field Name="No_Line">
+          <DataField>No_Line</DataField>
+        </Field>
+        <Field Name="Description_Line">
+          <DataField>Description_Line</DataField>
+        </Field>
+        <Field Name="Quantity_Line">
+          <DataField>Quantity_Line</DataField>
+        </Field>
+        <Field Name="Quantity_LineFormat">
+          <DataField>Quantity_LineFormat</DataField>
+        </Field>
+        <Field Name="UnitOfMeasure_Line">
+          <DataField>UnitOfMeasure_Line</DataField>
+        </Field>
+        <Field Name="UnitPrice_Line">
+          <DataField>UnitPrice_Line</DataField>
+        </Field>
+        <Field Name="UnitPrice_LineFormat">
+          <DataField>UnitPrice_LineFormat</DataField>
+        </Field>
+        <Field Name="UnitDiscount">
+          <DataField>UnitDiscount</DataField>
+        </Field>
+        <Field Name="UnitDiscountFormat">
+          <DataField>UnitDiscountFormat</DataField>
+        </Field>
+        <Field Name="Line_Discount_Amount">
+          <DataField>Line_Discount_Amount</DataField>
+        </Field>
+        <Field Name="Line_Discount_AmountFormat">
+          <DataField>Line_Discount_AmountFormat</DataField>
+        </Field>
+        <Field Name="LineAmount_Line">
+          <DataField>LineAmount_Line</DataField>
+        </Field>
+        <Field Name="LineAmount_LineFormat">
+          <DataField>LineAmount_LineFormat</DataField>
+        </Field>
+        <Field Name="TotalVATAmount">
+          <DataField>TotalVATAmount</DataField>
+        </Field>
+        <Field Name="TotalVATAmountFormat">
+          <DataField>TotalVATAmountFormat</DataField>
+        </Field>
+        <Field Name="TotalVATDiscountAmount">
+          <DataField>TotalVATDiscountAmount</DataField>
+        </Field>
+        <Field Name="TotalVATDiscountAmountFormat">
+          <DataField>TotalVATDiscountAmountFormat</DataField>
+        </Field>
+        <Field Name="TotalVATBaseAmount">
+          <DataField>TotalVATBaseAmount</DataField>
+        </Field>
+        <Field Name="TotalVATBaseAmountFormat">
+          <DataField>TotalVATBaseAmountFormat</DataField>
+        </Field>
+        <Field Name="TotalAmountInclVAT">
+          <DataField>TotalAmountInclVAT</DataField>
+        </Field>
+        <Field Name="TotalAmountInclVATFormat">
+          <DataField>TotalAmountInclVATFormat</DataField>
+        </Field>
+        <Field Name="TotalSubTotal">
+          <DataField>TotalSubTotal</DataField>
+        </Field>
+        <Field Name="TotalSubTotalFormat">
+          <DataField>TotalSubTotalFormat</DataField>
+        </Field>
+        <Field Name="TotalInvoiceDiscountAmount">
+          <DataField>TotalInvoiceDiscountAmount</DataField>
+        </Field>
+        <Field Name="TotalInvoiceDiscountAmountFormat">
+          <DataField>TotalInvoiceDiscountAmountFormat</DataField>
+        </Field>
+        <Field Name="TotalAmount">
+          <DataField>TotalAmount</DataField>
+        </Field>
+        <Field Name="TotalAmountFormat">
+          <DataField>TotalAmountFormat</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -67,7 +299,7 @@
                                 </Paragraph>
                               </Paragraphs>
                               <Top>1.53768in</Top>
-                              <Left>4.33929in</Left>
+                              <Left>4.96617in</Left>
                               <Height>11pt</Height>
                               <Width>0.64023in</Width>
                               <Style>
@@ -105,13 +337,13 @@
                               <TablixBody>
                                 <TablixColumns>
                                   <TablixColumn>
-                                    <Width>5.49252cm</Width>
+                                    <Width>6.3cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>5.49252cm</Width>
+                                    <Width>6.3cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>5.49252cm</Width>
+                                    <Width>3.87754cm</Width>
                                   </TablixColumn>
                                 </TablixColumns>
                                 <TablixRows>
@@ -153,14 +385,14 @@
                                       </TablixCell>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="Textbox4">
+                                          <Textbox Name="SellToAddress1">
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value />
+                                                    <Value>=Fields!ShipToAddress1.Value</Value>
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>8pt</FontSize>
@@ -172,7 +404,7 @@
                                                 <Style />
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>Textbox4</rd:DefaultName>
+                                            <rd:DefaultName>SellToAddress1</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Color>LightGrey</Color>
@@ -255,14 +487,14 @@
                                       </TablixCell>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="Textbox8">
+                                          <Textbox Name="ShipToAddress2">
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value />
+                                                    <Value>=Fields!ShipToAddress2.Value</Value>
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>8pt</FontSize>
@@ -272,7 +504,7 @@
                                                 <Style />
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>Textbox8</rd:DefaultName>
+                                            <rd:DefaultName>ShipToAddress2</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Color>LightGrey</Color>
@@ -353,14 +585,14 @@
                                       </TablixCell>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="Textbox18">
+                                          <Textbox Name="ShipToAddress3">
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value />
+                                                    <Value>=Fields!ShipToAddress3.Value</Value>
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>8pt</FontSize>
@@ -370,7 +602,7 @@
                                                 <Style />
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>Textbox18</rd:DefaultName>
+                                            <rd:DefaultName>ShipToAddress3</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Color>LightGrey</Color>
@@ -451,14 +683,14 @@
                                       </TablixCell>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="Textbox19">
+                                          <Textbox Name="ShipToAddress4">
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value />
+                                                    <Value>=Fields!ShipToAddress4.Value</Value>
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>8pt</FontSize>
@@ -468,7 +700,7 @@
                                                 <Style />
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>Textbox19</rd:DefaultName>
+                                            <rd:DefaultName>ShipToAddress4</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Color>LightGrey</Color>
@@ -549,14 +781,14 @@
                                       </TablixCell>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="Textbox20">
+                                          <Textbox Name="ShipToAddress5">
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value />
+                                                    <Value>=Fields!ShipToAddress5.Value</Value>
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>8pt</FontSize>
@@ -566,7 +798,7 @@
                                                 <Style />
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>Textbox20</rd:DefaultName>
+                                            <rd:DefaultName>ShipToAddress5</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Color>LightGrey</Color>
@@ -647,14 +879,14 @@
                                       </TablixCell>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="Textbox23">
+                                          <Textbox Name="ShipToAddress6">
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value />
+                                                    <Value>=Fields!ShipToAddress6.Value</Value>
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>8pt</FontSize>
@@ -664,7 +896,7 @@
                                                 <Style />
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>Textbox23</rd:DefaultName>
+                                            <rd:DefaultName>ShipToAddress6</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Color>LightGrey</Color>
@@ -745,14 +977,14 @@
                                       </TablixCell>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="Textbox24">
+                                          <Textbox Name="ShipToAddress7">
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value />
+                                                    <Value>=Fields!ShipToAddress7.Value</Value>
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>8pt</FontSize>
@@ -762,7 +994,7 @@
                                                 <Style />
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>Textbox24</rd:DefaultName>
+                                            <rd:DefaultName>ShipToAddress7</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Color>LightGrey</Color>
@@ -843,14 +1075,14 @@
                                       </TablixCell>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="Textbox25">
+                                          <Textbox Name="ShipToAddress8">
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value />
+                                                    <Value>=Fields!ShipToAddress8.Value</Value>
                                                     <Style>
                                                       <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>8pt</FontSize>
@@ -860,7 +1092,7 @@
                                                 <Style />
                                               </Paragraph>
                                             </Paragraphs>
-                                            <rd:DefaultName>Textbox25</rd:DefaultName>
+                                            <rd:DefaultName>ShipToAddress8</rd:DefaultName>
                                             <Style>
                                               <Border>
                                                 <Color>LightGrey</Color>
@@ -930,7 +1162,7 @@
                               <Top>4.29376cm</Top>
                               <Left>0.36698cm</Left>
                               <Height>3.10448cm</Height>
-                              <Width>16.47756cm</Width>
+                              <Width>16.47754cm</Width>
                               <ZIndex>2</ZIndex>
                               <Style>
                                 <Border>
@@ -1438,6 +1670,36 @@
                                 </Border>
                               </Style>
                             </Tablix>
+                            <Textbox Name="ShipCaption3">
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Parameters!ShipToLbl.Value</Value>
+                                      <Style>
+                                        <FontFamily>Segoe UI</FontFamily>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                        <Color>#2397d6</Color>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <Top>1.53768in</Top>
+                              <Left>2.48in</Left>
+                              <Height>11pt</Height>
+                              <Width>0.49803in</Width>
+                              <ZIndex>4</ZIndex>
+                              <Visibility>
+                                <Hidden>=Fields!ShipToAddress1.Value=""</Hidden>
+                              </Visibility>
+                              <Style>
+                                <VerticalAlign>Middle</VerticalAlign>
+                              </Style>
+                            </Textbox>
                           </ReportItems>
                           <KeepTogether>true</KeepTogether>
                           <Style>
@@ -3694,6 +3956,15 @@
       </DefaultValue>
       <Prompt>SellToLbl</Prompt>
     </ReportParameter>
+    <ReportParameter Name="ShipToLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ShipToLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ShipToLbl</Prompt>
+    </ReportParameter>
     <ReportParameter Name="BuyFromLbl">
       <DataType>String</DataType>
       <DefaultValue>
@@ -3932,7 +4203,7 @@
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>1</NumberOfColumns>
-      <NumberOfRows>40</NumberOfRows>
+      <NumberOfRows>41</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
@@ -4007,131 +4278,136 @@
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>14</RowIndex>
-          <ParameterName>BuyFromLbl</ParameterName>
+          <ParameterName>ShipToLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>15</RowIndex>
-          <ParameterName>PageLbl</ParameterName>
+          <ParameterName>BuyFromLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>16</RowIndex>
-          <ParameterName>RequestedReceiptDateLbl</ParameterName>
+          <ParameterName>PageLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>17</RowIndex>
-          <ParameterName>ItemNoLbl</ParameterName>
+          <ParameterName>RequestedReceiptDateLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>18</RowIndex>
-          <ParameterName>DescriptionLbl</ParameterName>
+          <ParameterName>ItemNoLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>19</RowIndex>
-          <ParameterName>QuantityLbl</ParameterName>
+          <ParameterName>DescriptionLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>20</RowIndex>
-          <ParameterName>UnitPriceLbl</ParameterName>
+          <ParameterName>QuantityLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>21</RowIndex>
-          <ParameterName>UnitOfMeasureLbl</ParameterName>
+          <ParameterName>UnitPriceLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>22</RowIndex>
-          <ParameterName>TotalPriceLbl</ParameterName>
+          <ParameterName>UnitOfMeasureLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>23</RowIndex>
-          <ParameterName>SubtotalLbl</ParameterName>
+          <ParameterName>TotalPriceLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>24</RowIndex>
-          <ParameterName>InvoiceDiscountLbl</ParameterName>
+          <ParameterName>SubtotalLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>25</RowIndex>
-          <ParameterName>TaxLbl</ParameterName>
+          <ParameterName>InvoiceDiscountLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>26</RowIndex>
-          <ParameterName>TotalLbl</ParameterName>
+          <ParameterName>TaxLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>27</RowIndex>
-          <ParameterName>ForAnyPaymentsLbl</ParameterName>
+          <ParameterName>TotalLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>28</RowIndex>
-          <ParameterName>BankLbl</ParameterName>
+          <ParameterName>ForAnyPaymentsLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>29</RowIndex>
-          <ParameterName>BankValue</ParameterName>
+          <ParameterName>BankLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>30</RowIndex>
-          <ParameterName>RoutingNoLbl</ParameterName>
+          <ParameterName>BankValue</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>31</RowIndex>
-          <ParameterName>RoutingNoValue</ParameterName>
+          <ParameterName>RoutingNoLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>32</RowIndex>
-          <ParameterName>AccountNoLbl</ParameterName>
+          <ParameterName>RoutingNoValue</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>33</RowIndex>
-          <ParameterName>AccountNoValue</ParameterName>
+          <ParameterName>AccountNoLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>34</RowIndex>
-          <ParameterName>HomePageLbl</ParameterName>
+          <ParameterName>AccountNoValue</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>35</RowIndex>
-          <ParameterName>PhoneNoLbl</ParameterName>
+          <ParameterName>HomePageLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>36</RowIndex>
-          <ParameterName>EmailLbl</ParameterName>
+          <ParameterName>PhoneNoLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>37</RowIndex>
-          <ParameterName>PhoneNo_CompanyInformationCaption</ParameterName>
+          <ParameterName>EmailLbl</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>38</RowIndex>
-          <ParameterName>HomePage_CompanyInformationCaption</ParameterName>
+          <ParameterName>PhoneNo_CompanyInformationCaption</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>39</RowIndex>
+          <ParameterName>HomePage_CompanyInformationCaption</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>40</RowIndex>
           <ParameterName>Email_CompanyInformationCaption</ParameterName>
         </CellDefinition>
       </CellDefinitions>
@@ -4213,212 +4489,4 @@ AAAAAACgaQRkelwGHWdZUV5KWPP/2ruDmzaCKAzAjwpIB0kHIE0DlBC5gTi3OVIC6SDcfIQGRqaCQAGW
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Fields>
-        <Field Name="Picture_CompanyInformation">
-          <DataField>Picture_CompanyInformation</DataField>
-        </Field>
-        <Field Name="PhoneNo_CompanyInformation">
-          <DataField>PhoneNo_CompanyInformation</DataField>
-        </Field>
-        <Field Name="HomePage_CompanyInformation">
-          <DataField>HomePage_CompanyInformation</DataField>
-        </Field>
-        <Field Name="Email_CompanyInformation">
-          <DataField>Email_CompanyInformation</DataField>
-        </Field>
-        <Field Name="DocumentDate_Header">
-          <DataField>DocumentDate_Header</DataField>
-        </Field>
-        <Field Name="DueDate_Header">
-          <DataField>DueDate_Header</DataField>
-        </Field>
-        <Field Name="No_Header">
-          <DataField>No_Header</DataField>
-        </Field>
-        <Field Name="ExternalDocumentNo_Header">
-          <DataField>ExternalDocumentNo_Header</DataField>
-        </Field>
-        <Field Name="QuoteNo_Header">
-          <DataField>QuoteNo_Header</DataField>
-        </Field>
-        <Field Name="Name_SalesPerson">
-          <DataField>Name_SalesPerson</DataField>
-        </Field>
-        <Field Name="Description_PaymentTerms">
-          <DataField>Description_PaymentTerms</DataField>
-        </Field>
-        <Field Name="ShipmentDate_Header">
-          <DataField>ShipmentDate_Header</DataField>
-        </Field>
-        <Field Name="Description_ShipmentMethod">
-          <DataField>Description_ShipmentMethod</DataField>
-        </Field>
-        <Field Name="BuyFromAddress1">
-          <DataField>BuyFromAddress1</DataField>
-        </Field>
-        <Field Name="BuyFromAddress2">
-          <DataField>BuyFromAddress2</DataField>
-        </Field>
-        <Field Name="BuyFromAddress3">
-          <DataField>BuyFromAddress3</DataField>
-        </Field>
-        <Field Name="BuyFromAddress4">
-          <DataField>BuyFromAddress4</DataField>
-        </Field>
-        <Field Name="BuyFromAddress5">
-          <DataField>BuyFromAddress5</DataField>
-        </Field>
-        <Field Name="BuyFromAddress6">
-          <DataField>BuyFromAddress6</DataField>
-        </Field>
-        <Field Name="BuyFromAddress7">
-          <DataField>BuyFromAddress7</DataField>
-        </Field>
-        <Field Name="BuyFromAddress8">
-          <DataField>BuyFromAddress8</DataField>
-        </Field>
-        <Field Name="BillToAddress1">
-          <DataField>BillToAddress1</DataField>
-        </Field>
-        <Field Name="BillToAddress2">
-          <DataField>BillToAddress2</DataField>
-        </Field>
-        <Field Name="BillToAddress3">
-          <DataField>BillToAddress3</DataField>
-        </Field>
-        <Field Name="BillToAddress4">
-          <DataField>BillToAddress4</DataField>
-        </Field>
-        <Field Name="BillToAddress5">
-          <DataField>BillToAddress5</DataField>
-        </Field>
-        <Field Name="BillToAddress6">
-          <DataField>BillToAddress6</DataField>
-        </Field>
-        <Field Name="BillToAddress7">
-          <DataField>BillToAddress7</DataField>
-        </Field>
-        <Field Name="BillToAddress8">
-          <DataField>BillToAddress8</DataField>
-        </Field>
-        <Field Name="SellToAddress1">
-          <DataField>SellToAddress1</DataField>
-        </Field>
-        <Field Name="SellToAddress2">
-          <DataField>SellToAddress2</DataField>
-        </Field>
-        <Field Name="SellToAddress3">
-          <DataField>SellToAddress3</DataField>
-        </Field>
-        <Field Name="SellToAddress4">
-          <DataField>SellToAddress4</DataField>
-        </Field>
-        <Field Name="SellToAddress5">
-          <DataField>SellToAddress5</DataField>
-        </Field>
-        <Field Name="SellToAddress6">
-          <DataField>SellToAddress6</DataField>
-        </Field>
-        <Field Name="SellToAddress7">
-          <DataField>SellToAddress7</DataField>
-        </Field>
-        <Field Name="SellToAddress8">
-          <DataField>SellToAddress8</DataField>
-        </Field>
-        <Field Name="DiscountCaption">
-          <DataField>DiscountCaption</DataField>
-        </Field>
-        <Field Name="Type_Line">
-          <DataField>Type_Line</DataField>
-        </Field>
-        <Field Name="No_Line">
-          <DataField>No_Line</DataField>
-        </Field>
-        <Field Name="Description_Line">
-          <DataField>Description_Line</DataField>
-        </Field>
-        <Field Name="Quantity_Line">
-          <DataField>Quantity_Line</DataField>
-        </Field>
-        <Field Name="Quantity_LineFormat">
-          <DataField>Quantity_LineFormat</DataField>
-        </Field>
-        <Field Name="UnitOfMeasure_Line">
-          <DataField>UnitOfMeasure_Line</DataField>
-        </Field>
-        <Field Name="UnitPrice_Line">
-          <DataField>UnitPrice_Line</DataField>
-        </Field>
-        <Field Name="UnitPrice_LineFormat">
-          <DataField>UnitPrice_LineFormat</DataField>
-        </Field>
-        <Field Name="UnitDiscount">
-          <DataField>UnitDiscount</DataField>
-        </Field>
-        <Field Name="UnitDiscountFormat">
-          <DataField>UnitDiscountFormat</DataField>
-        </Field>
-        <Field Name="Line_Discount_Amount">
-          <DataField>Line_Discount_Amount</DataField>
-        </Field>
-        <Field Name="Line_Discount_AmountFormat">
-          <DataField>Line_Discount_AmountFormat</DataField>
-        </Field>
-        <Field Name="LineAmount_Line">
-          <DataField>LineAmount_Line</DataField>
-        </Field>
-        <Field Name="LineAmount_LineFormat">
-          <DataField>LineAmount_LineFormat</DataField>
-        </Field>
-        <Field Name="TotalVATAmount">
-          <DataField>TotalVATAmount</DataField>
-        </Field>
-        <Field Name="TotalVATAmountFormat">
-          <DataField>TotalVATAmountFormat</DataField>
-        </Field>
-        <Field Name="TotalVATDiscountAmount">
-          <DataField>TotalVATDiscountAmount</DataField>
-        </Field>
-        <Field Name="TotalVATDiscountAmountFormat">
-          <DataField>TotalVATDiscountAmountFormat</DataField>
-        </Field>
-        <Field Name="TotalVATBaseAmount">
-          <DataField>TotalVATBaseAmount</DataField>
-        </Field>
-        <Field Name="TotalVATBaseAmountFormat">
-          <DataField>TotalVATBaseAmountFormat</DataField>
-        </Field>
-        <Field Name="TotalAmountInclVAT">
-          <DataField>TotalAmountInclVAT</DataField>
-        </Field>
-        <Field Name="TotalAmountInclVATFormat">
-          <DataField>TotalAmountInclVATFormat</DataField>
-        </Field>
-        <Field Name="TotalSubTotal">
-          <DataField>TotalSubTotal</DataField>
-        </Field>
-        <Field Name="TotalSubTotalFormat">
-          <DataField>TotalSubTotalFormat</DataField>
-        </Field>
-        <Field Name="TotalInvoiceDiscountAmount">
-          <DataField>TotalInvoiceDiscountAmount</DataField>
-        </Field>
-        <Field Name="TotalInvoiceDiscountAmountFormat">
-          <DataField>TotalInvoiceDiscountAmountFormat</DataField>
-        </Field>
-        <Field Name="TotalAmount">
-          <DataField>TotalAmount</DataField>
-        </Field>
-        <Field Name="TotalAmountFormat">
-          <DataField>TotalAmountFormat</DataField>
-        </Field>
-      </Fields>
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-    </DataSet>
-  </DataSets>
 </Report>

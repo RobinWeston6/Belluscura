@@ -30,6 +30,10 @@ report 56704 "SK2 Purchase Order"
             { }
             column(OrderDate_Header; "Order Date")
             { }
+            column(Payment_Terms_Code; "Payment Terms Code")
+            {
+                IncludeCaption = true;
+            }
             column(BuyFromAddress1; BuyFromAddress[1])
             { }
             column(BuyFromAddress2; BuyFromAddress[2])

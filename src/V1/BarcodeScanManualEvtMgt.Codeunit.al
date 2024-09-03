@@ -8,6 +8,7 @@ codeunit 56702 "SK2 Barcd Scan Manual Evt Mgt."
         DefaultOption := 1;
         HideDialog := true;
         PurchaseHeader.Receive := true;
+        PurchaseHeader.Invoice := false;
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post (Yes/No)", 'OnBeforeConfirmSalesPost', '', false, false)]
@@ -16,6 +17,7 @@ codeunit 56702 "SK2 Barcd Scan Manual Evt Mgt."
         DefaultOption := 1;
         HideDialog := true;
         SalesHeader.Ship := true;
+        SalesHeader.Invoice := false;
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Assembly Line Management", 'OnBeforeUpdateAssemblyLines', '', false, false)]

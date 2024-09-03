@@ -104,16 +104,6 @@ page 56702 "Basic Role Center"
                 Visible = false;
                 ApplicationArea = Basic, Suite;
             }
-            part(" "; "O365 Link to Financials")
-            {
-
-                Visible = false;
-                ApplicationArea = Invoicing;
-                Caption = ' ';
-                ObsoleteReason = 'Microsoft Invoicing is not supported on Business Central';
-                ObsoleteState = Pending;
-                ObsoleteTag = '17.0';
-            }
         }
     }
 

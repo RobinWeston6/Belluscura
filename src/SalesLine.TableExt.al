@@ -24,4 +24,18 @@ tableextension 56710 "SK2 Sales Line" extends "Sales Line"
             end;
         }
     }
+
+    procedure AutoCategoriseSerialNoComments()
+    var
+        AutoCat: Codeunit "SK2 Sales SN Comment AutoCat";
+    begin
+        AutoCat.AutoCategoriseSalesSNComments(Rec."Document Type", Rec."Document No.", Rec."Line No.");
+    end;
+
+    procedure AllCommentsCategorised(): Boolean
+    var
+        AutoCat: Codeunit "SK2 Sales SN Comment AutoCat";
+    begin
+        AutoCat.AllCommentsCategorised(Rec."Document Type", Rec."Document No.", Rec."Line No.");
+    end;
 }
